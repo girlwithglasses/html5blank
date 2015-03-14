@@ -143,13 +143,15 @@ function html5blank_styles()
         wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize.css/normalize.css', array(), '3.0.1');
 
         // Custom CSS
-        wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
+//        wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
+        wp_register_style('html5blank', get_template_directory_uri() . '/css/style.css', array('normalize'), '1.0');
 
         // Register CSS
         wp_enqueue_style('html5blank');
     } else {
         // Custom CSS
-        wp_register_style('html5blankcssmin', get_template_directory_uri() . '/style.css', array(), '1.0');
+//        wp_register_style('html5blankcssmin', get_template_directory_uri() . '/style.css', array(), '1.0');
+        wp_register_style('html5blankcssmin', get_template_directory_uri() . '/css/style.css', array(), '1.0');
         // Register CSS
         wp_enqueue_style('html5blankcssmin');
     }
@@ -214,9 +216,9 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'html5blank'),
+        'name' => __('Left Sidebar', 'html5blank'),
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-1',
+        'id' => 'left',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
@@ -225,9 +227,20 @@ if (function_exists('register_sidebar'))
 
     // Define Sidebar Widget Area 2
     register_sidebar(array(
-        'name' => __('Widget Area 2', 'html5blank'),
+        'name' => __('Right Sidebar', 'html5blank'),
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-2',
+        'id' => 'right',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+    // Define Footer Widget
+    register_sidebar(array(
+        'name' => __('Footer Widget', 'html5blank'),
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'widget-footer',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
