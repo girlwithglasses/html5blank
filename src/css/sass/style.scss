@@ -1,11 +1,10 @@
-/**
- * styles.scss
- * ---
- * Main `sass` file. Import here `sass` files
- */
+// @import "../../bower-components/normalize.css/normalize.css";
 
-@import "compass/typography/vertical_rhythm";
+/** Main SASS file */
+
+/** Compass imports */
 @import "compass/layout/grid-background";
+@import "compass/typography/vertical_rhythm";
 @import "compass/utilities/general/clearfix";
 @import "compass/utilities/general/float";
 
@@ -14,13 +13,12 @@
 @import "modules/mixins";
 // @import "modules/fonts";
 
-/* copied from the Cat Town css */
+/* set up basic formatting */
 @import 'partials/base'; //reset
 
 @import 'colours';
 
 // Partials
-// @import "partials/reset";
 @import "partials/wordpress";
 @import "partials/utils";
 @import "partials/wrapper";
@@ -44,19 +42,6 @@ body { @include baseline-grid-background(1.5em, #ccc); }
 }
 */
 
-
-// $color : rgb(204,102,51);
-$primary: #228866;
-$secondary: #cc6633;
-// @include complement($primary);
-// $orange : rgb(204,102,51);
-// $secondary : $orange;
-
-// $midgrn : rgb(199,231,217);
-// $primary : $midgrn;
-
-// mid	darker	darkest	lighter	lightest
-// 228866	2D6653	0B583F	55C39F	73C3A9
 
 /* copied from the Cat Town css */
 @import 'menu';

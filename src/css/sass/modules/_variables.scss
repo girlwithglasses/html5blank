@@ -46,7 +46,7 @@ $main-alink:
 */
 
 // header nav colours:
-
+$h-menu-border: #999;
 // background
 $h-menu-bg: $body-bg;
 // link colour
@@ -58,6 +58,8 @@ $h-menu-hfa-link: #fff;
 // hover/focus/active link bg
 $h-menu-hfa-link-bg: #044;
 
+$h-menu-current: $h-menu-link;
+$h-menu-current-bg: $h-menu-link-bg;
 
 /**
  * Grid

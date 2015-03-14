@@ -1,8 +1,5 @@
-/**
- * styles.scss
- * ---
- * Main `sass` file. Import here `sass` files
- */
+/** Main SASS file */
+/** Compass imports */
 /**
  * modules/variables
  * ---
@@ -20,70 +17,415 @@
  * modules/mixins
  * ---
  */
-/**
- * modules/fonts
- * ---
- * Declare fonts here
- */
-/*
-@font-face {
-  font-family: "Font-Name";
-  src: url("fonts/font-name.eot");
-  src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"),
-    url("fonts/font-name.woff") format("woff"),
-    url("fonts/font-name.ttf") format("truetype"),
-    url("fonts/font-name.svg#font-name") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-*/
-/**
- * partials/reset
- * ---
- * Reset file
- * NOTE: also `normalize.css` is used
- */
-*,
-*:after,
-*:before {
+/* set up basic formatting */
+/* css reset plus some sensible default styling. */
+/* line 3, sass/partials/_base.scss */
+*, *:after, *:before {
   box-sizing: border-box;
 }
 
+/* BASE */
+/* Force scrollbar in non-IE and Remove iOS text size adjust without disabling user zoom */
+/* line 9, sass/partials/_base.scss */
 html {
-  font-size: 62.5%;
-  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/* Improve default text rendering, handling of kerning pairs and ligatures */
+/* line 18, sass/partials/_base.scss */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-  font-size: 140%;
-  line-height: 1.5;
+  min-height: 100%;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* DEFAULT FONT SETTINGS */
+  font: 100%/1.5 "Helvetica Neue", Helvetica, Roboto, "Open Sans", Arial, sans-serif;
   color: #444444;
   background-color: white;
 }
 
+/* set borders, padding, margins, vertical align */
+/* line 30, sass/partials/_base.scss */
+html, body,
+address, article, aside, footer, header, hgroup, nav, section,
+p, blockquote, pre, div,
+dl, dt, dd, ol, ul, li,
+figcaption, figure, main,
+abbr, cite, dfn, em, q, s, small, span, strong, time, var,
+code, kbd, samp,
+b, u, i,
+del, ins, mark,
+sub, sup,
+table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td,
+img,
+embed, iframe, object, audio, video,
+a, map, area,
+fieldset, form, label, legend, meter, progress,
+details, summary,
+canvas, template {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* leave out the border for these elements */
+/* line 70, sass/partials/_base.scss */
+button, input, optgroup, select, textarea {
+  /*	in normalize.css
+  	margin: 0;
+  	font: inherit;
+  */
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* set font/size on non-inline elements */
+/* line 80, sass/partials/_base.scss */
+html, body,
+address, article, aside, footer, header, hgroup, nav, section,
+p, blockquote, pre, div,
+dl, dt, dd, ol, ul, li,
+figcaption, figure, main,
+table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td,
+img,
+embed, iframe, object, audio, video,
+fieldset, form, label, legend,
+input, textarea,
+details, summary,
+canvas, template {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* HTML5 DECLARATIONS */
+/*	- all covered by normalize.css
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+
+audio, canvas, progress, video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden], template {
+	display: none;
+}
+*/
+/* line 124, sass/partials/_base.scss */
 img {
   max-width: 100%;
   vertical-align: middle;
+  /*	in normalize.css
+  	border: 0;
+  */
+  -ms-interpolation-mode: bicubic;
 }
 
+/* in normalize.css
+svg:not(:root) { overflow: hidden; }
+*/
+/* CODE */
+/* Allow line wrapping of 'pre' */
+/* line 141, sass/partials/_base.scss */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  /*	in normalize.css
+  	overflow: auto;
+  */
+}
+
+/* line 149, sass/partials/_base.scss */
+pre, code, kbd, samp {
+  font: 100%/1.5 Menlo, Consolas, 'DejaVu Sans Mono', Monaco, monospace;
+}
+
+/* line 153, sass/partials/_base.scss */
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, fieldset, menu, label {
+  margin: 0 0 1.5em;
+}
+
+/* TABLES */
+/* line 158, sass/partials/_base.scss */
+table {
+  /*	in normalize.css
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  */
+  border-width: 0;
+  margin-bottom: 1.5em;
+  empty-cells: show;
+}
+
+/* line 168, sass/partials/_base.scss */
+th {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 172, sass/partials/_base.scss */
+th, td {
+  padding: 0 0.75em;
+  border-bottom: 0 solid;
+}
+
+/* FORMS */
+/* line 178, sass/partials/_base.scss */
+form {
+  overflow: auto;
+}
+
+/* line 182, sass/partials/_base.scss */
+textarea {
+  /* mostly from baseline.js */
+  vertical-align: top;
+  margin: 0 0 -2px 0;
+  display: block;
+  clear: left;
+  border: 1px solid #333;
+  /*	in normalize.css
+  	overflow: auto;
+  */
+}
+
+/* line 194, sass/partials/_base.scss */
+legend {
+  padding-bottom: 1.5em;
+}
+
+/*	in normalize.css
+button, input {
+	overflow: visible;
+}
+*/
+/* line 206, sass/partials/_base.scss */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  /*	in normalize.css
+  	cursor: pointer;
+  	-webkit-appearance: button;
+  */
+  margin-bottom: 1.5em;
+}
+
+/*	in normalize.css
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input[type="search"] {
+	box-sizing: content-box;
+	-webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+*/
+/* line 234, sass/partials/_base.scss */
+input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="tel"] {
+  /* from BASELINE.js */
+  font-size: inherit;
+  border: 1px solid #666;
+  line-height: 20px;
+  display: block;
+  padding: 1px 0;
+  margin: 0;
+}
+
+/* line 245, sass/partials/_base.scss */
+input[type="select"], select {
+  /* from BASELINE.js */
+  display: block;
+  height: 1.5em;
+  border: 0 solid;
+  padding: 0;
+}
+
+/* QUOTES */
+/* line 254, sass/partials/_base.scss */
+blockquote {
+  quotes: none;
+}
+
+/* line 257, sass/partials/_base.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* line 260, sass/partials/_base.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none;
+}
+
+/* line 263, sass/partials/_base.scss */
+blockquote, q, cite {
+  font-style: italic;
+}
+
+/* line 266, sass/partials/_base.scss */
+blockquote {
+  padding-left: 1.5em;
+  border-left: 3px solid #ccc;
+}
+
+/* line 270, sass/partials/_base.scss */
+blockquote > p {
+  padding: 0;
+}
+
+/* LISTS */
+/* line 275, sass/partials/_base.scss */
+ul {
+  list-style: disc inside;
+}
+
+/* line 278, sass/partials/_base.scss */
+ol {
+  list-style: decimal inside;
+}
+
+/* LINKS */
+/* line 283, sass/partials/_base.scss */
 a {
-  color: #444444;
+  text-decoration: none;
+  /* in normalize.css
+  	background: transparent;
+  */
+}
+/* line 288, sass/partials/_base.scss */
+a:hover, a:focus {
   text-decoration: none;
 }
-a:focus, a:hover {
-  text-decoration: underline;
+/* line 291, sass/partials/_base.scss */
+a:focus {
+  outline: thin dotted;
 }
 
-input[type="text"],
-input[type="search"] {
-  font-size: inherit;
-  line-height: inherit;
+/* in normalize.css
+a:hover, a:active { outline: none; }
+*/
+/* ABBREVIATION */
+/* line 307, sass/partials/_base.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #333;
+  cursor: help;
 }
 
-::selection {
-  background-color: #04a4cc;
-  color: white;
+/* MARKED/INSERTED/DELETED AND SELECTED TEXT */
+/* line 313, sass/partials/_base.scss */
+ins, mark {
+  text-decoration: none;
+}
+
+/* line 316, sass/partials/_base.scss */
+ins {
+  background: #d49855;
+}
+
+/* line 319, sass/partials/_base.scss */
+del {
+  text-decoration: line-through;
+}
+
+/*	in normalize.css
+mark {
+	background-color: #FF3;
+	color: #000;
+}
+*/
+/* OTHERS */
+/* line 331, sass/partials/_base.scss */
+strong, b, dt {
+  font-weight: bold;
+}
+
+/*	in normalize.css
+dfn {
+	font-style: italic;
+}
+*/
+/* line 339, sass/partials/_base.scss */
+var, address {
+  font-style: normal;
+}
+
+/*	in normalize.css
+Position 'sub' and 'sup' without affecting line-height
+
+sub, sup {
+	font-size: .75em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+*/
+/* Best available ampersand */
+/* line 361, sass/partials/_base.scss */
+.amp {
+  font-family: Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;
+  font-style: italic;
+  font-size: 110%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 370, sass/partials/_base.scss */
+li ul, li ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 374, sass/partials/_base.scss */
+.noDot, .noDot, nav ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* line 378, sass/partials/_base.scss */
+dd + dt {
+  margin-top: 1.5em;
+}
+
+/* line 383, sass/partials/_base.scss */
+.debug {
+  background-image: url(data:image/gif;base64,R0lGODlhAQAYAIAAAO7u7v///yH5BAAAAAAALAAAAAABABgAAAIFjI+pBgUAOw==);
+}
+
+/* LINKS */
+/* line 2, sass/_colours.scss */
+a {
+  color: #004444;
+}
+/* line 8, sass/_colours.scss */
+a:visited {
+  color: #006666;
+}
+
+/* selected text */
+/* line 14, sass/_colours.scss */
+::selection, ::-moz-selection {
+  background: #444444;
+  color: #04a4cc;
   text-shadow: none;
 }
 
@@ -95,36 +437,41 @@ input[type="search"] {
 /**
  * Alignment
  */
+/* line 16, sass/partials/_wordpress.scss */
 .alignnone {
-  margin: 5px 15px 15px 0;
+  margin: 0.75em 1.5em 1.5em 0;
 }
 
+/* line 20, sass/partials/_wordpress.scss */
 .aligncenter {
   display: block;
-  margin: 5px auto;
+  margin: 0.75em auto;
 }
 
+/* line 25, sass/partials/_wordpress.scss */
 .alignright {
   float: right;
-  margin: 5px 0 20px 20px;
-  margin: 5px 0 15px 15px;
+  margin: 0.75em 0 1.5em 1.5em;
 }
 
+/* line 30, sass/partials/_wordpress.scss */
 .alignleft {
   float: left;
-  margin: 5px 15px 15px 0;
+  margin: 0.75em 1.5em 1.5em 0;
 }
 
 /**
  * Gallery & images
  */
+/* line 40, sass/partials/_wordpress.scss */
 .wp-caption {
   background: white;
   border: thin solid #F0F0F0;
   max-width: 95%;
-  padding: 5px 5px;
+  padding: 0.75em 0.75em;
   text-align: center;
 }
+/* line 47, sass/partials/_wordpress.scss */
 .wp-caption img {
   width: auto;
   max-width: 98.5%;
@@ -132,14 +479,13 @@ input[type="search"] {
   border: 0 none;
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
+/* line 57, sass/partials/_wordpress.scss */
 .wp-caption .wp-caption-text,
 .gallery-caption {
-  margin: 0;
-  padding: 0 5px 5px;
-  font-size: 140%;
-  line-height: 1.5;
+  padding: 0 0.75em 0.75em;
 }
 
 /**
@@ -147,32 +493,68 @@ input[type="search"] {
  * ---
  * Utils classes
  */
-.clear:before, .clear:after {
-  content: " ";
-  display: table;
+/* General utility css classes */
+/* line 9, sass/partials/_utils.scss */
+.floatR {
+  float: right;
 }
-.clear:after {
+
+/* line 10, sass/partials/_utils.scss */
+.floatL {
+  float: left;
+}
+
+/* line 11, sass/partials/_utils.scss */
+.L {
+  text-align: left;
+}
+
+/* line 12, sass/partials/_utils.scss */
+.C {
+  text-align: center;
+}
+
+/* line 13, sass/partials/_utils.scss */
+.R {
+  text-align: right;
+}
+
+/* line 14, sass/partials/_utils.scss */
+.clearR {
+  clear: right;
+}
+
+/* line 15, sass/partials/_utils.scss */
+.clearL {
+  clear: left;
+}
+
+/* line 16, sass/partials/_utils.scss */
+.clear {
   clear: both;
 }
 
+/* line 18, sass/partials/_utils.scss */
 .reset-box {
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
 /**
  * partials/wrapper
  * ---
  */
+/* line 7, sass/partials/_wrapper.scss */
 .wrapper {
   max-width: 1280px;
-  padding: 0 15px;
+  padding: 0 1.5em;
   margin: 0 auto;
   position: relative;
 }
 
 /**
- * partial/header
+ * partials/header
  * ---
  */
 /**
@@ -195,6 +577,7 @@ input[type="search"] {
  * (from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
  */
 @media print {
+  /* line 10, sass/partials/_print.scss */
   *,
   *:before,
   *:after {
@@ -205,15 +588,18 @@ input[type="search"] {
     text-shadow: none !important;
   }
 
+  /* line 19, sass/partials/_print.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
+  /* line 24, sass/partials/_print.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
+  /* line 28, sass/partials/_print.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -222,31 +608,37 @@ input[type="search"] {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
+  /* line 37, sass/partials/_print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
+  /* line 42, sass/partials/_print.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
+  /* line 48, sass/partials/_print.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
+  /* line 52, sass/partials/_print.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
+  /* line 57, sass/partials/_print.scss */
   img {
     max-width: 100% !important;
   }
 
+  /* line 61, sass/partials/_print.scss */
   p,
   h2,
   h3 {
@@ -254,8 +646,275 @@ input[type="search"] {
     widows: 3;
   }
 
+  /* line 68, sass/partials/_print.scss */
   h2,
   h3 {
     page-break-after: avoid;
+  }
+
+  /* line 73, sass/partials/_print.scss */
+  nav {
+    display: none;
+  }
+}
+/* line 31, sass/style.scss */
+a.img {
+  display: block;
+}
+
+/* line 32, sass/style.scss */
+.img img {
+  padding: .75em;
+}
+
+/* line 34, sass/style.scss */
+body {
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, #cccccc), color-stop(5%, rgba(204, 204, 204, 0)));
+  background-image: -webkit-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  background-image: -moz-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  background-image: -o-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  background-image: linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  -webkit-background-size: 100% 1.5em;
+  -moz-background-size: 100% 1.5em;
+  -o-background-size: 100% 1.5em;
+  background-size: 100% 1.5em;
+  background-position: left top;
+}
+
+/*
+@include establish-baseline;
+@if true {
+	$grid-background-baseline-height: $base-line-height;
+	body {
+		@include debug-vertical-alignment;
+	}
+}
+*/
+/* copied from the Cat Town css */
+/* =NAVIGATION
+----------------------------------------------- */
+/* line 3, sass/_menu.scss */
+header {
+  *zoom: 1;
+}
+/* line 32, sass/modules/_mixins.scss */
+header:before, header:after {
+  content: " ";
+  display: table;
+}
+/* line 37, sass/modules/_mixins.scss */
+header:after {
+  clear: both;
+}
+
+/* line 7, sass/_menu.scss */
+nav li > ul,
+nav li > ol {
+  margin: 0;
+  list-style: none;
+}
+
+/* line 12, sass/_menu.scss */
+header nav {
+  width: 100%;
+  background-color: white;
+}
+/* line 15, sass/_menu.scss */
+header nav li {
+  float: left;
+  position: relative;
+}
+/* line 21, sass/_menu.scss */
+header nav a {
+  color: #004444;
+  display: block;
+  float: left;
+  padding: 0.75em 1em;
+}
+/* line 27, sass/_menu.scss */
+header nav a:hover,
+header nav ul li.current-menu-item a,
+header nav ul li.current_page_ancestor a,
+header nav ul li.current-menu-ancestor a,
+header nav ul li.current_page_item a,
+header nav ul li:hover > a {
+  color: #004444;
+  background-color: #eeeeee;
+}
+
+/* line 38, sass/_menu.scss */
+li.default-menu {
+  display: none;
+}
+
+/* =DROP DOWN
+----------------------------------------------- */
+/* line 46, sass/_menu.scss */
+header nav ul li ul,
+header nav ul li:hover ul ul,
+header nav ul ul li:hover ul ul,
+header nav ul ul ul li:hover ul ul,
+header nav ul ul ul ul li:hover ul ul {
+  display: none;
+  z-index: 100;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  margin-left: -1px;
+}
+/* line 58, sass/_menu.scss */
+header nav ul li:hover ul,
+header nav ul ul li:hover ul,
+header nav ul ul ul li:hover ul,
+header nav ul ul ul ul li:hover ul,
+header nav ul ul ul ul ul li:hover ul {
+  display: block;
+}
+/* line 66, sass/_menu.scss */
+header nav ul li ul {
+  position: absolute;
+  width: 12.5em;
+  top: 3em;
+}
+/* line 70, sass/_menu.scss */
+header nav ul li ul li {
+  margin-top: -1px;
+  float: none;
+  border-bottom: 1px solid #999999;
+}
+/* line 75, sass/_menu.scss */
+header nav ul li ul li:last-child {
+  border-bottom: none;
+}
+/* line 81, sass/_menu.scss */
+header nav ul li ul li a,
+header nav ul li .current-menu-item ul li a,
+header nav ul li ul li.current-menu-item a,
+header nav ul li .current_page_ancestor ul li a,
+header nav ul li .current-menu-ancestor ul li a,
+header nav ul li .current_page_item ul li a {
+  float: none;
+  height: 100%;
+  padding: 0.75em 1em;
+  color: #004444;
+  background-color: #eeeeee;
+}
+/* line 93, sass/_menu.scss */
+header nav ul li .current-menu-item a:before {
+  content: "> ";
+}
+/* line 97, sass/_menu.scss */
+header nav ul li ul li a:hover,
+header nav ul li ul li a:focus,
+header nav ul li ul li a:active,
+header nav ul li ul li:hover > a,
+header nav ul li ul li:focus > a,
+header nav ul li ul li:active > a,
+header nav ul li .current-menu-item ul li a:hover,
+header nav ul li .current-menu-item ul li a:focus,
+header nav ul li .current-menu-item ul li a:active {
+  color: white;
+  background-color: #004444;
+}
+/* line 109, sass/_menu.scss */
+header nav ul li ul li ul {
+  left: 12.5em;
+  top: 0;
+}
+/* line 115, sass/_menu.scss */
+header nav select {
+  display: none;
+}
+
+/* =RESPONSIVE MENU
+----------------------------------------------- */
+/* line 122, sass/_menu.scss */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* line 126, sass/_menu.scss */
+.site-header .menu-toggle {
+  background: #FFFFFF;
+  color: #444444;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 5px 22px;
+  margin: 0;
+  text-align: center;
+}
+
+/* line 136, sass/_menu.scss */
+.site-header .menu-toggle:before {
+  content: "MENU";
+  padding-right: 10px;
+}
+
+/* line 147, sass/_menu.scss */
+.main-small-navigation {
+  float: none;
+  padding-top: 0;
+  background-color: #000000;
+}
+
+/* line 152, sass/_menu.scss */
+.main-small-navigation ul {
+  margin: 0;
+  list-style: none;
+}
+
+/* line 156, sass/_menu.scss */
+.main-small-navigation a {
+  display: block;
+  color: #444444;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #F8F8F8;
+}
+
+/* line 163, sass/_menu.scss */
+.main-small-navigation li {
+  background-color: #FFFFFF;
+}
+
+/* line 166, sass/_menu.scss */
+.main-small-navigation li:hover {
+  background-color: #77CC6D;
+  color: #FFFFFF;
+}
+
+/* line 170, sass/_menu.scss */
+.main-small-navigation ul ul a {
+  padding-left: 60px;
+}
+
+/* line 173, sass/_menu.scss */
+.main-small-navigation ul ul ul a {
+  padding-left: 80px;
+}
+
+/* line 176, sass/_menu.scss */
+.main-small-navigation ul > .current_page_item,
+.main-small-navigation ul > .current-menu-item {
+  background: #77CC6D;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 183, sass/_menu.scss */
+  .menu-toggle,
+  header .toggled .nav-menu {
+    display: block;
+  }
+
+  /* line 187, sass/_menu.scss */
+  header nav ul {
+    display: none;
+  }
+
+  /* line 190, sass/_menu.scss */
+  header nav {
+    float: none;
   }
 }

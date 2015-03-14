@@ -1,5 +1,9 @@
 /* =NAVIGATION
 ----------------------------------------------- */
+header {
+	@include cf;
+}
+
 nav li > ul,
 nav li > ol {
 	margin: 0;
@@ -46,9 +50,9 @@ header nav {
 		ul ul ul li:hover ul ul {
 			display:none;
 			z-index: 100;
-			border-left: 1px solid #F8F8F8;
-			border-right: 1px solid #F8F8F8;
-			border-bottom: 1px solid #F8F8F8;
+			border-left: 1px solid $h-menu-border;
+			border-right: 1px solid $h-menu-border;
+			border-bottom: 1px solid $h-menu-border;
 			margin-left: -1px;
 		}
 		li:hover ul,
@@ -66,12 +70,13 @@ header nav {
 				li {
 					margin-top: -1px;
 					float: none;
-					border-bottom: 1px solid #F8F8F8;
+					border-bottom: 1px solid $h-menu-border;
 				}
 				li:last-child {
-					float: none;
-				//	border-bottom: none;
+			//		float: none;
+					border-bottom: none;
 				}
+
 			}
 			ul li a,
 			.current-menu-item ul li a,
@@ -82,9 +87,13 @@ header nav {
 				float: none;
 				height: 100%;
 				padding: $gutter $font-size;
-				color: #444;
-				background-color: #FFF;
+				color: $h-menu-current;
+				background-color: $h-menu-current-bg;
 			}
+			.current-menu-item a:before {
+				content: "> ";
+			}
+
 			ul li a:hover,
 			ul li a:focus,
 			ul li a:active,
@@ -122,17 +131,17 @@ header nav {
 	padding: 5px 22px;
 	margin: 0;
 	text-align: center;
-	font-family: 'Roboto';
+//	font-family: 'Roboto';
 }
 .site-header .menu-toggle:before {
-	content: "\f0c9";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	text-decoration: inherit;
-	color: #FFFFFF;
-	font-size: 21px;
-	color: #77CC6D;
+	content: "MENU";
+//	font-family: FontAwesome;
+//	font-style: normal;
+//	font-weight: normal;
+//	text-decoration: inherit;
+//	color: #FFFFFF;
+//	font-size: 21px;
+//	color: #77CC6D;
 	padding-right: 10px;
 }
 .main-small-navigation {
@@ -172,7 +181,7 @@ header nav {
 
 @media screen and (max-width: 767px) {
 	.menu-toggle,
-	header nav.toggled .nav-menu {
+	header .toggled .nav-menu {
 		display: block;
 	}
 	header nav ul {
