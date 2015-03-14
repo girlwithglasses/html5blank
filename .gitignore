@@ -3,5 +3,6 @@ node_modules
 src/bower_components
 .sass-cache
 Thumbs.db
-dist/
+dist
 config.rb
+style.css.map
