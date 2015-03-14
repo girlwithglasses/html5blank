@@ -161,9 +161,9 @@ function html5blank_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'header-menu'  => __('Header Menu', 'html5blank'), // Main Navigation
+        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Nav
+        'extra-menu'   => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -240,7 +240,7 @@ if (function_exists('register_sidebar'))
     register_sidebar(array(
         'name' => __('Footer Widget', 'html5blank'),
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-footer',
+        'id' => 'footer',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
@@ -310,7 +310,7 @@ function html5_blank_view_article($more)
 // Remove Admin bar
 function remove_admin_bar()
 {
-    return false;
+    return true;
 }
 
 // Remove 'text/css' from our enqueued stylesheet

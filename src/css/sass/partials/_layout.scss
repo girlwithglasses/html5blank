@@ -1,0 +1,36 @@
+#primary, #primary-left, #primary-right, #primary-middle {
+//	clear: left;
+	width: 100%;
+}
+
+@include maxw(479px) {
+	aside, #primary, #primary-left, #primary-right, #primary-middle {
+		width: 100%;
+	}
+}
+@include minmax(480px,767px) {
+	aside {
+		width: 40%;
+	}
+	#primary-left, #primary-right {
+		width: 60%;
+	}
+}
+@include minw(768px) {
+	aside {
+		width: 30%;
+		background-color: goldenrod;
+	}
+	#primary-left, #primary-right {
+		width: 70%;
+	}
+	#primary-middle {
+		width: 40%;
+	}
+	#primary-left, .sidebar.left, #primary-middle {
+		float: left;
+	}
+	#primary-right, .sidebar.right {
+		float: right;
+	}
+}

@@ -2,7 +2,7 @@
 
 /** Main SASS file */
 
-/** Compass imports */
+// Compass imports
 @import "compass/layout/grid-background";
 @import "compass/typography/vertical_rhythm";
 @import "compass/utilities/general/clearfix";
@@ -13,7 +13,7 @@
 @import "modules/mixins";
 // @import "modules/fonts";
 
-/* set up basic formatting */
+// set up basic formatting
 @import 'partials/base'; //reset
 
 @import 'colours';
@@ -27,6 +27,9 @@
 @import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
+
+@import "partials/layout";
+@import 'menu';
 
 a.img { display: block }
 .img img { padding: .75em; }
@@ -43,10 +46,6 @@ body { @include baseline-grid-background(1.5em, #ccc); }
 */
 
 
-/* copied from the Cat Town css */
-@import 'menu';
-// @import 'typo';
-// @import 'layout';
 
 
 

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div id="main" role="main">
+	<div id="primary" role="main">
 		<!-- section -->
 		<section>
 			<h1><?php the_title(); ?></h1>
