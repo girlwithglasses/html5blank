@@ -3,6 +3,10 @@
 	width: 100%;
 }
 
+#primary, #primary-left, #primary-right, #primary-middle, aside {
+	padding: 0 1em;
+}
+
 @include maxw(479px) {
 	aside, #primary, #primary-left, #primary-right, #primary-middle {
 		width: 100%;
