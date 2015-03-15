@@ -15,9 +15,17 @@
 @include minmax(480px,767px) {
 	aside {
 		width: 40%;
+		background-color: orange;
 	}
 	#primary-left, #primary-right {
 		width: 60%;
+		background-color: #f8f8f8;
+	}
+	#primary-left, .sidebar.left, #primary-middle {
+		float: left;
+	}
+	#primary-right, .sidebar.right {
+		float: right;
 	}
 }
 @include minw(768px) {
