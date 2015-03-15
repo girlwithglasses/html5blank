@@ -1,6 +1,10 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: No Sidebars
+*/
+	get_header(); ?>
 
-	<div id="primary" role="main">
+	<div class="main" id="primary" role="main">
 		<!-- section -->
 		<section>
 			<h1><?php the_title(); ?></h1>
@@ -23,6 +27,6 @@
 		</section>
 	</div>
 
-<?php get_sidebar(); ?>
+<?php // get_sidebar(); ?>
 
 <?php get_footer(); ?>

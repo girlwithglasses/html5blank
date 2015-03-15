@@ -1,0 +1,59 @@
+// modules/colours
+
+$text-color: #444;
+$body-bg: #fff;
+
+// selected text, selection background
+$selcn: #04A4CC;
+$selcn-bg: #444;
+
+// link colours in main body text
+$main-link: #044;
+
+// visited link
+$main-vlink: #066;
+
+/*
+// hover/focus link
+$main-hflink:
+// active link
+$main-alink:
+
+*/
+
+// header nav colours:
+$h-menu-border: #999;
+// background
+$h-menu-bg: $body-bg;
+// link colour
+$h-menu-link: #044;
+// link background
+$h-menu-link-bg: #eee;
+// hover/focus/active link
+$h-menu-hfa-link: #fff;
+// hover/focus/active link bg
+$h-menu-hfa-link-bg: #044;
+
+$h-menu-current: $h-menu-link;
+$h-menu-current-bg: $h-menu-link-bg;
+
+
+/* LINKS */
+a {
+	color: $main-link;
+	&:hover, &:focus {
+	}
+	&:active {
+	}
+	&:visited {
+		color: $main-vlink;
+	}
+}
+
+/* selected text */
+::selection, ::-moz-selection {
+	background: $selcn-bg;
+	color: $selcn;
+	text-shadow: none;
+}
+

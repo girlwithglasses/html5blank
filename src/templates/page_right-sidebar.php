@@ -4,7 +4,7 @@ Template Name: Right Sidebar
 */
 	get_header(); ?>
 
-	<div id="primary-left" role="main">
+	<div class="main" id="primary-left" role="main">
 		<!-- section -->
 		<section>
 			<h1><?php the_title(); ?></h1>

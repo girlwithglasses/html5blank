@@ -1,5 +1,4 @@
 #primary, #primary-left, #primary-right, #primary-middle {
-//	clear: left;
 	width: 100%;
 }
 
@@ -21,6 +20,8 @@
 		width: 60%;
 		background-color: #f8f8f8;
 	}
+}
+@include minw(480px) {
 	#primary-left, .sidebar.left, #primary-middle {
 		float: left;
 	}
@@ -38,11 +39,6 @@
 	}
 	#primary-middle {
 		width: 40%;
-	}
-	#primary-left, .sidebar.left, #primary-middle {
 		float: left;
-	}
-	#primary-right, .sidebar.right {
-		float: right;
 	}
 }

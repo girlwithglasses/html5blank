@@ -31,6 +31,7 @@
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
 						</a>
 					</div>
+					<!-- h1><?php bloginfo('name') ?></h1 -->
 					<!-- /logo -->
 					<nav class="nav" role="navigation">
 						<?php html5blank_nav(); ?>

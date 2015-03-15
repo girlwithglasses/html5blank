@@ -7,3 +7,5 @@ dist
 config.rb
 style.css.map
 src/style.css
+src/css/style.css
+

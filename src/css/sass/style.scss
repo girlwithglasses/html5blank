@@ -1,6 +1,6 @@
 // @import "../../bower-components/normalize.css/normalize.css";
 
-/** Main SASS file */
+// Main SASS file
 
 // Compass imports
 @import "compass/layout/grid-background";
@@ -11,12 +11,12 @@
 // Modules
 @import "modules/variables";
 @import "modules/mixins";
-// @import "modules/fonts";
+@import "modules/typo";
+@import 'modules/colours';
+
 
 // set up basic formatting
 @import 'partials/base'; //reset
-
-@import 'colours';
 
 // Partials
 @import "partials/wordpress";
@@ -28,9 +28,8 @@
 @import "partials/footer";
 @import "partials/print";
 @import "partials/images";
-
 @import "partials/layout";
-@import 'menu';
+@import "partials/menu";
 
 a.img { display: block }
 .img img { padding: .75em; }
@@ -45,8 +44,3 @@ body { @include baseline-grid-background(1.5em, #ccc); }
 	}
 }
 */
-
-
-
-
-
