@@ -2,14 +2,13 @@
 /*
 Template Name: Left and Right Sidebars
 */
-	get_header();
-
-	get_sidebar('left'); ?>
-
+	get_header(); ?>
+	<div id="three-col-wrap">
+<?php get_sidebar('left'); ?>
 	<div id="primary-middle" role="main">
 		<!-- section -->
 		<section>
-			<!-- <h1><?php the_title(); ?></h1> -->
+			<h1><?php the_title(); ?></h1>
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -28,7 +27,6 @@ Template Name: Left and Right Sidebars
 		<?php endif; ?>
 		</section>
 	</div>
-
 <?php get_sidebar('right'); ?>
-
+	</div>
 <?php get_footer(); ?>

@@ -1,18 +1,10 @@
-/**
- * modules/variables
- * ---
- */
+// modules/variables
 
 
-/**
- * Typography
- */
+// Typography
 
-$f_sz: 1 rem;
-$f_sz_px: 16px;
-$line_ht : 1.5em;
-$hlf_ln_ht : .75em; // = $gutter
 $base-font-size: 16px;
+$line_ht : 1.5em;
 $base-line-height: 24px;
 $gutter: .75em;
 
@@ -20,51 +12,7 @@ $base-font-family-base: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-se
 $font-size: 1em;
 $line-height-base: 1.5;
 
-/**
- * Colors
- */
-
-$text-color: #444;
-$body-bg: #fff;
-
-// selected text, selection background
-$selcn: #04A4CC;
-$selcn-bg: #444;
-
-// link colours in main body text
-$main-link: #044;
-
-// visited link
-$main-vlink: #066;
-
-/*
-// hover/focus link
-$main-hflink:
-// active link
-$main-alink:
-
-*/
-
-// header nav colours:
-$h-menu-border: #999;
-// background
-$h-menu-bg: $body-bg;
-// link colour
-$h-menu-link: #044;
-// link background
-$h-menu-link-bg: #eee;
-// hover/focus/active link
-$h-menu-hfa-link: #fff;
-// hover/focus/active link bg
-$h-menu-hfa-link-bg: #044;
-
-$h-menu-current: $h-menu-link;
-$h-menu-current-bg: $h-menu-link-bg;
-
-/**
- * Grid
- */
-
+// Grid
 $wrapper-width: 1280px;
 
 $padding-horizontal-base: $gutter;
