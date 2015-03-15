@@ -1,6 +1,6 @@
 // @import "../../bower-components/normalize.css/normalize.css";
 
-/** Main SASS file */
+// Main SASS file
 
 // Compass imports
 @import "compass/layout/grid-background";
@@ -27,6 +27,7 @@
 @import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
+@import "partials/images";
 @import "partials/layout";
 @import "partials/menu";
 

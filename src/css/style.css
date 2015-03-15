@@ -1,4 +1,3 @@
-/** Main SASS file */
 /**
  * modules/mixins
  * ---
@@ -758,6 +757,13 @@ dd + dt {
     display: none;
   }
 }
+/* line 3, sass/partials/_images.scss */
+img.main-image-right {
+  float: right;
+  width: 300px;
+  margin: 0 0 1em 1em;
+}
+
 /* line 1, sass/partials/_layout.scss */
 #primary, #primary-left, #primary-right, #primary-middle {
   width: 100%;
@@ -1043,17 +1049,17 @@ header nav select {
     float: none;
   }
 }
-/* line 33, sass/style.scss */
+/* line 34, sass/style.scss */
 a.img {
   display: block;
 }
 
-/* line 34, sass/style.scss */
+/* line 35, sass/style.scss */
 .img img {
   padding: .75em;
 }
 
-/* line 36, sass/style.scss */
+/* line 37, sass/style.scss */
 body {
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, #cccccc), color-stop(5%, rgba(204, 204, 204, 0)));
   background-image: -webkit-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
