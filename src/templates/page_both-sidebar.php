@@ -5,7 +5,7 @@ Template Name: Left and Right Sidebars
 	get_header(); ?>
 	<div id="three-col-wrap">
 <?php get_sidebar('left'); ?>
-	<div id="primary-middle" role="main">
+	<div class="main" id="primary-middle" role="main">
 		<!-- section -->
 		<section>
 			<h1><?php the_title(); ?></h1>
