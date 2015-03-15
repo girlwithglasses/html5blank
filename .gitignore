@@ -6,4 +6,4 @@ Thumbs.db
 dist
 config.rb
 style.css.map
-src\style.css
+src/style.css
