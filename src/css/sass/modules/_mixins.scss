@@ -35,3 +35,17 @@
   }
   @include has-layout;
 }
+
+@mixin background-grid( $size, $colour ) {
+	background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, $colour), color-stop(5%, rgba(204, 204, 204, 0)));
+	background-image: -webkit-linear-gradient(bottom, $colour 5%, rgba(204, 204, 204, 0) 5%);
+	background-image: -moz-linear-gradient(bottom, $colour 5%, rgba(204, 204, 204, 0) 5%);
+	background-image: -o-linear-gradient(bottom, $colour 5%, rgba(204, 204, 204, 0) 5%);
+	background-image: linear-gradient(bottom, $colour 5%, rgba(204, 204, 204, 0) 5%);
+	-webkit-background-size: 100% $size;
+	-moz-background-size: 100% $size;
+	-o-background-size: 100% $size;
+	background-size: 100% $size;
+	background-position: left top;
+}
+

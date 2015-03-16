@@ -10,18 +10,28 @@ $selcn-bg: #444;
 // inserted text (<ins> element)
 $inserted-text-bg: deepskyblue;
 
+// change 'null' to a value to set these colours
 // link colours in main body text
 $main-link: #044;
+$main-link-bg: null;
 
 // visited link
 $main-vlink: #066;
+$main-vlink-bg: null;
 
-// uncomment to set these colours
-// hover/focus link
-// $main-hflink:
+// hover/focus link, background
+$main-hflink: null;
+$main-hflink-bg: null;
 
 // active link
-// $main-alink:
+$main-alink: null;
+$main-alink-bg: null;
+
+// the bar on the left of a blockquote
+$blockquote-left-bar: #666;
+
+// form element border (e.g. on inputs)
+$form-element-border: #333;
 
 // header nav colours:
 $h-menu-border: #999;
@@ -36,26 +46,6 @@ $h-menu-hfa-link: #fff;
 // hover/focus/active link bg
 $h-menu-hfa-link-bg: #044;
 
+// the current menu item
 $h-menu-current: $h-menu-link;
 $h-menu-current-bg: $h-menu-link-bg;
-
-
-/* LINKS */
-a {
-	color: $main-link;
-	&:hover, &:focus {
-	}
-	&:active {
-	}
-	&:visited {
-		color: $main-vlink;
-	}
-}
-
-/* selected text */
-::selection, ::-moz-selection {
-	background: $selcn-bg;
-	color: $selcn;
-	text-shadow: none;
-}
-

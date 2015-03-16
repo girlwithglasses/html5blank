@@ -3,10 +3,7 @@
 // Main SASS file
 
 // Compass imports
-@import "compass/layout/grid-background";
 @import "compass/typography/vertical_rhythm";
-@import "compass/utilities/general/clearfix";
-@import "compass/utilities/general/float";
 
 // Modules
 @import "modules/mixins";
@@ -31,7 +28,7 @@
 @import "partials/layout";
 @import "partials/menu";
 
-body { @include baseline-grid-background(1.5em, #ccc); }
+body { @include background-grid(1.5em, #ccc); }
 /*
 @include establish-baseline;
 @if true {

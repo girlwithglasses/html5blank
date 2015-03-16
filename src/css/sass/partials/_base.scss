@@ -185,7 +185,7 @@ textarea { /* mostly from baseline.js */
 	margin: 0 0 -2px 0;
 	display: block;
 	clear: left;
-	border: 1px solid #333;
+	border: 1px solid $form-element-border;
 /*	in normalize.css
 	overflow: auto;
 */
@@ -234,7 +234,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="tel"] {
 /* from BASELINE.js */
 	font-size: inherit;
-	border: 1px solid #666;
+	border: 1px solid $form-element-border;
 	line-height: 20px;
 	display: block;
 	padding: 1px 0;
@@ -265,7 +265,7 @@ blockquote, q, cite {
 }
 blockquote {
 	padding-left: $line-ht;
-	border-left: 3px solid #ccc;
+	border-left: .25em solid $blockquote-left-bar;
 }
 blockquote > p {
 	padding: 0;
@@ -282,30 +282,47 @@ ol {
 /* LINKS */
 a {
 	text-decoration: none;
-/* in normalize.css
-	background: transparent;
-*/
+	color: $main-link;
+@if variable-exists(main-link-bg) {
+		background-color: $main-link-bg;
+}
+// in normalize.css
+//	background: transparent;
+
 	&:hover, &:focus {
 		text-decoration: none;
+@if variable-exists(main-hflink) {
+		color: $main-hflink;
+}
+@if variable-exists(main-hflink-bg) {
+		background-color: $main-hflink-bg;
+}
 	}
+
 	&:focus {
 		outline: thin dotted;
 	}
+
 	&:active {
-
+@if variable-exists(main-alink) {
+		color: $main-alink;
+}
+@if variable-exists(main-alink-bg) {
+		background-color: $main-alink-bg;
+}
 	}
-	&:visited {
 
+	&:visited {
+		color: $main-vlink;
+@if variable-exists(main-vlink-bg) {
+		background-color: $main-vlink-bg;
+}
 	}
 }
 
-/* in normalize.css
-a:hover, a:active { outline: none; }
-*/
-
 /* ABBREVIATION */
 abbr[title], dfn[title] {
-	border-bottom: 1px dotted #333;
+	border-bottom: 1px dotted $text-color;
 	cursor: help;
 }
 
@@ -318,6 +335,13 @@ ins {
 }
 del {
 	text-decoration: line-through;
+}
+
+/* selected text */
+::selection, ::-moz-selection {
+	background: $selcn-bg;
+	color: $selcn;
+	text-shadow: none;
 }
 
 /*	in normalize.css

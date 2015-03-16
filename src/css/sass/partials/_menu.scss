@@ -6,6 +6,7 @@ nav li > ol {
 	list-style: none;
 }
 header nav {
+	@include cf;
 	width: 100%;
 	background-color: $h-menu-bg;
 	li {
@@ -35,8 +36,8 @@ li.default-menu {
 	display: none;
 }
 
-/* =DROP DOWN
------------------------------------------------ */
+// DROP DOWN
+
 header nav {
 	ul {
 		li ul,
@@ -112,8 +113,8 @@ header nav {
 	}
 }
 
-/* =RESPONSIVE MENU
------------------------------------------------ */
+// RESPONSIVE MENU
+
 .menu-toggle {
 	display: none;
 	cursor: pointer;
