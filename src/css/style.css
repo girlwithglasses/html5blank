@@ -22,7 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   /* DEFAULT FONT SETTINGS */
-  font: 100%/1.5 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font: 1rem / 1.5 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   color: #444444;
   background-color: white;
 }
@@ -126,7 +126,7 @@ pre {
 
 /* line 149, sass/partials/_base.scss */
 pre, code, kbd, samp {
-  font: 66.66667% Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
+  font: 1rem / 1.5 Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 }
 
 /* line 153, sass/partials/_base.scss */
@@ -378,22 +378,21 @@ sub {
 
 /* line 394, sass/partials/_base.scss */
 li ul, li ol {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 0 0 2rem;
 }
 
-/* line 399, sass/partials/_base.scss */
+/* line 398, sass/partials/_base.scss */
 .noDot, .noDot, nav ul {
   list-style: none;
   margin-left: 0;
 }
 
-/* line 403, sass/partials/_base.scss */
+/* line 402, sass/partials/_base.scss */
 dd + dt {
   margin-top: 1.5rem;
 }
 
-/* line 407, sass/partials/_base.scss */
+/* line 406, sass/partials/_base.scss */
 .debug {
   background-image: url(data:image/gif;base64,R0lGODlhAQAYAIAAAO7u7v///yH5BAAAAAAALAAAAAABABgAAAIFjI+pBgUAOw==);
 }
@@ -408,72 +407,134 @@ h1 {
   text-align: center;
 }
 
-/* line 35, sass/modules/_typo.scss */
+/**
+$h1-font-size: 4.25rem;
+$h1-line: 1.5rem; // 0.352941176em;
+$h1-lines: 3;
+$h1-line-height: $h1-line * $h1-lines;
+$h1-margin-top: 1 * $h1-line;
+$h1-margin-bottom: 3 * $h1-line;
+
+$h2-font-size: 2.625rem;
+$h2-line: 1.5rem; // 0.571428571em;
+$h2-lines: 2;
+$h2-line-height: $h2-line * $h2-lines;
+$h2-margin-top: 1 * $h2-line;
+$h2-margin-bottom: 2 * $h2-line;
+
+$h3-font-size: 1.625rem;
+$h3-line: 1.5rem; // 0.923076923em;
+$h3-lines: 2;
+$h3-line-height: $h3-line * $h3-lines;
+$h3-margin-top: 1 * $h3-line;
+$h3-margin-bottom: 1 * $h3-line;
+
+$h4-font-size: 1.25rem;
+$h4-line: 1.5rem; //1.2em;
+$h4-lines: 1;
+$h4-line-height: $h4-line * $h4-lines;
+$h4-margin-top: 1 * $h4-line;
+$h4-margin-bottom: 1 * $h4-line;
+
 h1 {
-  font-size: 4.25rem;
-  line-height: 4.5rem;
-  margin: 3rem 1.5rem 0;
+	font-size: $h1-font-size;
+	line-height: $h1-line-height;
+	margin: $h1-margin-top 0 $h1-margin-bottom;
 }
 
-/* line 41, sass/modules/_typo.scss */
 h2 {
-  font-size: 2.625rem;
-  line-height: 3rem;
-  margin: 3rem 1.5rem 0;
+	font-size: $h2-font-size;
+	line-height: $h2-line-height;
+	margin: $h2-margin-top 0 $h2-margin-bottom;
 }
 
-/* line 47, sass/modules/_typo.scss */
 h3 {
-  font-size: 1.625rem;
-  line-height: 3rem;
-  margin: 1.5rem 1.5rem 0;
+	font-size: $h3-font-size;
+	line-height: $h3-line-height;
+	margin: $h3-margin-top 0 $h3-margin-bottom;
 }
 
-/* line 53, sass/modules/_typo.scss */
 h4 {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  margin: 1.5rem 1.5rem 0;
+	font-size: $h4-font-size;
+	line-height: $h4-line-height;
+	margin: $h4-margin-top 0 $h4-margin-bottom;
+}
+
+*/
+/* line 61, sass/modules/_typo.scss */
+h1 {
+  font-size: 3em;
+  line-height: 1.5em;
+}
+
+/* line 62, sass/modules/_typo.scss */
+h2 {
+  font-size: 2.25em;
+  line-height: 1.33333em;
+}
+
+/* line 63, sass/modules/_typo.scss */
+h3 {
+  font-size: 1.875em;
+  line-height: 1.6em;
+}
+
+/* line 64, sass/modules/_typo.scss */
+h4 {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+/* line 65, sass/modules/_typo.scss */
+h5 {
+  font-size: 1.3125em;
+  line-height: 2.28571em;
+}
+
+/* line 66, sass/modules/_typo.scss */
+h6 {
+  font-size: 1.125em;
+  line-height: 1.33333em;
 }
 
 /* standard text size is 16px */
-/* line 72, sass/modules/_typo.scss */
+/* line 74, sass/modules/_typo.scss */
 footer p {
   margin: 1.5rem 0;
 }
 
 @media only screen and (max-width: 479px) {
-  /* line 78, sass/modules/_typo.scss */
+  /* line 80, sass/modules/_typo.scss */
   h1 {
     font-size: 2.25em;
     line-height: 1.33333em;
   }
 
-  /* line 79, sass/modules/_typo.scss */
+  /* line 81, sass/modules/_typo.scss */
   h2 {
     font-size: 1.875em;
     line-height: 1.6em;
   }
 
-  /* line 80, sass/modules/_typo.scss */
+  /* line 82, sass/modules/_typo.scss */
   h3 {
     font-size: 1.5em;
     line-height: 2em;
   }
 
-  /* line 81, sass/modules/_typo.scss */
+  /* line 83, sass/modules/_typo.scss */
   h4 {
     font-size: 1.375em;
     line-height: 2.18182em;
   }
 
-  /* line 82, sass/modules/_typo.scss */
+  /* line 84, sass/modules/_typo.scss */
   h5 {
     font-size: 1.25em;
     line-height: 1.2em;
   }
 
-  /* line 83, sass/modules/_typo.scss */
+  /* line 85, sass/modules/_typo.scss */
   h6 {
     font-size: 1.125em;
     line-height: 1.33333em;
