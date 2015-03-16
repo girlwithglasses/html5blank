@@ -21,7 +21,6 @@ body {
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* DEFAULT FONT SETTINGS */
   font: 1rem / 1.5 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   color: #444444;
   background-color: white;

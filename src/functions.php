@@ -113,19 +113,22 @@ function html5blank_header_scripts()
                 '1.0.0');
 
             // Enqueue Scripts
-            wp_enqueue_script('html5blankscripts');
+        #    wp_enqueue_script('html5blankscripts');
+            wp_enqueue_script('html5blankscripts', false, false, false, true);
 
         // If production
         } else {
             // Scripts minify
-            wp_register_script('html5blankscripts-min', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0.0');
+            wp_register_script('html5blankscripts-min', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0.0', true);
             // Enqueue Scripts
+#            wp_enqueue_script('html5blankscripts-min', false, false, false, true);
             wp_enqueue_script('html5blankscripts-min');
         }
     }
 }
 
 // Load HTML5 Blank conditional scripts
+/*
 function html5blank_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
@@ -134,7 +137,7 @@ function html5blank_conditional_scripts()
         wp_enqueue_script('scriptname');
     }
 }
-
+*/
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
@@ -394,13 +397,25 @@ function html5blankcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
+// add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
+add_action('init', //'wp_enqueue_scripts',
+	'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+// add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+
+// move all the JS to the page footer
+function footer_enqueue_scripts() {
+	remove_action('wp_head', 'wp_print_scripts');
+	remove_action('wp_head', 'wp_print_head_scripts', 9);
+	remove_action('wp_head', 'wp_enqueue_scripts', 1);
+	add_action('wp_footer', 'wp_print_scripts', 5);
+	add_action('wp_footer', 'wp_enqueue_scripts', 5);
+	add_action('wp_footer', 'wp_print_head_scripts', 5);
+}
+add_action('after_setup_theme', 'footer_enqueue_scripts');
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -430,12 +445,28 @@ add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove 
 add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
 add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
 
+if (version_compare( '4.1', get_bloginfo('version') ) >= 0) {
+	add_filter( 'clean_url', function( $url ) {
+#		print "Running the clean_url filter" . PHP_EOL;
+		if ( FALSE === strpos( $url, '.js' ) ) {
+			return $url;
+		}
+		return "$url' defer='defer";
+	}, 10, 1 );
+}
+else {
+	add_filter( 'script_loader_tag', function ( $tag, $handle ) {
+#		print "Running the script_loader_tag filter" . PHP_EOL;
+		return str_replace( ' src', ' defer="defer" src', $tag );
+	}, 10, 2 );
+}
+
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 // Shortcodes
-add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
-add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
+// add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
+// add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
 
 // Shortcodes above would be nested like this -
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
