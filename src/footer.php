@@ -10,10 +10,10 @@
 
 	// conditionizr.com
 	// configure environment tests
-	conditionizr.config({
-		assets: '<?php echo get_template_directory_uri(); ?>',
-		tests: {}
-	});
+//	conditionizr.config({
+//		assets: '<?php echo get_template_directory_uri(); ?>',
+//		tests: {}
+//	});
 
 (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
 		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),

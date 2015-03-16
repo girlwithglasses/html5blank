@@ -1,15 +1,15 @@
 /* LINKS */
-/* line 44, sass/modules/_colours.scss */
+/* line 50, sass/modules/_colours.scss */
 a {
   color: #004444;
 }
-/* line 50, sass/modules/_colours.scss */
+/* line 56, sass/modules/_colours.scss */
 a:visited {
   color: #006666;
 }
 
 /* selected text */
-/* line 56, sass/modules/_colours.scss */
+/* line 62, sass/modules/_colours.scss */
 ::selection, ::-moz-selection {
   background: #444444;
   color: #04a4cc;
@@ -189,7 +189,7 @@ textarea {
   margin: 0 0 -2px 0;
   display: block;
   clear: left;
-  border: 1px solid #333;
+  border: 1px solid #333333;
   /*	in normalize.css
   	overflow: auto;
   */
@@ -236,7 +236,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="tel"] {
   /* from BASELINE.js */
   font-size: inherit;
-  border: 1px solid #666;
+  border: 1px solid #333333;
   line-height: 20px;
   display: block;
   padding: 1px 0;
@@ -276,7 +276,7 @@ blockquote, q, cite {
 /* line 266, sass/partials/_base.scss */
 blockquote {
   padding-left: 1.5em;
-  border-left: 3px solid #ccc;
+  border-left: 0.25em solid #666666;
 }
 
 /* line 270, sass/partials/_base.scss */
@@ -316,24 +316,24 @@ a:focus {
 a:hover, a:active { outline: none; }
 */
 /* ABBREVIATION */
-/* line 307, sass/partials/_base.scss */
+/* line 305, sass/partials/_base.scss */
 abbr[title], dfn[title] {
-  border-bottom: 1px dotted #333;
+  border-bottom: 1px dotted #444444;
   cursor: help;
 }
 
 /* MARKED/INSERTED/DELETED AND SELECTED TEXT */
-/* line 313, sass/partials/_base.scss */
+/* line 311, sass/partials/_base.scss */
 ins, mark {
   text-decoration: none;
 }
 
-/* line 316, sass/partials/_base.scss */
+/* line 314, sass/partials/_base.scss */
 ins {
   background: deepskyblue;
 }
 
-/* line 319, sass/partials/_base.scss */
+/* line 317, sass/partials/_base.scss */
 del {
   text-decoration: line-through;
 }
@@ -345,7 +345,7 @@ mark {
 }
 */
 /* OTHERS */
-/* line 331, sass/partials/_base.scss */
+/* line 329, sass/partials/_base.scss */
 strong, b, dt {
   font-weight: bold;
 }
@@ -355,7 +355,7 @@ dfn {
 	font-style: italic;
 }
 */
-/* line 339, sass/partials/_base.scss */
+/* line 337, sass/partials/_base.scss */
 var, address {
   font-style: normal;
 }
@@ -377,7 +377,7 @@ sub {
 }
 */
 /* Best available ampersand */
-/* line 361, sass/partials/_base.scss */
+/* line 359, sass/partials/_base.scss */
 .amp {
   font-family: Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;
   font-style: italic;
@@ -387,24 +387,24 @@ sub {
   vertical-align: baseline;
 }
 
-/* line 370, sass/partials/_base.scss */
+/* line 368, sass/partials/_base.scss */
 li ul, li ol {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 375, sass/partials/_base.scss */
+/* line 373, sass/partials/_base.scss */
 .noDot, .noDot, nav ul {
   list-style: none;
   margin-left: 0;
 }
 
-/* line 379, sass/partials/_base.scss */
+/* line 377, sass/partials/_base.scss */
 dd + dt {
   margin-top: 1.5em;
 }
 
-/* line 383, sass/partials/_base.scss */
+/* line 381, sass/partials/_base.scss */
 .debug {
   background-image: url(data:image/gif;base64,R0lGODlhAQAYAIAAAO7u7v///yH5BAAAAAAALAAAAAABABgAAAIFjI+pBgUAOw==);
 }
