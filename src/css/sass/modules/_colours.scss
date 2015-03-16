@@ -7,24 +7,26 @@ $body-bg: #fff;
 $selcn: #04A4CC;
 $selcn-bg: #444;
 
+// inserted text (<ins> element)
+$inserted-text-bg: deepskyblue;
+
 // link colours in main body text
 $main-link: #044;
 
 // visited link
 $main-vlink: #066;
 
-/*
+// uncomment to set these colours
 // hover/focus link
-$main-hflink:
-// active link
-$main-alink:
+// $main-hflink:
 
-*/
+// active link
+// $main-alink:
 
 // header nav colours:
 $h-menu-border: #999;
 // background
-$h-menu-bg: $body-bg;
+$h-menu-bg: aliceblue;
 // link colour
 $h-menu-link: #044;
 // link background

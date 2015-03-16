@@ -1,3 +1,7 @@
+header {
+	@include cf;
+}
+
 #primary, #primary-left, #primary-right, #primary-middle {
 	width: 100%;
 }

@@ -3,14 +3,20 @@
 
 // Typography
 
-$base-font-size: 16px;
-$line_ht : 1.5em;
-$base-line-height: 24px;
-$gutter: .75em;
+$typeface-page-text: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$typeface-display: 'Roboto Slab', 'Rockwell', sans-serif;
+$typeface-fixed-width: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 
-$base-font-family-base: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+// $base-font-size: 16px;
+// $base-line-height: 24px;
+
 $font-size: 1em;
-$line-height-base: 1.5;
+
+// line height as a proportion of font size
+$line-ht-prop: 1.5;
+$line-ht: 1.5em;
+
+$gutter: .75em;
 
 // Grid
 $wrapper-width: 1280px;

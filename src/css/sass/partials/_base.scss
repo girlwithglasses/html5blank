@@ -21,7 +21,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	/* DEFAULT FONT SETTINGS */
-	font: 100%/1.5 "Helvetica Neue", Helvetica, Roboto, "Open Sans", Arial, sans-serif;
+	font: 100%/1.5 $typeface-page-text;
 	color: $text-color;
 	background-color: $body-bg;
 }
@@ -98,7 +98,7 @@ details, summary, /* dialog, menu, menuitem, */
 /* script-related stuff */
 canvas, template {
     font-size: $font-size;
-    line-height: 1.5;
+    line-height: $line-ht;
 }
 
 /* HTML5 DECLARATIONS */
@@ -147,7 +147,7 @@ pre {
 }
 
 pre, code, kbd, samp {
-	font: 100%/1.5 Menlo, Consolas, 'DejaVu Sans Mono', Monaco, monospace;
+	font: 100%/$line-ht-prop $typeface-fixed-width;
 }
 
 p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, fieldset, menu, label /* , td, th, img 16px / 24px */ {
@@ -170,7 +170,7 @@ th {
 	font-weight: bold;
 }
 th, td {
-	padding: 0 $line-ht/2;
+	padding: 0 $gutter;
 	border-bottom: 0 solid;
 }
 
@@ -314,7 +314,7 @@ ins, mark {
 	text-decoration: none;
 }
 ins {
-	background: #d49855;
+	background: $inserted-text-bg;
 }
 del {
 	text-decoration: line-through;
@@ -371,6 +371,7 @@ li ul, li ol {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
 .noDot, .noDot, nav ul {
 	list-style: none;
 	margin-left: 0;
@@ -378,7 +379,6 @@ li ul, li ol {
 dd+dt {
 	margin-top: $line-ht;
 }
-
 
 .debug {
 	background-image: url(data:image/gif;base64,R0lGODlhAQAYAIAAAO7u7v///yH5BAAAAAAALAAAAAABABgAAAIFjI+pBgUAOw==);
