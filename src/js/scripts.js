@@ -4,7 +4,7 @@
 	$(function () {
 		// DOM ready, take it away
 		// do we have a chartify table?
-		if ( $('table.pie-chartify') ) {
+		if ( $('table.pie-chartify').length > 0 ) {
 			// load the appropriate APIs
 			var url = 'https://www.google.com/jsapi';
 			$.ajax({
