@@ -18,44 +18,57 @@
 		};
 	});
 
-function drawChart() {
-	// get the data from the table
-	$('.pie-chartify').each(function(ix,el){
+	/**
+		create a chart for each of the tables with the class 'pie-chartify'
+		inserts a div after the table element that contains the chart
+	*/
+	function drawChart() {
+		// get the data from the table
+		$('.pie-chartify').each( function(i,e){
+			var id = 'chart-' + i,
+				dt = dataTableFromTable( e ),
+				opt = {
+					'title': $(this).children('caption').text(),
+					'width': 400,
+					'height': 300,
+					'is_3D': true },
+				c;
+			$(this).after('<div class="piechart" id="' + id + '"></div>');
 
-		var div_id = 'chart-' + ix;
-		$(this).after('<div class="piechart" id="' + div_id + '"></div>');
+			c = new google.visualization.PieChart(
+				document.getElementById(id)
+			);
+			c.draw(dt, opt);
+		});
+	}
+
+	/**
+		Pass in an HTML table
+		extract the data and create a DataTable object from it
+	*/
+	function dataTableFromTable( t ) {
 		var tbl = new google.visualization.DataTable();
-		$('thead th').each(function(i,e){
-			if (0 === i) {
-				tbl.addColumn('string', $(this).text() );
-			}
-			else {
-				tbl.addColumn('number', $(this).text() );
-			}
+		$(t).find('thead th').each(function(i,e){
+			0 === i
+			? tbl.addColumn('string', $(this).text() )
+			: tbl.addColumn('number', $(this).text() );
 		});
 
-		$(this).find('tbody tr').each(function(i,e){
-			var row = Array();
-			$(this).find('td').each(function(j,f){
-				if (0 === j) {
-					row.push( $(this).text() );
-				}
-				else {
-					row.push( parseFloat( $(this).text() ) );
-				}
-			});
-			tbl.addRow(row);
+		$(t).find('tbody tr').each(function(i,e){
+			tbl.addRow(
+				$(this).find('td').map(function(j,f){
+					if (0 === j) {
+						return $(this).text()
+					}
+					else {
+						return parseFloat( $(this).text() )
+					}
+				})
+				.get());
 		});
-		var options = {
-			'title': $(this).children('caption').text(),
-			'width': 400,
-			'height': 300,
-			'is_3D': true };
+		return tbl;
+	}
 
-		var chart = new google.visualization.PieChart(
-			 document.getElementById(div_id)
-		);
-		chart.draw(tbl, options);
-	});
-}
+
+
 } ( this, jQuery ));
