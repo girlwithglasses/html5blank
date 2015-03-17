@@ -23,7 +23,7 @@ function drawChart() {
 	$('.pie-chartify').each(function(ix,el){
 
 		var div_id = 'chart-' + ix;
-		$(this).after('<div id="' + div_id + '"></div>');
+		$(this).after('<div class="piechart" id="' + div_id + '"></div>');
 		var tbl = new google.visualization.DataTable();
 		$('thead th').each(function(i,e){
 			if (0 === i) {
