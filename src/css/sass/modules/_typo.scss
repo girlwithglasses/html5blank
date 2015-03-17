@@ -4,20 +4,20 @@ h1, h2, h3, h4, h5, h6, caption {
 	font-family: $typeface-display;
 }
 
-/**
-$h1-font-size: 4.25rem;
+/** "Golden rhythm" font sizes
+$h1-font-size: 4.25rem; // 68px
 $h1-lines: 3;
 $h1-line-height: $line-ht * $h1-lines;
 
-$h2-font-size: 2.625rem;
+$h2-font-size: 2.625rem;	// 42px
 $h2-lines: 2;
 $h2-line-height: $line-ht * $h2-lines;
 
-$h3-font-size: 1.625rem;
+$h3-font-size: 1.625rem;	// 26px
 $h3-lines: 2;
 $h3-line-height: $line-ht * $h3-lines;
 
-$h4-font-size: 1.25rem;
+$h4-font-size: 1.25rem; 	// 20px
 $h4-lines: 1;
 $h4-line-height: $line-ht * $h4-lines;
 */
@@ -27,42 +27,43 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 0 0 $line-ht;
 }
 
+// 48px
 h1 {
 	font-size: 3rem;
 	line-height: 1;
 	text-align: center;
 }
 
+// 42px
 h2 {
-	font-size: 2.5rem;
+	font-size: 2.625rem;
 	line-height: 2*$line-ht;
 }
 
+// 30px
 h3 {
-	font-size: 2rem;
+	font-size: 1.875rem;
 	line-height: 2*$line-ht;
 }
 
+// 24px
 h4, caption {
 	font-size: 1.5rem;
 	line-height: 2*$line-ht;
 }
 
+// 21px
 h5 {
-	font-size: 1.25rem;
+	font-size: 1.3333333333rem;
 	line-height: $line-ht;
 }
 
+// 18px
 h6 {
 	font-size: 1.125rem;
 	line-height: $line-ht;
 }
 
-//h2 { @include adjust-font-size-to(36px); }
-//h3 { @include adjust-font-size-to(30px); }
-//h4, caption { @include adjust-font-size-to(24px); }
-//h5 { @include adjust-font-size-to(21px); }
-//h6 { @include adjust-font-size-to(18px); }
 /* standard text size is 16px */
 //	aside { @include adjust-font-size-to(14px); }
 

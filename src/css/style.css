@@ -1,3 +1,14 @@
+/*
+Theme Name: ICRA HTML5 no-longer-blank
+Theme URI: http://icraeastbay.org
+Author: @girlwithglasses, @jbgriswold
+Description: theme for the new and improved ICRA site, based on html5blank
+Version: alpha
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: cats, awesomeness, who-needs-a-logo-anyway?
+Text Domain: html5blank
+*/
 /* css reset plus some sensible default styling. */
 /* line 3, sass/partials/_base.scss */
 *, *:after, *:before {
@@ -394,20 +405,20 @@ h1, h2, h3, h4, h5, h6, caption {
   font-family: "Roboto Slab", "Rockwell", sans-serif;
 }
 
-/**
-$h1-font-size: 4.25rem;
+/** "Golden rhythm" font sizes
+$h1-font-size: 4.25rem; // 68px
 $h1-lines: 3;
 $h1-line-height: $line-ht * $h1-lines;
 
-$h2-font-size: 2.625rem;
+$h2-font-size: 2.625rem;	// 42px
 $h2-lines: 2;
 $h2-line-height: $line-ht * $h2-lines;
 
-$h3-font-size: 1.625rem;
+$h3-font-size: 1.625rem;	// 26px
 $h3-lines: 2;
 $h3-line-height: $line-ht * $h3-lines;
 
-$h4-font-size: 1.25rem;
+$h4-font-size: 1.25rem; 	// 20px
 $h4-lines: 1;
 $h4-line-height: $line-ht * $h4-lines;
 */
@@ -417,38 +428,38 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1.5rem;
 }
 
-/* line 30, sass/modules/_typo.scss */
+/* line 31, sass/modules/_typo.scss */
 h1 {
   font-size: 3rem;
   line-height: 1;
   text-align: center;
 }
 
-/* line 36, sass/modules/_typo.scss */
+/* line 38, sass/modules/_typo.scss */
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.625rem;
   line-height: 3rem;
 }
 
-/* line 41, sass/modules/_typo.scss */
+/* line 44, sass/modules/_typo.scss */
 h3 {
-  font-size: 2rem;
+  font-size: 1.875rem;
   line-height: 3rem;
 }
 
-/* line 46, sass/modules/_typo.scss */
+/* line 50, sass/modules/_typo.scss */
 h4, caption {
   font-size: 1.5rem;
   line-height: 3rem;
 }
 
-/* line 51, sass/modules/_typo.scss */
+/* line 56, sass/modules/_typo.scss */
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.3333333333rem;
   line-height: 1.5rem;
 }
 
-/* line 56, sass/modules/_typo.scss */
+/* line 62, sass/modules/_typo.scss */
 h6 {
   font-size: 1.125rem;
   line-height: 1.5rem;
@@ -456,37 +467,37 @@ h6 {
 
 /* standard text size is 16px */
 @media only screen and (max-width: 479px) {
-  /* line 70, sass/modules/_typo.scss */
+  /* line 71, sass/modules/_typo.scss */
   h1 {
     font-size: 2.25em;
     line-height: 1.33333em;
   }
 
-  /* line 71, sass/modules/_typo.scss */
+  /* line 72, sass/modules/_typo.scss */
   h2 {
     font-size: 1.875em;
     line-height: 1.6em;
   }
 
-  /* line 72, sass/modules/_typo.scss */
+  /* line 73, sass/modules/_typo.scss */
   h3 {
     font-size: 1.5em;
     line-height: 2em;
   }
 
-  /* line 73, sass/modules/_typo.scss */
+  /* line 74, sass/modules/_typo.scss */
   h4 {
     font-size: 1.375em;
     line-height: 2.18182em;
   }
 
-  /* line 74, sass/modules/_typo.scss */
+  /* line 75, sass/modules/_typo.scss */
   h5 {
     font-size: 1.25em;
     line-height: 1.2em;
   }
 
-  /* line 75, sass/modules/_typo.scss */
+  /* line 76, sass/modules/_typo.scss */
   h6 {
     font-size: 1.125em;
     line-height: 1.33333em;
@@ -630,6 +641,7 @@ footer p {
 /* line 5, sass/partials/_header.scss */
 .header {
   *zoom: 1;
+  margin-bottom: 1.5rem;
 }
 /* line 28, sass/modules/_mixins.scss */
 .header:before, .header:after {
@@ -639,6 +651,11 @@ footer p {
 /* line 33, sass/modules/_mixins.scss */
 .header:after {
   clear: both;
+}
+
+/* line 11, sass/partials/_header.scss */
+.logo {
+  padding: 0.75rem 0;
 }
 
 /* partials/nav */
@@ -844,7 +861,7 @@ nav li > ol {
 header nav {
   *zoom: 1;
   width: 100%;
-  background-color: c;
+  background-color: aliceblue;
 }
 /* line 28, sass/modules/_mixins.scss */
 header nav:before, header nav:after {
@@ -1050,7 +1067,7 @@ header nav select {
     float: none;
   }
 }
-/* line 32, sass/style.scss */
+/* line 34, sass/style.scss */
 body {
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, #cccccc), color-stop(5%, rgba(204, 204, 204, 0)));
   background-image: -webkit-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
