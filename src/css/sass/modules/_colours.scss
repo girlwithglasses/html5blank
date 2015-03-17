@@ -3,6 +3,11 @@
 $text-color: #444;
 $body-bg: #fff;
 
+// primary colour for the theme
+$primary: null;
+// secondary colour
+$secondary: null;
+
 // selected text, selection background
 $selcn: #04A4CC;
 $selcn-bg: #444;
@@ -16,7 +21,7 @@ $main-link: #044;
 $main-link-bg: null;
 
 // visited link
-$main-vlink: #066;
+$main-vlink: darken($main-link, 20%);
 $main-vlink-bg: null;
 
 // hover/focus link, background
@@ -36,7 +41,7 @@ $form-element-border: #333;
 // header nav colours:
 $h-menu-border: #999;
 // background
-$h-menu-bg: aliceblue;
+$h-menu-bg: c;
 // link colour
 $h-menu-link: #044;
 // link background
@@ -49,3 +54,18 @@ $h-menu-hfa-link-bg: #044;
 // the current menu item
 $h-menu-current: $h-menu-link;
 $h-menu-current-bg: $h-menu-link-bg;
+
+
+// table colours
+$caption-bg: null;
+
+// table head text, bg
+$thead: null;
+$thead-bg: darken(aliceblue, 5%);
+
+// table contents, even row
+$tr: null;
+$tr-bg: aliceblue;
+// table contents, odd row
+$tr-odd: null;
+$tr-odd-bg: lighten(aliceblue, 5%);

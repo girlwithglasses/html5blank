@@ -5,7 +5,6 @@
 }
 
 /* BASE */
-/* Force scrollbar in non-IE and Remove iOS text size adjust without disabling user zoom */
 /* line 9, sass/partials/_base.scss */
 html {
   height: 100%;
@@ -14,7 +13,6 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* Improve default text rendering, handling of kerning pairs and ligatures */
 /* line 18, sass/partials/_base.scss */
 body {
   min-height: 100%;
@@ -26,7 +24,6 @@ body {
   background-color: white;
 }
 
-/* set borders, padding, margins, vertical align */
 /* line 30, sass/partials/_base.scss */
 html, body,
 address, article, aside, footer, header, hgroup, nav, section,
@@ -51,7 +48,6 @@ canvas, template {
   vertical-align: baseline;
 }
 
-/* leave out the border for these elements */
 /* line 70, sass/partials/_base.scss */
 button, input, optgroup, select, textarea {
   /*	in normalize.css
@@ -62,7 +58,6 @@ button, input, optgroup, select, textarea {
   vertical-align: baseline;
 }
 
-/* set font/size on non-inline elements */
 /* line 80, sass/partials/_base.scss */
 html, body,
 address, article, aside, footer, header, hgroup, nav, section,
@@ -99,7 +94,7 @@ audio:not([controls]) {
 	display: none;
 }
 */
-/* line 124, sass/partials/_base.scss */
+/* line 116, sass/partials/_base.scss */
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -113,8 +108,7 @@ img {
 svg:not(:root) { overflow: hidden; }
 */
 /* CODE */
-/* Allow line wrapping of 'pre' */
-/* line 141, sass/partials/_base.scss */
+/* line 133, sass/partials/_base.scss */
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -123,18 +117,18 @@ pre {
   */
 }
 
-/* line 149, sass/partials/_base.scss */
+/* line 141, sass/partials/_base.scss */
 pre, code, kbd, samp {
   font: 1rem / 1.5 Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 }
 
-/* line 153, sass/partials/_base.scss */
+/* line 145, sass/partials/_base.scss */
 p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, fieldset, menu, label {
   margin: 0 0 1.5rem;
 }
 
 /* TABLES */
-/* line 158, sass/partials/_base.scss */
+/* line 150, sass/partials/_base.scss */
 table {
   /*	in normalize.css
   	border-collapse: collapse;
@@ -145,27 +139,27 @@ table {
   empty-cells: show;
 }
 
-/* line 168, sass/partials/_base.scss */
-th {
-  text-align: center;
-  font-weight: bold;
-}
-
-/* line 172, sass/partials/_base.scss */
+/* line 160, sass/partials/_base.scss */
 th, td {
   padding: 0 0.75rem;
   border-bottom: 0 solid;
 }
 
+/* line 164, sass/partials/_base.scss */
+th {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: bold;
+}
+
 /* FORMS */
-/* line 178, sass/partials/_base.scss */
+/* line 171, sass/partials/_base.scss */
 form {
   overflow: auto;
 }
 
-/* line 182, sass/partials/_base.scss */
+/* line 175, sass/partials/_base.scss */
 textarea {
-  /* mostly from baseline.js */
   vertical-align: top;
   margin: 0 0 -2px 0;
   display: block;
@@ -176,7 +170,7 @@ textarea {
   */
 }
 
-/* line 194, sass/partials/_base.scss */
+/* line 187, sass/partials/_base.scss */
 legend {
   padding-bottom: 1.5rem;
 }
@@ -186,7 +180,7 @@ button, input {
 	overflow: visible;
 }
 */
-/* line 206, sass/partials/_base.scss */
+/* line 199, sass/partials/_base.scss */
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   /*	in normalize.css
   	cursor: pointer;
@@ -213,9 +207,8 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 	-webkit-appearance: none;
 }
 */
-/* line 234, sass/partials/_base.scss */
+/* line 227, sass/partials/_base.scss */
 input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="tel"] {
-  /* from BASELINE.js */
   font-size: inherit;
   border: 1px solid #333333;
   line-height: 20px;
@@ -224,9 +217,8 @@ input[type="text"], input[type="password"], input[type="search"], input[type="em
   margin: 0;
 }
 
-/* line 245, sass/partials/_base.scss */
+/* line 238, sass/partials/_base.scss */
 input[type="select"], select {
-  /* from BASELINE.js */
   display: block;
   height: 1.5rem;
   border: 0 solid;
@@ -234,92 +226,92 @@ input[type="select"], select {
 }
 
 /* QUOTES */
-/* line 254, sass/partials/_base.scss */
+/* line 247, sass/partials/_base.scss */
 blockquote {
   quotes: none;
 }
 
-/* line 257, sass/partials/_base.scss */
+/* line 250, sass/partials/_base.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/* line 260, sass/partials/_base.scss */
+/* line 253, sass/partials/_base.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: none;
 }
 
-/* line 263, sass/partials/_base.scss */
+/* line 256, sass/partials/_base.scss */
 blockquote, q, cite {
   font-style: italic;
 }
 
-/* line 266, sass/partials/_base.scss */
+/* line 259, sass/partials/_base.scss */
 blockquote {
   padding-left: 1.5rem;
   border-left: 0.25em solid #666666;
 }
 
-/* line 270, sass/partials/_base.scss */
+/* line 263, sass/partials/_base.scss */
 blockquote > p {
   padding: 0;
 }
 
 /* LISTS */
-/* line 275, sass/partials/_base.scss */
+/* line 268, sass/partials/_base.scss */
 ul {
   list-style: disc inside;
 }
 
-/* line 278, sass/partials/_base.scss */
+/* line 271, sass/partials/_base.scss */
 ol {
   list-style: decimal inside;
 }
 
 /* LINKS */
-/* line 283, sass/partials/_base.scss */
+/* line 276, sass/partials/_base.scss */
 a {
   text-decoration: none;
   color: #004444;
 }
-/* line 292, sass/partials/_base.scss */
+/* line 285, sass/partials/_base.scss */
 a:hover, a:focus {
   text-decoration: none;
 }
-/* line 302, sass/partials/_base.scss */
+/* line 295, sass/partials/_base.scss */
 a:focus {
   outline: thin dotted;
 }
-/* line 315, sass/partials/_base.scss */
+/* line 308, sass/partials/_base.scss */
 a:visited {
-  color: #006666;
+  color: black;
 }
 
 /* ABBREVIATION */
-/* line 324, sass/partials/_base.scss */
+/* line 317, sass/partials/_base.scss */
 abbr[title], dfn[title] {
   border-bottom: 1px dotted #444444;
   cursor: help;
 }
 
 /* MARKED/INSERTED/DELETED AND SELECTED TEXT */
-/* line 330, sass/partials/_base.scss */
+/* line 323, sass/partials/_base.scss */
 ins, mark {
   text-decoration: none;
 }
 
-/* line 333, sass/partials/_base.scss */
+/* line 326, sass/partials/_base.scss */
 ins {
   background: deepskyblue;
 }
 
-/* line 336, sass/partials/_base.scss */
+/* line 329, sass/partials/_base.scss */
 del {
   text-decoration: line-through;
 }
 
 /* selected text */
-/* line 341, sass/partials/_base.scss */
+/* line 334, sass/partials/_base.scss */
 ::selection, ::-moz-selection {
   background: #444444;
   color: #04a4cc;
@@ -333,7 +325,7 @@ mark {
 }
 */
 /* OTHERS */
-/* line 355, sass/partials/_base.scss */
+/* line 348, sass/partials/_base.scss */
 strong, b, dt {
   font-weight: bold;
 }
@@ -343,7 +335,7 @@ dfn {
 	font-style: italic;
 }
 */
-/* line 363, sass/partials/_base.scss */
+/* line 356, sass/partials/_base.scss */
 var, address {
   font-style: normal;
 }
@@ -365,7 +357,7 @@ sub {
 }
 */
 /* Best available ampersand */
-/* line 385, sass/partials/_base.scss */
+/* line 378, sass/partials/_base.scss */
 .amp {
   font-family: Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;
   font-style: italic;
@@ -375,205 +367,158 @@ sub {
   vertical-align: baseline;
 }
 
-/* line 394, sass/partials/_base.scss */
+/* line 387, sass/partials/_base.scss */
 li ul, li ol {
   margin: 0 0 0 2rem;
 }
 
-/* line 398, sass/partials/_base.scss */
+/* line 391, sass/partials/_base.scss */
 .noDot, .noDot, nav ul {
   list-style: none;
   margin-left: 0;
 }
 
-/* line 402, sass/partials/_base.scss */
+/* line 395, sass/partials/_base.scss */
 dd + dt {
   margin-top: 1.5rem;
 }
 
-/* line 406, sass/partials/_base.scss */
+/* line 399, sass/partials/_base.scss */
 .debug {
   background-image: url(data:image/gif;base64,R0lGODlhAQAYAIAAAO7u7v///yH5BAAAAAAALAAAAAABABgAAAIFjI+pBgUAOw==);
 }
 
-/* line 1, sass/modules/_typo.scss */
-h1, h2, h3, h4, h5, h6 {
+/* modules/typo */
+/* line 3, sass/modules/_typo.scss */
+h1, h2, h3, h4, h5, h6, caption {
   font-family: "Roboto Slab", "Rockwell", sans-serif;
-}
-
-/* line 5, sass/modules/_typo.scss */
-h1 {
-  text-align: center;
 }
 
 /**
 $h1-font-size: 4.25rem;
-$h1-line: 1.5rem; // 0.352941176em;
 $h1-lines: 3;
-$h1-line-height: $h1-line * $h1-lines;
-$h1-margin-top: 1 * $h1-line;
-$h1-margin-bottom: 3 * $h1-line;
+$h1-line-height: $line-ht * $h1-lines;
 
 $h2-font-size: 2.625rem;
-$h2-line: 1.5rem; // 0.571428571em;
 $h2-lines: 2;
-$h2-line-height: $h2-line * $h2-lines;
-$h2-margin-top: 1 * $h2-line;
-$h2-margin-bottom: 2 * $h2-line;
+$h2-line-height: $line-ht * $h2-lines;
 
 $h3-font-size: 1.625rem;
-$h3-line: 1.5rem; // 0.923076923em;
 $h3-lines: 2;
-$h3-line-height: $h3-line * $h3-lines;
-$h3-margin-top: 1 * $h3-line;
-$h3-margin-bottom: 1 * $h3-line;
+$h3-line-height: $line-ht * $h3-lines;
 
 $h4-font-size: 1.25rem;
-$h4-line: 1.5rem; //1.2em;
 $h4-lines: 1;
-$h4-line-height: $h4-line * $h4-lines;
-$h4-margin-top: 1 * $h4-line;
-$h4-margin-bottom: 1 * $h4-line;
-
-h1 {
-	font-size: $h1-font-size;
-	line-height: $h1-line-height;
-	margin: $h1-margin-top 0 $h1-margin-bottom;
-}
-
-h2 {
-	font-size: $h2-font-size;
-	line-height: $h2-line-height;
-	margin: $h2-margin-top 0 $h2-margin-bottom;
-}
-
-h3 {
-	font-size: $h3-font-size;
-	line-height: $h3-line-height;
-	margin: $h3-margin-top 0 $h3-margin-bottom;
-}
-
-h4 {
-	font-size: $h4-font-size;
-	line-height: $h4-line-height;
-	margin: $h4-margin-top 0 $h4-margin-bottom;
-}
-
+$h4-line-height: $line-ht * $h4-lines;
 */
-/* line 61, sass/modules/_typo.scss */
+/* line 25, sass/modules/_typo.scss */
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+/* line 30, sass/modules/_typo.scss */
 h1 {
-  font-size: 3em;
-  line-height: 1.5em;
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
 }
 
-/* line 62, sass/modules/_typo.scss */
+/* line 36, sass/modules/_typo.scss */
 h2 {
-  font-size: 2.25em;
-  line-height: 1.33333em;
+  font-size: 2.5rem;
+  line-height: 3rem;
 }
 
-/* line 63, sass/modules/_typo.scss */
+/* line 41, sass/modules/_typo.scss */
 h3 {
-  font-size: 1.875em;
-  line-height: 1.6em;
+  font-size: 2rem;
+  line-height: 3rem;
 }
 
-/* line 64, sass/modules/_typo.scss */
-h4 {
-  font-size: 1.5em;
-  line-height: 2em;
+/* line 46, sass/modules/_typo.scss */
+h4, caption {
+  font-size: 1.5rem;
+  line-height: 3rem;
 }
 
-/* line 65, sass/modules/_typo.scss */
+/* line 51, sass/modules/_typo.scss */
 h5 {
-  font-size: 1.3125em;
-  line-height: 2.28571em;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 
-/* line 66, sass/modules/_typo.scss */
+/* line 56, sass/modules/_typo.scss */
 h6 {
-  font-size: 1.125em;
-  line-height: 1.33333em;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 /* standard text size is 16px */
-/* line 74, sass/modules/_typo.scss */
-footer p {
-  margin: 1.5rem 0;
-}
-
 @media only screen and (max-width: 479px) {
-  /* line 80, sass/modules/_typo.scss */
+  /* line 70, sass/modules/_typo.scss */
   h1 {
     font-size: 2.25em;
     line-height: 1.33333em;
   }
 
-  /* line 81, sass/modules/_typo.scss */
+  /* line 71, sass/modules/_typo.scss */
   h2 {
     font-size: 1.875em;
     line-height: 1.6em;
   }
 
-  /* line 82, sass/modules/_typo.scss */
+  /* line 72, sass/modules/_typo.scss */
   h3 {
     font-size: 1.5em;
     line-height: 2em;
   }
 
-  /* line 83, sass/modules/_typo.scss */
+  /* line 73, sass/modules/_typo.scss */
   h4 {
     font-size: 1.375em;
     line-height: 2.18182em;
   }
 
-  /* line 84, sass/modules/_typo.scss */
+  /* line 74, sass/modules/_typo.scss */
   h5 {
     font-size: 1.25em;
     line-height: 1.2em;
   }
 
-  /* line 85, sass/modules/_typo.scss */
+  /* line 75, sass/modules/_typo.scss */
   h6 {
     font-size: 1.125em;
     line-height: 1.33333em;
   }
 }
-/**
- * partials/wordpress
- * ---
- * Wordpess core classes
- */
-/**
- * Alignment
- */
-/* line 16, sass/partials/_wordpress.scss */
+/* partials/wordpress */
+/* Alignment */
+/* line 10, sass/partials/_wordpress.scss */
 .alignnone {
   margin: 0.75rem 1.5rem 1.5rem 0;
 }
 
-/* line 20, sass/partials/_wordpress.scss */
+/* line 14, sass/partials/_wordpress.scss */
 .aligncenter {
   display: block;
   margin: 0.75rem auto;
 }
 
-/* line 25, sass/partials/_wordpress.scss */
+/* line 19, sass/partials/_wordpress.scss */
 .alignright {
   float: right;
   margin: 0.75rem 0 1.5rem 1.5rem;
 }
 
-/* line 30, sass/partials/_wordpress.scss */
+/* line 24, sass/partials/_wordpress.scss */
 .alignleft {
   float: left;
   margin: 0.75rem 1.5rem 1.5rem 0;
 }
 
-/**
- * Gallery & images
- */
-/* line 40, sass/partials/_wordpress.scss */
+/* Gallery & images */
+/* line 32, sass/partials/_wordpress.scss */
 .wp-caption {
   background: white;
   border: thin solid #F0F0F0;
@@ -581,7 +526,7 @@ footer p {
   padding: 0.75rem 0.75rem;
   text-align: center;
 }
-/* line 47, sass/partials/_wordpress.scss */
+/* line 39, sass/partials/_wordpress.scss */
 .wp-caption img {
   width: auto;
   max-width: 98.5%;
@@ -592,168 +537,172 @@ footer p {
   border: 0;
 }
 
-/* line 57, sass/partials/_wordpress.scss */
+/* line 49, sass/partials/_wordpress.scss */
 .wp-caption .wp-caption-text,
 .gallery-caption {
   padding: 0 0.75rem 0.75rem;
 }
 
-/**
- * partials/utils
- * ---
- * Utils classes
- */
-/* General utility css classes */
-/* line 9, sass/partials/_utils.scss */
+/* partials/utils */
+/* line 5, sass/partials/_utils.scss */
 .floatR {
   float: right;
 }
 
-/* line 10, sass/partials/_utils.scss */
+/* line 6, sass/partials/_utils.scss */
 .floatL {
   float: left;
 }
 
-/* line 11, sass/partials/_utils.scss */
+/* line 7, sass/partials/_utils.scss */
 .L {
   text-align: left;
 }
 
-/* line 12, sass/partials/_utils.scss */
+/* line 8, sass/partials/_utils.scss */
 .C {
   text-align: center;
 }
 
-/* line 13, sass/partials/_utils.scss */
+/* line 9, sass/partials/_utils.scss */
 .R {
   text-align: right;
 }
 
-/* line 14, sass/partials/_utils.scss */
+/* line 10, sass/partials/_utils.scss */
 .clearR {
   clear: right;
 }
 
-/* line 15, sass/partials/_utils.scss */
+/* line 11, sass/partials/_utils.scss */
 .clearL {
   clear: left;
 }
 
-/* line 16, sass/partials/_utils.scss */
+/* line 12, sass/partials/_utils.scss */
 .clear {
   clear: both;
 }
 
-/* line 18, sass/partials/_utils.scss */
+/* line 14, sass/partials/_utils.scss */
 .reset-box {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-/**
- * partials/wrapper
- * ---
- */
-/* line 7, sass/partials/_wrapper.scss */
+/* line 20, sass/partials/_utils.scss */
+.cf {
+  *zoom: 1;
+}
+/* line 28, sass/modules/_mixins.scss */
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+/* line 33, sass/modules/_mixins.scss */
+.cf:after {
+  clear: both;
+}
+
+/* partials/wrapper */
+/* line 3, sass/partials/_wrapper.scss */
 .wrapper {
-  max-width: 1280px;
+  max-width: 80rem;
   padding: 0 1.5rem;
   margin: 0 auto;
   position: relative;
 }
 
-/**
- * partials/header
- * ---
- */
-/**
- * partials/nav
- * ---
- * Menus
- */
-/**
- * partials/sidebar
- * ---
- */
-/**
- * partials/footer
- * ---
- */
-/* line 7, sass/partials/_footer.scss */
+/* partials/footer */
+/* line 3, sass/partials/_footer.scss */
 .footer {
   clear: both;
 }
 
-/**
- * partials/print
- * ---
- * Print version
+/* line 6, sass/partials/_footer.scss */
+footer p {
+  text-align: center;
+  margin: 1.5rem;
+}
+
+/* partials/headers */
+/* line 5, sass/partials/_header.scss */
+.header {
+  *zoom: 1;
+}
+/* line 28, sass/modules/_mixins.scss */
+.header:before, .header:after {
+  content: " ";
+  display: table;
+}
+/* line 33, sass/modules/_mixins.scss */
+.header:after {
+  clear: both;
+}
+
+/* partials/nav */
+/* partials/sidebar */
+/* partials/print
  * (from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
  */
 @media print {
-  /* line 10, sass/partials/_print.scss */
+  /* line 7, sass/partials/_print.scss */
   *,
   *:before,
   *:after {
     background: transparent !important;
     color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  /* line 19, sass/partials/_print.scss */
+  /* line 16, sass/partials/_print.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 24, sass/partials/_print.scss */
+  /* line 21, sass/partials/_print.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 28, sass/partials/_print.scss */
+  /* line 25, sass/partials/_print.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  /* line 37, sass/partials/_print.scss */
+  /* line 31, sass/partials/_print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 42, sass/partials/_print.scss */
+  /* line 36, sass/partials/_print.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 48, sass/partials/_print.scss */
+  /* line 42, sass/partials/_print.scss */
   thead {
     display: table-header-group;
-    /* h5bp.com/t */
   }
 
-  /* line 52, sass/partials/_print.scss */
+  /* line 46, sass/partials/_print.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 57, sass/partials/_print.scss */
+  /* line 51, sass/partials/_print.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 61, sass/partials/_print.scss */
+  /* line 55, sass/partials/_print.scss */
   p,
   h2,
   h3 {
@@ -761,13 +710,13 @@ footer p {
     widows: 3;
   }
 
-  /* line 68, sass/partials/_print.scss */
+  /* line 62, sass/partials/_print.scss */
   h2,
   h3 {
     page-break-after: avoid;
   }
 
-  /* line 73, sass/partials/_print.scss */
+  /* line 67, sass/partials/_print.scss */
   nav {
     display: none;
   }
@@ -790,77 +739,100 @@ img.main-image-right {
 }
 
 /* line 1, sass/partials/_layout.scss */
-header {
-  *zoom: 1;
-}
-/* line 28, sass/modules/_mixins.scss */
-header:before, header:after {
-  content: " ";
-  display: table;
-}
-/* line 33, sass/modules/_mixins.scss */
-header:after {
-  clear: both;
-}
-
-/* line 5, sass/partials/_layout.scss */
 #primary, #primary-left, #primary-right, #primary-middle {
   width: 100%;
 }
 
-/* line 9, sass/partials/_layout.scss */
+/* line 5, sass/partials/_layout.scss */
 #primary, #primary-left, #primary-right, #primary-middle, aside {
   padding: 0 1em;
 }
 
 @media only screen and (max-width: 479px) {
-  /* line 14, sass/partials/_layout.scss */
+  /* line 10, sass/partials/_layout.scss */
   aside, #primary, #primary-left, #primary-right, #primary-middle {
     width: 100%;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 19, sass/partials/_layout.scss */
+  /* line 15, sass/partials/_layout.scss */
   aside {
     width: 40%;
     background-color: orange;
   }
 
-  /* line 23, sass/partials/_layout.scss */
+  /* line 19, sass/partials/_layout.scss */
   #primary-left, #primary-right {
     width: 60%;
     background-color: #f8f8f8;
   }
 }
 @media only screen and (min-width: 480px) {
-  /* line 29, sass/partials/_layout.scss */
+  /* line 25, sass/partials/_layout.scss */
   #primary-left, .sidebar.left, #primary-middle {
     float: left;
   }
 
-  /* line 32, sass/partials/_layout.scss */
+  /* line 28, sass/partials/_layout.scss */
   #primary-right, .sidebar.right {
     float: right;
   }
 }
 @media only screen and (min-width: 768px) {
-  /* line 37, sass/partials/_layout.scss */
+  /* line 33, sass/partials/_layout.scss */
   aside {
     width: 30%;
     background-color: goldenrod;
   }
 
-  /* line 41, sass/partials/_layout.scss */
+  /* line 37, sass/partials/_layout.scss */
   #primary-left, #primary-right {
     width: 70%;
   }
 
-  /* line 44, sass/partials/_layout.scss */
+  /* line 40, sass/partials/_layout.scss */
   #primary-middle {
     width: 40%;
     float: left;
   }
 }
+/* line 49, sass/partials/_layout.scss */
+.cf > .pie-chartify, .cf > .piechart {
+  float: left;
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+/* line 4, sass/partials/_tables.scss */
+th, td {
+  padding: 0.75rem;
+}
+
+/* line 8, sass/partials/_tables.scss */
+tr {
+  border-bottom: 1px solid #999;
+}
+
+/* line 12, sass/partials/_tables.scss */
+caption {
+  text-align: left;
+  padding: 0 0.75rem 1.5rem;
+}
+
+/* line 21, sass/partials/_tables.scss */
+thead tr {
+  background-color: #d7ecff;
+}
+
+/* line 30, sass/partials/_tables.scss */
+tbody tr:nth-child(even) {
+  background-color: aliceblue;
+}
+
+/* line 39, sass/partials/_tables.scss */
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
 /* line 3, sass/partials/_menu.scss */
 nav li > ul,
 nav li > ol {
@@ -872,7 +844,7 @@ nav li > ol {
 header nav {
   *zoom: 1;
   width: 100%;
-  background-color: aliceblue;
+  background-color: c;
 }
 /* line 28, sass/modules/_mixins.scss */
 header nav:before, header nav:after {
@@ -1078,7 +1050,7 @@ header nav select {
     float: none;
   }
 }
-/* line 31, sass/style.scss */
+/* line 32, sass/style.scss */
 body {
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, #cccccc), color-stop(5%, rgba(204, 204, 204, 0)));
   background-image: -webkit-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);

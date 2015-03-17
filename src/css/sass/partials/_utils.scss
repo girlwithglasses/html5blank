@@ -1,11 +1,7 @@
-/**
- * partials/utils
- * ---
- * Utils classes
- */
+/* partials/utils */
 
 
-/* General utility css classes */
+// General utility css classes
 .floatR { float: right; }
 .floatL { float: left; }
 .L { text-align: left; }
@@ -17,4 +13,10 @@
 
 .reset-box {
   @include reset-box;
+}
+
+
+// clearfix styling
+.cf {
+	@include cf;
 }

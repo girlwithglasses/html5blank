@@ -1,11 +1,10 @@
-/**
- * partials/header
- * ---
- */
+/* partials/headers */
 
 
 // Header container
-.header {}
+.header {
+	@include cf;
+}
 
 // Logo
 .logo {}

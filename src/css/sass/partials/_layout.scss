@@ -1,7 +1,3 @@
-header {
-	@include cf;
-}
-
 #primary, #primary-left, #primary-right, #primary-middle {
 	width: 100%;
 }
@@ -25,7 +21,7 @@ header {
 		background-color: #f8f8f8;
 	}
 }
-@include minw(480px) {
+@include minw(480px) { // = 30rem
 	#primary-left, .sidebar.left, #primary-middle {
 		float: left;
 	}
@@ -33,7 +29,7 @@ header {
 		float: right;
 	}
 }
-@include minw(768px) {
+@include minw(768px) { // = 48rem
 	aside {
 		width: 30%;
 		background-color: goldenrod;
@@ -44,5 +40,14 @@ header {
 	#primary-middle {
 		width: 40%;
 		float: left;
+	}
+}
+
+// page-specific stuff
+
+.cf {
+	> .pie-chartify, > .piechart {
+		float: left;
+		margin: 0 $line-ht $line-ht 0;
 	}
 }
