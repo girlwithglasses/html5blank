@@ -14,7 +14,7 @@
 @include minmax(480px,767px) {
 	aside {
 		width: 40%;
-		background-color: orange;
+		// background-color: orange;
 	}
 	#primary-left, #primary-right {
 		width: 60%;
@@ -32,7 +32,7 @@
 @include minw(768px) { // = 48rem
 	aside {
 		width: 30%;
-		background-color: goldenrod;
+		// background-color: goldenrod;
 	}
 	#primary-left, #primary-right {
 		width: 70%;

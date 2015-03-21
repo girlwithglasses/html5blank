@@ -1,5 +1,3 @@
-@import "partials/wp_css_header";
-
 // @import "../../bower-components/normalize.css/normalize.css";
 
 // Main SASS file
@@ -21,14 +19,13 @@
 @import "partials/wordpress";
 @import "partials/utils";
 @import "partials/wrapper";
-@import "partials/footer";
 @import "partials/header";
 @import "partials/nav";
 @import "partials/sidebar";
+@import "partials/footer";
 @import "partials/print";
 @import "partials/images";
 @import "partials/layout";
-@import "partials/tables";
 @import "partials/menu";
 
 body { @include background-grid(1.5em, #ccc); }
