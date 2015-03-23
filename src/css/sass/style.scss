@@ -1,6 +1,5 @@
+// header for the CSS file so the theme shows up properly in WP
 @import "partials/wp_css_header";
-
-// @import "../../bower-components/normalize.css/normalize.css";
 
 // Main SASS file
 
@@ -8,7 +7,7 @@
 @import "modules/mixins";
 @import "modules/variables";
 @import 'modules/colours';
-
+@import 'modules/fonts';
 
 // set up basic formatting
 @import 'partials/base'; // reset
@@ -18,14 +17,14 @@
 @import "partials/wordpress";
 @import "partials/utils";
 @import "partials/wrapper";
-@import "partials/footer";
 @import "partials/header";
 @import "partials/nav";
 @import "partials/sidebar";
+@import "partials/footer";
 @import "partials/print";
 @import "partials/images";
 @import "partials/layout";
-@import "partials/tables";
 @import "partials/menu";
+@import "partials/collapse";
 
-body { @include background-grid(1.5em, #ccc); }
+// body { @include background-grid(1.5em, #ccc); }

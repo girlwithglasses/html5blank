@@ -1,3 +1,19 @@
 /* partials/sidebar */
 
 .sidebar {}
+
+aside ul {
+	li {
+		margin: 1px 0;
+		list-style-type: none;
+		background-color: $s-button-bg;
+		a {
+			padding: 8px 10px;
+			display: block;
+			}
+		}
+		
+	ul li {
+		text-indent: 15px;
+		}
+}

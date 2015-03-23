@@ -55,7 +55,6 @@ $h-menu-hfa-link-bg: #044;
 $h-menu-current: $h-menu-link;
 $h-menu-current-bg: $h-menu-link-bg;
 
-
 // table colours
 $caption-bg: null;
 
@@ -69,3 +68,6 @@ $tr-bg: aliceblue;
 // table contents, odd row
 $tr-odd: null;
 $tr-odd-bg: lighten(aliceblue, 5%);
+
+// sidebar buttons
+$s-button-bg: orange;
