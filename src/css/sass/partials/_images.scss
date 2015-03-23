@@ -1,9 +1,13 @@
 // images
 
+article img {
+	max-width: 100%;
+	height: auto;
+}
+
 a.img { display: block }
+
 .img img { padding: $gutter; }
-
-
 
 img.main-image-right {
 	float: right;

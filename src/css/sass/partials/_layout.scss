@@ -1,3 +1,9 @@
+// make sure that all the article content stays in the container
+article {
+	@include cf;
+//	background-color: aquamarine;
+}
+
 #primary, #primary-left, #primary-right, #primary-middle {
 	width: 100%;
 }

@@ -4,9 +4,6 @@
 
 // Main SASS file
 
-// Compass imports
-@import "compass/typography/vertical_rhythm";
-
 // Modules
 @import "modules/mixins";
 @import "modules/variables";
@@ -32,12 +29,3 @@
 @import "partials/menu";
 
 body { @include background-grid(1.5em, #ccc); }
-/*
-@include establish-baseline;
-@if true {
-	$grid-background-baseline-height: $base-line-height;
-	body {
-		@include debug-vertical-alignment;
-	}
-}
-*/

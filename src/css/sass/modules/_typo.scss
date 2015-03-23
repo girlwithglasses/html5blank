@@ -34,9 +34,9 @@ h1 {
 	text-align: center;
 }
 
-// 42px
+// 36px
 h2 {
-	font-size: 2.625rem;
+	font-size: 2.25rem;
 	line-height: 2*$line-ht;
 }
 
@@ -65,8 +65,12 @@ h6 {
 }
 
 /* standard text size is 16px */
-//	aside { @include adjust-font-size-to(14px); }
+//aside {
+//	font-size: 0.875rem;
+// 	line-height: $line-ht;
+//}
 
+/**
 @media only screen and (max-width: 479px) {
 	h1 { @include adjust-font-size-to(36px); }
 	h2 { @include adjust-font-size-to(30px); }
@@ -75,3 +79,4 @@ h6 {
 	h5 { @include adjust-font-size-to(20px); }
 	h6 { @include adjust-font-size-to(18px); }
 }
+*/
