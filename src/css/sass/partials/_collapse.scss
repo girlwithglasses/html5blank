@@ -3,10 +3,12 @@
 .row { 
 	vertical-align: top; 
 	height:auto; 
+	display: inline-block;
+	font-size: 1.5rem;
 }
 
 .content {
-	display:none; 
+	display: none; 
 }
 
 .show {
@@ -21,7 +23,7 @@
 	display: none;
 }
 
-.hide:target ~ .list {
+.hide:target ~ .content {
 	display:inline;
 }
 
