@@ -3,6 +3,8 @@
 Template Name: Right Sidebar
 */
 	get_header(); ?>
+    
+    <?php the_breadcrumb(); ?>
 
 	<div class="main" id="primary-left" role="main">
 		<!-- section -->

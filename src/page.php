@@ -3,6 +3,8 @@
 Template Name: No Sidebars
 */
 	get_header(); ?>
+    
+    <?php the_breadcrumb(); ?>
 
 	<div class="main" id="primary" role="main">
 		<!-- section -->
