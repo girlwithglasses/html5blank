@@ -94,7 +94,7 @@ function html5blank_header_scripts()
         if (HTML5_DEBUG) {
             // jQuery
             wp_deregister_script('jquery');
-            wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.js', array(), '1.11.1');
+            wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', array(), '1.11.1');
 
             // Conditionizr
 //            wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0');
@@ -671,3 +671,15 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+//  toggle shortcode
+ function toggle_shortcode( $atts, $content = null ) {
+ extract( shortcode_atts(
+ array(
+   'title' => 'Click To Open',
+   'color' => ''
+ ),
+ $atts ) );
+ return '<h3><a href="#">'. $title .'</a></h3><div class="toggle_container">' . do_shortcode($content) . '</div>';
+ }
+ add_shortcode('toggle', 'toggle_shortcode');

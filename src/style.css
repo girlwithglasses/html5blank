@@ -1379,60 +1379,102 @@ header nav select {
   }
 }
 /* partials/collapse */
-/* line 3, css/sass/partials/_extras.scss */
-.row {
-  vertical-align: top;
-  height: auto;
-  display: inline-block;
-  font-size: 1.5rem;
+/* .row { 
+	vertical-align: top; 
+	height:auto; 
+	display: inline-block;
+	font-size: 1.5rem;
 }
 
-/* line 10, css/sass/partials/_extras.scss */
 .content {
-  display: none;
+	display: none; 
 }
 
-/* line 14, css/sass/partials/_extras.scss */
 .show {
-  display: none;
+	display: none;
 }
 
-/* line 18, css/sass/partials/_extras.scss */
 .hide:target + .show {
-  display: inline;
+	display: inline;
 }
 
-/* line 22, css/sass/partials/_extras.scss */
 .hide:target {
-  display: none;
+	display: none;
 }
 
-/* line 26, css/sass/partials/_extras.scss */
 .hide:target ~ .content {
-  display: inline;
+	display:inline;
 }
 
-@media print {
-  /* line 31, css/sass/partials/_extras.scss */
-  .hide, .show {
-    display: none;
-  }
+@media print { 
+	.hide, .show { 
+		display: none; 
+	} 
+} */
+/*toggle*/
+/* line 37, css/sass/partials/_extras.scss */
+h3.trigger {
+  margin: 0px !important;
+  font-size: 18px;
+  padding: 10px;
+  padding-left: 30px;
+  background-image: url("img/shortcodes/toggle-plus.png");
+  background-position: 10px center;
+  background-repeat: no-repeat;
 }
-/* line 36, css/sass/partials/_extras.scss */
+
+/* line 46, css/sass/partials/_extras.scss */
+h3.trigger a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+/* line 51, css/sass/partials/_extras.scss */
+h3.trigger a:hover {
+  color: #0489B7;
+  text-decoration: underline;
+}
+
+/* line 55, css/sass/partials/_extras.scss */
+h3.active {
+  background-image: url("img/shortcodes/toggle-minus.png") !important;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
+/* line 60, css/sass/partials/_extras.scss */
+h3.toggle-white {
+  background-color: #FFF;
+}
+
+/* line 63, css/sass/partials/_extras.scss */
+h3.toggle-gray {
+  background-color: #F5F5F5;
+}
+
+/* line 66, css/sass/partials/_extras.scss */
+.toggle_container {
+  overflow: hidden;
+  padding: 20px 10px;
+}
+
+/* breadcrumbs */
+/* line 72, css/sass/partials/_extras.scss */
 #breadcrumbs {
   list-style: none;
   margin: 10px 0;
   overflow: hidden;
 }
 
-/* line 42, css/sass/partials/_extras.scss */
+/* line 78, css/sass/partials/_extras.scss */
 #breadcrumbs li {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
 
-/* line 48, css/sass/partials/_extras.scss */
+/* line 84, css/sass/partials/_extras.scss */
 #breadcrumbs .separator {
   font-size: 18px;
   font-weight: 100;
