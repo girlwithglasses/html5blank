@@ -83,13 +83,10 @@
 	});
 } ( this, jQuery ));
 
-//toggle
-jQuery(function($){
-$(document).ready(function(){
-$(".toggle_container").hide();
-$("h3.trigger").click(function(){
-$(this).toggleClass("active").next().slideToggle("normal");
-return false; //Prevent the browser jump to the link anchor
-});
-});
-});
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
