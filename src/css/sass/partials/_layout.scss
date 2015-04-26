@@ -57,3 +57,23 @@ article {
 		margin: 0 $line-ht $line-ht 0;
 	}
 }
+
+// front page
+
+@include maxw(479px) {
+	.bigpic h2 {
+		width: 100%;
+	}
+}
+@include minmax(480px,767px) {
+	.bigpic h2 {
+		width: 50%;
+		float: left;
+	}
+}
+@include minw(768px) {
+	.bigpic h2 {
+		float: left;
+		width: 25%;
+	}
+}
