@@ -395,12 +395,3 @@ li ul, li ol {
 dd+dt {
 	margin-top: $line-ht;
 }
-
-/* make less drastic the ugly outline in Safari */
-:focus {
-	outline: thin dotted;
-}
-
-.debug {
-	background-image: url(data:image/gif;base64,R0lGODlhAQAYAIAAAO7u7v///yH5BAAAAAAALAAAAAABABgAAAIFjI+pBgUAOw==);
-}

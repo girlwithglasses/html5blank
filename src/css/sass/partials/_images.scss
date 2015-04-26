@@ -9,8 +9,13 @@ a.img { display: block }
 
 .img img { padding: $gutter; }
 
-img.main-image-right {
-	float: right;
-	width: 300px;
-	margin: 0 0 1em 1em;
+article img.alignright {
+	margin: 0 0 $gutter $gutter;
 }
+
+@include minw(856px) {
+	.landscape {
+		width: 50%;
+	}
+}
+
