@@ -20,12 +20,12 @@ article {
 @include minmax(480px,767px) {
 	aside {
 		width: 40%;
-		// background-color: orange;
 	}
 	#primary-left, #primary-right {
 		width: 60%;
 		background-color: #f8f8f8;
 	}
+
 }
 @include minw(480px) { // = 30rem
 	#primary-left, .sidebar.left, #primary-middle {
@@ -47,7 +47,58 @@ article {
 		width: 40%;
 		float: left;
 	}
+	.two-thirds {
+		width: 65%;
+		float: left;
+		margin-right: 10px;
+	}
+	.one-third {
+		width: 32%;
+		float: left;
+		background-color: aliceblue;
+		// padding: 10px;
+		// margin: 8px;
+		position: relative
+	}
 }
+@include maxw(587px) {
+	.portrait-test {
+		// width: 50%;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+	.landscape-test {
+		width: 100%;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+}
+
+@include minmax(588px,855px) {
+	.portrait-test {
+		width: 50%;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+	.landscape-test {
+		width: 100%;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+}
+@include minw(856px) {
+	.portrait-test {
+		width: 33%;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+	.landscape-test {
+		width: 50%;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+}
+
 
 // page-specific stuff
 
@@ -59,7 +110,6 @@ article {
 }
 
 // front page
-
 @include maxw(479px) {
 	.bigpic h2 {
 		width: 100%;
