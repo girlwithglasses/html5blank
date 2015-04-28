@@ -87,7 +87,7 @@ header nav {
 				background-color: $h-menu-current-bg;
 			}
 			.current-menu-item a:before {
-				content: "> ";
+				border-left: .25rem $h-menu-current-hilite solid;
 			}
 
 			ul li a:hover,
