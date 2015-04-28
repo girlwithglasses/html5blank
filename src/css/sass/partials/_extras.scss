@@ -86,27 +86,3 @@ padding: 20px 10px;
     font-weight:100;
     color:#ccc;
 }
-
-a[target="_blank"][href^="/"]:after {
-	font-family: icomoon;
-    content: "\ea7e"; // external link icon
-    text-decoration: none; // removes underline from the icon in some browsers
-    display: inline-block; // removes underline from the icon in some browsers
-    padding-left: 2px; 
-}
-
-a[href$='.pdf']:after {
-	font-family: icomoon;
-    content: "\eada"; // pdf icon
-    text-decoration: none; // removes underline from the icon in some browsers
-    display: inline-block; // removes underline from the icon in some browsers
-    padding-left: 2px; 
-}
-
-a[target="_blank"][href$='.pdf']:after {
-	font-family: icomoon;
-    content: "\eada\ea7e"; // external link icon
-    text-decoration: none; // removes underline from the icon in some browsers
-    display: inline-block; // removes underline from the icon in some browsers
-    padding-left: 2px; 
-}
