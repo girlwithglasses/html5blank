@@ -5,3 +5,27 @@
 	display: inline-block;
 	margin-right: $gutter;
 }
+
+a[rel="external"]:after {
+	font-family: icomoon;
+    content: "\ea7e"; // external link icon
+    text-decoration: none; // removes underline from the icon in some browsers
+    display: inline-block; // removes underline from the icon in some browsers
+    padding-left: 4px; 
+}
+
+a[href$='.pdf']:after {
+	font-family: icomoon;
+    content: "\eada"; // pdf icon
+    text-decoration: none; // removes underline from the icon in some browsers
+    display: inline-block; // removes underline from the icon in some browsers
+    padding-left: 4px; 
+}
+
+a[rel="external"][href$='.pdf']:after {
+	font-family: icomoon;
+    content: "\eada  \ea7e"; // external link icon
+    text-decoration: none; // removes underline from the icon in some browsers
+    display: inline-block; // removes underline from the icon in some browsers
+    padding-left: 4px; 
+}
