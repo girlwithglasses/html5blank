@@ -6,6 +6,8 @@
 	margin-right: $gutter;
 }
 
+
+/* icons for links */
 a[rel="external"]:after {
 	font-family: icomoon;
     content: "\ea7e"; // external link icon
@@ -28,4 +30,50 @@ a[rel="external"][href$='.pdf']:after {
     text-decoration: none; // removes underline from the icon in some browsers
     display: inline-block; // removes underline from the icon in some browsers
     padding-left: 4px; 
+}
+
+/* format toggle */
+
+/* hide the default marker */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary:before {
+	font-family: 'icomoon';
+    content: "\e625";
+	padding-right: 10px;
+}
+
+details[open] {
+	// border: 1px solid $s-details-bg;	
+	p, ul {
+		padding: 0 1rem;
+	}
+	summary:before {
+		font-family: 'icomoon';
+    	content: "\e623";
+		padding-right: 10px;
+	}
+}
+
+
+details summary {
+	// background: $s-details-bg;
+	color: $main-link;
+	padding: 10px;
+	font-size: 1.25rem;
+	font-family: $typeface-display;
+	border: 1px dotted;
+}
+
+details summary:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* dt dd */
+dt:before {
+	content: ‘\a’;
+	white-space: pre;
 }

@@ -9,6 +9,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: cats, awesomeness, who-needs-a-logo-anyway?
 Text Domain: html5blank
 */
+/* // summary details
+$s-details-bg: #B8B8B8;
+$s-details-txt: #FFF; */
 /*
 @font-face {
   font-family: "Font-Name";
@@ -23,11 +26,13 @@ Text Domain: html5blank
 */
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?-dwdsew');
-  src: url('fonts/icomoon.eot?#iefix-dwdsew') format('embedded-opentype'), url('fonts/icomoon.woff?-dwdsew') format('woff'), url('fonts/icomoon.ttf?-dwdsew') format('truetype'), url('fonts/icomoon.svg?-dwdsew#icomoon') format('svg');
+  src: url("fonts/icomoon.eot?-dwdsew");
+  src: url("fonts/icomoon.eot?#iefix-dwdsew") format("embedded-opentype"), url("fonts/icomoon.woff?-dwdsew") format("woff"), url("fonts/icomoon.ttf?-dwdsew") format("truetype"), url("fonts/icomoon.svg?-dwdsew#icomoon") format("svg");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+}
 
+/* line 27, css/sass/modules/_fonts.scss */
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
   speak: none;
@@ -38,234 +43,395 @@ Text Domain: html5blank
   line-height: 1;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+}
 
+/* line 41, css/sass/modules/_fonts.scss */
 .icon-mail3:before {
-  content: "\e608"; }
+  content: "\e608";
+}
 
+/* line 45, css/sass/modules/_fonts.scss */
 .icon-arrow-drop-up:before {
-  content: "\e609"; }
+  content: "\e609";
+}
 
+/* line 49, css/sass/modules/_fonts.scss */
 .icon-arrow-drop-down:before {
-  content: "\e60a"; }
+  content: "\e60a";
+}
 
+/* line 53, css/sass/modules/_fonts.scss */
 .icon-mail5:before {
-  content: "\e60b"; }
+  content: "\e60b";
+}
 
+/* line 57, css/sass/modules/_fonts.scss */
 .icon-minus:before {
-  content: "\e60c"; }
+  content: "\e60c";
+}
 
+/* line 61, css/sass/modules/_fonts.scss */
 .icon-plus:before {
-  content: "\e60d"; }
+  content: "\e60d";
+}
 
+/* line 65, css/sass/modules/_fonts.scss */
 .icon-keyboard-arrow-up:before {
-  content: "\e602"; }
+  content: "\e602";
+}
 
+/* line 69, css/sass/modules/_fonts.scss */
 .icon-keyboard-arrow-right:before {
-  content: "\e603"; }
+  content: "\e603";
+}
 
+/* line 73, css/sass/modules/_fonts.scss */
 .icon-keyboard-arrow-left:before {
-  content: "\e604"; }
+  content: "\e604";
+}
 
+/* line 77, css/sass/modules/_fonts.scss */
 .icon-keyboard-arrow-down:before {
-  content: "\e605"; }
+  content: "\e605";
+}
 
+/* line 81, css/sass/modules/_fonts.scss */
 .icon-instagram2:before {
-  content: "\e60e"; }
+  content: "\e60e";
+}
 
+/* line 85, css/sass/modules/_fonts.scss */
 .icon-circle-left2:before {
-  content: "\e60f"; }
+  content: "\e60f";
+}
 
+/* line 89, css/sass/modules/_fonts.scss */
 .icon-circle-down2:before {
-  content: "\e610"; }
+  content: "\e610";
+}
 
+/* line 93, css/sass/modules/_fonts.scss */
 .icon-circle-right2:before {
-  content: "\e611"; }
+  content: "\e611";
+}
 
+/* line 97, css/sass/modules/_fonts.scss */
 .icon-circle-up2:before {
-  content: "\e612"; }
+  content: "\e612";
+}
 
+/* line 101, css/sass/modules/_fonts.scss */
 .icon-tumblr3:before {
-  content: "\e613"; }
+  content: "\e613";
+}
 
+/* line 105, css/sass/modules/_fonts.scss */
 .icon-tumblr4:before {
-  content: "\e614"; }
+  content: "\e614";
+}
 
+/* line 109, css/sass/modules/_fonts.scss */
 .icon-youtube:before {
-  content: "\e615"; }
+  content: "\e615";
+}
 
+/* line 113, css/sass/modules/_fonts.scss */
 .icon-youtube2:before {
-  content: "\e616"; }
+  content: "\e616";
+}
 
+/* line 117, css/sass/modules/_fonts.scss */
 .icon-twitter4:before {
-  content: "\e617"; }
+  content: "\e617";
+}
 
+/* line 121, css/sass/modules/_fonts.scss */
 .icon-twitter5:before {
-  content: "\e618"; }
+  content: "\e618";
+}
 
+/* line 125, css/sass/modules/_fonts.scss */
 .icon-twitter6:before {
-  content: "\e619"; }
+  content: "\e619";
+}
 
+/* line 129, css/sass/modules/_fonts.scss */
 .icon-instagram3:before {
-  content: "\e61a"; }
+  content: "\e61a";
+}
 
+/* line 133, css/sass/modules/_fonts.scss */
 .icon-facebook4:before {
-  content: "\e61b"; }
+  content: "\e61b";
+}
 
+/* line 137, css/sass/modules/_fonts.scss */
 .icon-facebook5:before {
-  content: "\e61c"; }
+  content: "\e61c";
+}
 
+/* line 141, css/sass/modules/_fonts.scss */
 .icon-facebook6:before {
-  content: "\e61d"; }
+  content: "\e61d";
+}
 
+/* line 145, css/sass/modules/_fonts.scss */
 .icon-google-plus:before {
-  content: "\e61e"; }
+  content: "\e61e";
+}
 
+/* line 149, css/sass/modules/_fonts.scss */
 .icon-google-plus2:before {
-  content: "\e61f"; }
+  content: "\e61f";
+}
 
+/* line 153, css/sass/modules/_fonts.scss */
 .icon-google-plus3:before {
-  content: "\e620"; }
+  content: "\e620";
+}
 
+/* line 157, css/sass/modules/_fonts.scss */
 .icon-mail6:before {
-  content: "\e621"; }
+  content: "\e621";
+}
 
+/* line 161, css/sass/modules/_fonts.scss */
 .icon-link-external:before {
-  content: "\e600"; }
+  content: "\e600";
+}
 
+/* line 165, css/sass/modules/_fonts.scss */
 .icon-envelope:before {
-  content: "\e601"; }
+  content: "\e601";
+}
 
+/* line 169, css/sass/modules/_fonts.scss */
 .icon-home3:before {
-  content: "\e902"; }
+  content: "\e902";
+}
 
+/* line 173, css/sass/modules/_fonts.scss */
 .icon-circle-up:before {
-  content: "\ea41"; }
+  content: "\ea41";
+}
 
+/* line 177, css/sass/modules/_fonts.scss */
 .icon-circle-right:before {
-  content: "\ea42"; }
+  content: "\ea42";
+}
 
+/* line 181, css/sass/modules/_fonts.scss */
 .icon-circle-down:before {
-  content: "\ea43"; }
+  content: "\ea43";
+}
 
+/* line 185, css/sass/modules/_fonts.scss */
 .icon-circle-left:before {
-  content: "\ea44"; }
+  content: "\ea44";
+}
 
+/* line 189, css/sass/modules/_fonts.scss */
 .icon-new-tab:before {
-  content: "\ea7e"; }
+  content: "\ea7e";
+}
 
+/* line 193, css/sass/modules/_fonts.scss */
 .icon-mail4:before {
-  content: "\ea86"; }
+  content: "\ea86";
+}
 
+/* line 197, css/sass/modules/_fonts.scss */
 .icon-facebook:before {
-  content: "\ea8c"; }
+  content: "\ea8c";
+}
 
+/* line 201, css/sass/modules/_fonts.scss */
 .icon-facebook2:before {
-  content: "\ea8d"; }
+  content: "\ea8d";
+}
 
+/* line 205, css/sass/modules/_fonts.scss */
 .icon-facebook3:before {
-  content: "\ea8e"; }
+  content: "\ea8e";
+}
 
+/* line 209, css/sass/modules/_fonts.scss */
 .icon-instagram:before {
-  content: "\ea90"; }
+  content: "\ea90";
+}
 
+/* line 213, css/sass/modules/_fonts.scss */
 .icon-twitter:before {
-  content: "\ea91"; }
+  content: "\ea91";
+}
 
+/* line 217, css/sass/modules/_fonts.scss */
 .icon-twitter2:before {
-  content: "\ea92"; }
+  content: "\ea92";
+}
 
+/* line 221, css/sass/modules/_fonts.scss */
 .icon-twitter3:before {
-  content: "\ea93"; }
+  content: "\ea93";
+}
 
+/* line 225, css/sass/modules/_fonts.scss */
 .icon-youtube3:before {
-  content: "\ea99"; }
+  content: "\ea99";
+}
 
+/* line 229, css/sass/modules/_fonts.scss */
 .icon-youtube4:before {
-  content: "\ea9a"; }
+  content: "\ea9a";
+}
 
+/* line 233, css/sass/modules/_fonts.scss */
 .icon-tumblr:before {
-  content: "\eabb"; }
+  content: "\eabb";
+}
 
+/* line 237, css/sass/modules/_fonts.scss */
 .icon-tumblr2:before {
-  content: "\eabc"; }
+  content: "\eabc";
+}
 
+/* line 241, css/sass/modules/_fonts.scss */
 .icon-paypal:before {
-  content: "\ead6"; }
+  content: "\ead6";
+}
 
+/* line 245, css/sass/modules/_fonts.scss */
 .icon-paypal2:before {
-  content: "\ead7"; }
+  content: "\ead7";
+}
 
+/* line 249, css/sass/modules/_fonts.scss */
 .icon-paypal3:before {
-  content: "\ead8"; }
+  content: "\ead8";
+}
 
+/* line 253, css/sass/modules/_fonts.scss */
 .icon-file-pdf:before {
-  content: "\eada"; }
+  content: "\eada";
+}
 
+/* line 257, css/sass/modules/_fonts.scss */
 .icon-file-word:before {
-  content: "\eadc"; }
+  content: "\eadc";
+}
 
+/* line 261, css/sass/modules/_fonts.scss */
 .icon-file-pdf-o:before {
-  content: "\e622"; }
+  content: "\e622";
+}
 
+/* line 265, css/sass/modules/_fonts.scss */
 .icon-minus-square-o:before {
-  content: "\e623"; }
+  content: "\e623";
+}
 
+/* line 269, css/sass/modules/_fonts.scss */
 .icon-minus-square:before {
-  content: "\e624"; }
+  content: "\e624";
+}
 
+/* line 273, css/sass/modules/_fonts.scss */
 .icon-plus-square-o:before {
-  content: "\e625"; }
+  content: "\e625";
+}
 
+/* line 277, css/sass/modules/_fonts.scss */
 .icon-plus-square:before {
-  content: "\e626"; }
+  content: "\e626";
+}
 
+/* line 281, css/sass/modules/_fonts.scss */
 .icon-mail:before {
-  content: "\e606"; }
+  content: "\e606";
+}
 
+/* line 285, css/sass/modules/_fonts.scss */
 .icon-mail2:before {
-  content: "\e607"; }
+  content: "\e607";
+}
 
 /* css reset plus some sensible default styling. */
+/* line 3, css/sass/partials/_base.scss */
 *, *:after, *:before {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* BASE */
+/* line 9, css/sass/partials/_base.scss */
 html {
   height: 100%;
   font-size: 100%;
   overflow-y: scroll;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
+/* line 18, css/sass/partials/_base.scss */
 body {
   min-height: 100%;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font: 16px/1.5 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font: 1rem/1.5 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  color: #444;
-  background-color: #fff; }
+  font: 1rem / 1.5 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: #444444;
+  background-color: white;
+}
 
-html, body, address, article, aside, footer, header, hgroup, nav, section, p, blockquote, pre, div, dl, dt, dd, ol, ul, li, figcaption, figure, main, abbr, cite, dfn, em, q, s, small, span, strong, time, var, code, kbd, samp, b, u, i, del, ins, mark, sub, sup, table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td, img, embed, iframe, object, audio, video, a, map, area, fieldset, form, label, legend, meter, progress, details, summary, canvas, template {
+/* line 62, css/sass/partials/_base.scss */
+html, body,
+address, article, aside, footer, header, hgroup, nav, section,
+p, blockquote, pre, div,
+dl, dt, dd, ol, ul, li,
+figcaption, figure, main,
+abbr, cite, dfn, em, q, s, small, span, strong, time, var,
+code, kbd, samp,
+b, u, i,
+del, ins, mark,
+sub, sup,
+table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td,
+img,
+embed, iframe, object, audio, video,
+a, map, area,
+fieldset, form, label, legend, meter, progress,
+details, summary,
+canvas, template {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
+/* line 70, css/sass/partials/_base.scss */
 button, input, optgroup, select, textarea {
   /*	in normalize.css
-	margin: 0;
-	font: inherit;
-*/
+  	margin: 0;
+  	font: inherit;
+  */
   padding: 0;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
-html, body, address, article, aside, footer, header, hgroup, nav, section, p, blockquote, pre, div, dl, dt, dd, ol, ul, li, figcaption, figure, main, table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td, img, embed, iframe, object, audio, video, fieldset, form, label, legend, input, textarea, details, summary, canvas, template {
-  font-size: 16px;
+/* line 91, css/sass/partials/_base.scss */
+html, body,
+address, article, aside, footer, header, hgroup, nav, section,
+p, blockquote, pre, div,
+dl, dt, dd, ol, ul, li,
+figcaption, figure, main,
+table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td,
+img,
+embed, iframe, object, audio, video,
+fieldset, form, label, legend,
+input, textarea,
+details, summary,
+canvas, template {
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+}
 
 /* HTML5 DECLARATIONS */
 /*	- all covered by normalize.css
@@ -286,85 +452,100 @@ audio:not([controls]) {
 	display: none;
 }
 */
+/* line 116, css/sass/partials/_base.scss */
 img {
   max-width: 100%;
   vertical-align: middle;
   /*	in normalize.css
-	border: 0;
-*/
-  -ms-interpolation-mode: bicubic; }
+  	border: 0;
+  */
+  -ms-interpolation-mode: bicubic;
+}
 
 /* in normalize.css
 svg:not(:root) { overflow: hidden; }
 */
 /* CODE */
+/* line 133, css/sass/partials/_base.scss */
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
   /*	in normalize.css
-	overflow: auto;
-*/ }
+  	overflow: auto;
+  */
+}
 
+/* line 141, css/sass/partials/_base.scss */
 pre, code, kbd, samp {
-  font: 16px/1.5 Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
-  font: 1rem/1.5 Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace; }
+  font: 1rem / 1.5 Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
+}
 
+/* line 145, css/sass/partials/_base.scss */
 p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, fieldset, menu, label, details, summary {
-  margin: 0 0 24px;
-  margin: 0 0 1.5rem; }
+  margin: 0 0 1.5rem;
+}
 
 /* TABLES */
+/* line 150, css/sass/partials/_base.scss */
 table {
   /*	in normalize.css
-	border-collapse: collapse;
-	border-spacing: 0;
-*/
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  */
   border-width: 0;
-  margin-bottom: 24px;
   margin-bottom: 1.5rem;
-  empty-cells: show; }
+  empty-cells: show;
+}
 
+/* line 160, css/sass/partials/_base.scss */
 th, td {
-  padding: 0 12px;
   padding: 0 0.75rem;
-  border-bottom: 0 solid; }
+  border-bottom: 0 solid;
+}
 
+/* line 164, css/sass/partials/_base.scss */
 th {
-  padding: 12px;
   padding: 0.75rem;
   text-align: center;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 /* FORMS */
+/* line 171, css/sass/partials/_base.scss */
 form {
-  overflow: auto; }
+  overflow: auto;
+}
 
+/* line 175, css/sass/partials/_base.scss */
 textarea {
   vertical-align: top;
   margin: 0 0 -2px 0;
   display: block;
   clear: left;
-  border: 1px solid #333;
+  border: 1px solid #333333;
   /*	in normalize.css
-	overflow: auto;
-*/ }
+  	overflow: auto;
+  */
+}
 
+/* line 187, css/sass/partials/_base.scss */
 legend {
-  padding-bottom: 24px;
-  padding-bottom: 1.5rem; }
+  padding-bottom: 1.5rem;
+}
 
 /*	in normalize.css
 button, input {
 	overflow: visible;
 }
 */
+/* line 199, css/sass/partials/_base.scss */
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   /*	in normalize.css
-	cursor: pointer;
-	-webkit-appearance: button;
-*/
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  	cursor: pointer;
+  	-webkit-appearance: button;
+  */
+  margin-bottom: 1.5rem;
+}
 
 /*	in normalize.css
 button[disabled], html input[disabled] {
@@ -384,84 +565,117 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 	-webkit-appearance: none;
 }
 */
+/* line 227, css/sass/partials/_base.scss */
 input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="tel"] {
   font-size: inherit;
-  border: 1px solid #333;
+  border: 1px solid #333333;
   line-height: 20px;
   display: block;
   padding: 1px 0;
-  margin: 0; }
+  margin: 0;
+}
 
+/* line 238, css/sass/partials/_base.scss */
 input[type="select"], select {
   display: block;
-  height: 24px;
   height: 1.5rem;
   border: 0 solid;
-  padding: 0; }
+  padding: 0;
+}
 
 /* QUOTES */
+/* line 247, css/sass/partials/_base.scss */
 blockquote {
-  quotes: none; }
+  quotes: none;
+}
 
+/* line 250, css/sass/partials/_base.scss */
 q {
-  quotes: "\201C" "\201D" "\2018" "\2019"; }
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
 
+/* line 253, css/sass/partials/_base.scss */
 blockquote:before, blockquote:after, q:before, q:after {
-  content: none; }
+  content: none;
+}
 
+/* line 256, css/sass/partials/_base.scss */
 blockquote, q, cite {
-  font-style: italic; }
+  font-style: italic;
+}
 
+/* line 259, css/sass/partials/_base.scss */
 blockquote {
-  padding-left: 24px;
   padding-left: 1.5rem;
-  border-left: .25em solid #666; }
+  border-left: 0.25em solid #666666;
+}
 
+/* line 263, css/sass/partials/_base.scss */
 blockquote > p {
-  padding: 0; }
+  padding: 0;
+}
 
 /* LISTS */
+/* line 268, css/sass/partials/_base.scss */
 ul {
-  list-style: disc inside; }
+  list-style: square inside;
+}
 
+/* line 271, css/sass/partials/_base.scss */
 ol {
-  list-style: decimal inside; }
+  list-style: decimal inside;
+}
 
 /* LINKS */
+/* line 276, css/sass/partials/_base.scss */
 a {
   text-decoration: none;
-  color: #044; }
-  a:hover, a:focus {
-    text-decoration: none; }
-  a:focus {
-    outline: thin dotted; }
-  a:visited {
-    color: black; }
+  color: #004444;
+  border-bottom: 1px dotted;
+}
+/* line 286, css/sass/partials/_base.scss */
+a:hover, a:focus {
+  text-decoration: none;
+}
+/* line 296, css/sass/partials/_base.scss */
+a:focus {
+  outline: thin dotted;
+}
+/* line 309, css/sass/partials/_base.scss */
+a:visited {
+  color: black;
+}
 
 /* ABBREVIATION */
+/* line 318, css/sass/partials/_base.scss */
 abbr[title], dfn[title] {
-  border-bottom: 1px dotted #444;
-  cursor: help; }
+  border-bottom: 1px dotted #444444;
+  cursor: help;
+}
 
 /* MARKED/INSERTED/DELETED AND SELECTED TEXT */
+/* line 324, css/sass/partials/_base.scss */
 ins, mark {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
+/* line 327, css/sass/partials/_base.scss */
 ins {
-  background: deepskyblue; }
+  background: deepskyblue;
+}
 
+/* line 330, css/sass/partials/_base.scss */
 del {
-  text-decoration: line-through; }
+  text-decoration: line-through;
+}
 
 /* selected text */
-::-moz-selection, ::-moz-selection {
-  background: #444;
-  color: #04A4CC;
-  text-shadow: none; }
+/* line 335, css/sass/partials/_base.scss */
 ::selection, ::-moz-selection {
-  background: #444;
-  color: #04A4CC;
-  text-shadow: none; }
+  background: #444444;
+  color: #04a4cc;
+  text-shadow: none;
+}
 
 /*	in normalize.css
 mark {
@@ -470,16 +684,20 @@ mark {
 }
 */
 /* OTHERS */
+/* line 349, css/sass/partials/_base.scss */
 strong, b, dt {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 /*	in normalize.css
 dfn {
 	font-style: italic;
 }
 */
+/* line 357, css/sass/partials/_base.scss */
 var, address {
-  font-style: normal; }
+  font-style: normal;
+}
 
 /*	in normalize.css
 Position 'sub' and 'sup' without affecting line-height
@@ -498,29 +716,37 @@ sub {
 }
 */
 /* Best available ampersand */
+/* line 379, css/sass/partials/_base.scss */
 .amp {
-  font-family: Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;
+  font-family: Adobe Caslon Pro, Baskerville, "Goudy Old Style", "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 110%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
+/* line 388, css/sass/partials/_base.scss */
 li ul, li ol {
-  margin: 0 0 0 32px;
-  margin: 0 0 0 2rem; }
+  margin: 0 0 0 2rem;
+}
 
+/* line 392, css/sass/partials/_base.scss */
 .noDot, .noDot, nav ul {
   list-style: none;
-  margin-left: 0; }
+  margin-left: 0;
+}
 
+/* line 396, css/sass/partials/_base.scss */
 dd + dt {
-  margin-top: 24px;
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem;
+}
 
 /* modules/typo */
+/* line 3, css/sass/modules/_typo.scss */
 h1, h2, h3, h4, h5, h6, caption {
-  font-family: 'Lucida Sans', 'Lucida Grande', 'Myriad Pro', sans-serif; }
+  font-family: "Lucida Sans", "Lucida Grande", "Myriad Pro", sans-serif;
+}
 
 /** "Golden rhythm" font sizes
 $h1-font-size: 4.25rem; // 68px
@@ -539,46 +765,48 @@ $h4-font-size: 1.25rem; 	// 20px
 $h4-lines: 1;
 $h4-line-height: $line-ht * $h4-lines;
 */
+/* line 25, css/sass/modules/_typo.scss */
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
-  margin: 0 0 24px;
-  margin: 0 0 1.5rem; }
+  margin: 0 0 1.5rem;
+}
 
+/* line 31, css/sass/modules/_typo.scss */
 h1 {
-  font-size: 48px;
   font-size: 3rem;
   line-height: 1;
-  text-align: center; }
+  text-align: center;
+}
 
+/* line 38, css/sass/modules/_typo.scss */
 h2 {
-  font-size: 36px;
   font-size: 2.25rem;
-  line-height: 48px;
-  line-height: 3rem; }
+  line-height: 3rem;
+}
 
+/* line 44, css/sass/modules/_typo.scss */
 h3 {
-  font-size: 28px;
   font-size: 1.75rem;
-  line-height: 48px;
-  line-height: 3rem; }
+  line-height: 3rem;
+}
 
+/* line 50, css/sass/modules/_typo.scss */
 h4, caption {
-  font-size: 24px;
   font-size: 1.5rem;
-  line-height: 48px;
-  line-height: 3rem; }
+  line-height: 3rem;
+}
 
+/* line 56, css/sass/modules/_typo.scss */
 h5 {
-  font-size: 21px;
-  font-size: 1.33333rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
+  font-size: 1.3333333333rem;
+  line-height: 1.5rem;
+}
 
+/* line 62, css/sass/modules/_typo.scss */
 h6 {
-  font-size: 18px;
   font-size: 1.125rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+}
 
 /* standard text size is 16px */
 /**
@@ -593,309 +821,509 @@ h6 {
 */
 /* partials/wordpress */
 /* Alignment */
+/* line 10, css/sass/partials/_wordpress.scss */
 .alignnone {
-  margin: 0 0 12px;
-  margin: 0 0 0.75rem; }
+  margin: 0 0 0.75rem;
+}
 
+/* line 15, css/sass/partials/_wordpress.scss */
 .aligncenter {
   display: block;
-  margin: 0 auto 12px;
-  margin: 0 auto 0.75rem; }
+  margin: 0 auto 0.75rem;
+}
 
+/* line 20, css/sass/partials/_wordpress.scss */
 .alignright {
   float: right;
-  margin: 0 0 12px 24px;
-  margin: 0 0 0.75rem 1.5rem; }
+  margin: 0 0 0.75rem 1.5rem;
+}
 
+/* line 25, css/sass/partials/_wordpress.scss */
 .alignleft {
   float: left;
-  margin: 0 24px 12px 0;
-  margin: 0 1.5rem 0.75rem 0; }
+  margin: 0 1.5rem 0.75rem 0;
+}
 
 /* Gallery & images */
+/* line 33, css/sass/partials/_wordpress.scss */
 .wp-caption {
-  background: #fff;
+  background: white;
   border: 1px solid #F0F0F0;
   max-width: 100%;
   padding: 4px 4px 0 4px;
   text-align: center;
-  clear: both; }
+  clear: both;
+}
 
-.wp-caption .wp-caption-text, .gallery-caption {
-  margin: 12px 0;
-  margin: .75rem 0; }
+/* line 49, css/sass/partials/_wordpress.scss */
+.wp-caption .wp-caption-text,
+.gallery-caption {
+  margin: .75rem 0;
+}
 
 /* partials/utils */
+/* line 5, css/sass/partials/_utils.scss */
 .floatR {
-  float: right; }
+  float: right;
+}
 
+/* line 6, css/sass/partials/_utils.scss */
 .floatL {
-  float: left; }
+  float: left;
+}
 
+/* line 7, css/sass/partials/_utils.scss */
 .L {
-  text-align: left; }
+  text-align: left;
+}
 
+/* line 8, css/sass/partials/_utils.scss */
 .C {
-  text-align: center; }
+  text-align: center;
+}
 
+/* line 9, css/sass/partials/_utils.scss */
 .R {
-  text-align: right; }
+  text-align: right;
+}
 
+/* line 10, css/sass/partials/_utils.scss */
 .clearR {
-  clear: right; }
+  clear: right;
+}
 
+/* line 11, css/sass/partials/_utils.scss */
 .clearL {
-  clear: left; }
+  clear: left;
+}
 
+/* line 12, css/sass/partials/_utils.scss */
 .clear {
-  clear: both; }
+  clear: both;
+}
 
+/* line 14, css/sass/partials/_utils.scss */
 .reset-box {
   padding: 0;
   margin: 0;
-  border: 0; }
+  border: 0;
+}
 
+/* line 20, css/sass/partials/_utils.scss */
 .cf {
-  *zoom: 1; }
-  .cf:before, .cf:after {
-    content: " ";
-    display: table; }
-  .cf:after {
-    clear: both; }
+  *zoom: 1;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+.cf:after {
+  clear: both;
+}
 
 /* partials/wrapper */
+/* line 3, css/sass/partials/_wrapper.scss */
 .wrapper {
-  max-width: 1280px;
   max-width: 80rem;
-  padding: 0 24px;
   padding: 0 1.5rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 /* partials/headers */
+/* line 5, css/sass/partials/_header.scss */
 .header {
   *zoom: 1;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
-  .header:before, .header:after {
-    content: " ";
-    display: table; }
-  .header:after {
-    clear: both; }
+  margin-bottom: 1.5rem;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+.header:before, .header:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+.header:after {
+  clear: both;
+}
 
+/* line 11, css/sass/partials/_header.scss */
 .logo {
-  padding: 12px 0;
-  padding: 0.75rem 0; }
+  padding: 0.75rem 0;
+}
 
 /* partials/nav */
 /* partials/sidebar */
+/* line 6, css/sass/partials/_sidebar.scss */
 aside ul li {
   margin: 0 0 10px 0;
   list-style-type: none;
-  background-color: orange; }
-  aside ul li a {
-    padding: 8px 10px;
-    display: block; }
+  background-color: orange;
+}
+/* line 10, css/sass/partials/_sidebar.scss */
+aside ul li a {
+  padding: 8px 10px;
+  display: block;
+}
+/* line 16, css/sass/partials/_sidebar.scss */
 aside ul ul li {
   margin: 0 0 5px 0;
   list-style-type: square;
-  background-color: #fff; }
-  aside ul ul li a {
-    padding: 0 10px;
-    display: block; }
+  background-color: white;
+}
+/* line 20, css/sass/partials/_sidebar.scss */
+aside ul ul li a {
+  padding: 0 10px;
+  display: block;
+}
 
 /* partials/footer */
+/* line 3, css/sass/partials/_footer.scss */
 .footer {
-  clear: both; }
+  clear: both;
+}
 
+/* line 6, css/sass/partials/_footer.scss */
 footer p {
   text-align: center;
-  margin: 24px;
-  margin: 1.5rem; }
+  margin: 1.5rem;
+}
 
 /* partials/print
  * (from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
  */
 @media print {
-  *, *:before, *:after {
+  /* line 9, css/sass/partials/_print.scss */
+  *,
+  *:before,
+  *:after {
     background: transparent !important;
     color: #000 !important;
     box-shadow: none !important;
-    text-shadow: none !important; }
-  a, a:visited {
-    text-decoration: underline; }
-  a[href]:after {
-    content: " (" attr(href) ")"; }
-  abbr[title]:after {
-    content: " (" attr(title) ")"; }
-  a[href^="#"]:after, a[href^="javascript:"]:after {
-    content: ""; }
-  pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid; }
-  thead {
-    display: table-header-group; }
-  tr, img {
-    page-break-inside: avoid; }
-  img {
-    max-width: 100% !important; }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3; }
-  h2, h3 {
-    page-break-after: avoid; }
-  nav {
-    display: none; } }
+    text-shadow: none !important;
+  }
 
+  /* line 17, css/sass/partials/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 21, css/sass/partials/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 25, css/sass/partials/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 32, css/sass/partials/_print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 37, css/sass/partials/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 42, css/sass/partials/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 47, css/sass/partials/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 51, css/sass/partials/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 57, css/sass/partials/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 63, css/sass/partials/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* line 67, css/sass/partials/_print.scss */
+  nav {
+    display: none;
+  }
+}
+/* line 3, css/sass/partials/_images.scss */
 article img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
+/* line 8, css/sass/partials/_images.scss */
 a.img {
-  display: block; }
+  display: block;
+}
 
+/* line 10, css/sass/partials/_images.scss */
 .img img {
-  padding: 12px;
-  padding: 0.75rem; }
+  padding: 0.75rem;
+}
 
+/* line 12, css/sass/partials/_images.scss */
 article img.alignright {
-  margin: 0 0 12px 12px;
-  margin: 0 0 0.75rem 0.75rem; }
+  margin: 0 0 0.75rem 0.75rem;
+}
 
 @media only screen and (min-width: 856px) {
+  /* line 17, css/sass/partials/_images.scss */
   .landscape {
-    width: 50%; } }
-
+    width: 50%;
+  }
+}
+/* line 2, css/sass/partials/_layout.scss */
 article {
-  *zoom: 1; }
-  article:before, article:after {
-    content: " ";
-    display: table; }
-  article:after {
-    clear: both; }
+  *zoom: 1;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+article:before, article:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+article:after {
+  clear: both;
+}
 
+/* line 7, css/sass/partials/_layout.scss */
 #primary, #primary-left, #primary-right, #primary-middle {
-  width: 100%; }
+  width: 100%;
+}
 
+/* line 11, css/sass/partials/_layout.scss */
 #primary, #primary-left, #primary-right, #primary-middle, aside {
-  padding: 0 1em; }
+  padding: 0 1em;
+}
 
 @media only screen and (max-width: 479px) {
+  /* line 16, css/sass/partials/_layout.scss */
   aside, #primary, #primary-left, #primary-right, #primary-middle {
-    width: 100%; } }
-
+    width: 100%;
+  }
+}
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 21, css/sass/partials/_layout.scss */
   aside {
-    width: 40%; }
+    width: 40%;
+  }
+
+  /* line 24, css/sass/partials/_layout.scss */
   #primary-left, #primary-right {
     width: 60%;
-    background-color: #f8f8f8; } }
-
+    background-color: #f8f8f8;
+  }
+}
 @media only screen and (min-width: 480px) {
+  /* line 31, css/sass/partials/_layout.scss */
   #primary-left, .sidebar.left, #primary-middle {
-    float: left; }
-  #primary-right, .sidebar.right {
-    float: right; } }
+    float: left;
+  }
 
+  /* line 34, css/sass/partials/_layout.scss */
+  #primary-right, .sidebar.right {
+    float: right;
+  }
+}
 @media only screen and (min-width: 768px) {
+  /* line 39, css/sass/partials/_layout.scss */
   aside {
-    width: 30%; }
+    width: 30%;
+  }
+
+  /* line 43, css/sass/partials/_layout.scss */
   #primary-left, #primary-right {
-    width: 70%; }
+    width: 70%;
+  }
+
+  /* line 46, css/sass/partials/_layout.scss */
   #primary-middle {
     width: 40%;
-    float: left; } }
-
+    float: left;
+  }
+}
+/* line 55, css/sass/partials/_layout.scss */
 .cf > .pie-chartify, .cf > .piechart {
   float: left;
-  margin: 0 24px 24px 0;
-  margin: 0 1.5rem 1.5rem 0; }
+  margin: 0 1.5rem 1.5rem 0;
+}
 
 @media only screen and (max-width: 479px) {
+  /* line 63, css/sass/partials/_layout.scss */
   .bigpic h2 {
-    width: 100%; } }
-
+    width: 100%;
+  }
+}
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 68, css/sass/partials/_layout.scss */
   .bigpic h2 {
     width: 50%;
-    float: left; } }
-
+    float: left;
+  }
+}
 @media only screen and (min-width: 768px) {
+  /* line 74, css/sass/partials/_layout.scss */
   .bigpic h2 {
     float: left;
-    width: 25%; } }
-
-nav li > ul, nav li > ol {
+    width: 25%;
+  }
+}
+/* line 4, css/sass/partials/_menu.scss */
+nav li > ul,
+nav li > ol {
   margin: 0;
-  list-style: none; }
+  list-style: none;
+}
 
+/* line 8, css/sass/partials/_menu.scss */
 header nav {
   *zoom: 1;
   width: 100%;
-  background-color: aliceblue; }
-  header nav:before, header nav:after {
-    content: " ";
-    display: table; }
-  header nav:after {
-    clear: both; }
-  header nav li {
-    float: left;
-    position: relative; }
-  header nav a {
-    color: #044;
-    display: block;
-    float: left;
-    padding: 12px 16px;
-    padding: 0.75rem 1rem; }
-  header nav a:hover, header nav ul li.current-menu-item a, header nav ul li.current_page_ancestor a, header nav ul li.current-menu-ancestor a, header nav ul li.current_page_item a, header nav ul li:hover > a {
-    color: #044;
-    background-color: #eee; }
+  background-color: aliceblue;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+header nav:before, header nav:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+header nav:after {
+  clear: both;
+}
+/* line 12, css/sass/partials/_menu.scss */
+header nav li {
+  float: left;
+  position: relative;
+}
+/* line 18, css/sass/partials/_menu.scss */
+header nav a {
+  color: #004444;
+  display: block;
+  float: left;
+  padding: 0.75rem 1rem;
+}
+/* line 29, css/sass/partials/_menu.scss */
+header nav a:hover,
+header nav ul li.current-menu-item a,
+header nav ul li.current_page_ancestor a,
+header nav ul li.current-menu-ancestor a,
+header nav ul li.current_page_item a,
+header nav ul li:hover > a {
+  color: #004444;
+  background-color: #eeeeee;
+}
 
+/* line 35, css/sass/partials/_menu.scss */
 li.default-menu {
-  display: none; }
+  display: none;
+}
 
-header nav ul li ul, header nav ul li:hover ul ul, header nav ul ul li:hover ul ul, header nav ul ul ul li:hover ul ul, header nav ul ul ul ul li:hover ul ul {
+/* line 47, css/sass/partials/_menu.scss */
+header nav ul li ul,
+header nav ul li:hover ul ul,
+header nav ul ul li:hover ul ul,
+header nav ul ul ul li:hover ul ul,
+header nav ul ul ul ul li:hover ul ul {
   display: none;
   z-index: 100;
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-  border-bottom: 1px solid #999;
-  margin-left: -1px; }
-header nav ul li:hover ul, header nav ul ul li:hover ul, header nav ul ul ul li:hover ul, header nav ul ul ul ul li:hover ul, header nav ul ul ul ul ul li:hover ul {
-  display: block; }
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  margin-left: -1px;
+}
+/* line 59, css/sass/partials/_menu.scss */
+header nav ul li:hover ul,
+header nav ul ul li:hover ul,
+header nav ul ul ul li:hover ul,
+header nav ul ul ul ul li:hover ul,
+header nav ul ul ul ul ul li:hover ul {
+  display: block;
+}
+/* line 63, css/sass/partials/_menu.scss */
 header nav ul li ul {
   position: absolute;
   width: 12.5em;
-  top: 48px;
-  top: 3rem; }
-  header nav ul li ul li {
-    margin-top: -1px;
-    float: none;
-    border-bottom: 1px solid #999; }
-  header nav ul li ul li:last-child {
-    border-bottom: none; }
-header nav ul li ul li a, header nav ul li .current-menu-item ul li a, header nav ul li ul li.current-menu-item a, header nav ul li .current_page_ancestor ul li a, header nav ul li .current-menu-ancestor ul li a, header nav ul li .current_page_item ul li a {
+  top: 3rem;
+}
+/* line 67, css/sass/partials/_menu.scss */
+header nav ul li ul li {
+  margin-top: -1px;
+  float: none;
+  border-bottom: 1px solid #999999;
+}
+/* line 72, css/sass/partials/_menu.scss */
+header nav ul li ul li:last-child {
+  border-bottom: none;
+}
+/* line 82, css/sass/partials/_menu.scss */
+header nav ul li ul li a,
+header nav ul li .current-menu-item ul li a,
+header nav ul li ul li.current-menu-item a,
+header nav ul li .current_page_ancestor ul li a,
+header nav ul li .current-menu-ancestor ul li a,
+header nav ul li .current_page_item ul li a {
   float: none;
   height: 100%;
-  padding: 12px 16px;
   padding: 0.75rem 1rem;
-  color: #044;
-  background-color: #eee; }
+  color: #004444;
+  background-color: #eeeeee;
+}
+/* line 89, css/sass/partials/_menu.scss */
 header nav ul li .current-menu-item a:before {
-  border-left: 4px deepskyblue solid;
-  border-left: .25rem deepskyblue solid; }
-header nav ul li ul li a:hover, header nav ul li ul li a:focus, header nav ul li ul li a:active, header nav ul li ul li:hover > a, header nav ul li ul li:focus > a, header nav ul li ul li:active > a, header nav ul li .current-menu-item ul li a:hover, header nav ul li .current-menu-item ul li a:focus, header nav ul li .current-menu-item ul li a:active {
-  color: #fff;
-  background-color: #044; }
+  border-left: 0.25rem deepskyblue solid;
+}
+/* line 101, css/sass/partials/_menu.scss */
+header nav ul li ul li a:hover,
+header nav ul li ul li a:focus,
+header nav ul li ul li a:active,
+header nav ul li ul li:hover > a,
+header nav ul li ul li:focus > a,
+header nav ul li ul li:active > a,
+header nav ul li .current-menu-item ul li a:hover,
+header nav ul li .current-menu-item ul li a:focus,
+header nav ul li .current-menu-item ul li a:active {
+  color: white;
+  background-color: #004444;
+}
+/* line 105, css/sass/partials/_menu.scss */
 header nav ul li ul li ul {
   left: 12.5em;
-  top: 0; }
+  top: 0;
+}
+/* line 111, css/sass/partials/_menu.scss */
 header nav select {
-  display: none; }
+  display: none;
+}
 
+/* line 118, css/sass/partials/_menu.scss */
 .menu-toggle {
   display: none;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
+/* line 122, css/sass/partials/_menu.scss */
 .site-header .menu-toggle {
   background: #FFFFFF;
   color: #444444;
@@ -903,56 +1331,161 @@ header nav select {
   font-weight: 300;
   padding: 5px 22px;
   margin: 0;
-  text-align: center; }
+  text-align: center;
+}
 
+/* line 132, css/sass/partials/_menu.scss */
 .site-header .menu-toggle:before {
   content: "MENU";
-  padding-right: 10px; }
+  padding-right: 10px;
+}
 
+/* line 143, css/sass/partials/_menu.scss */
 .main-small-navigation {
   float: none;
   padding-top: 0;
-  background-color: #000000; }
+  background-color: #000000;
+}
 
+/* line 148, css/sass/partials/_menu.scss */
 .main-small-navigation ul {
   margin: 0;
-  list-style: none; }
+  list-style: none;
+}
 
+/* line 152, css/sass/partials/_menu.scss */
 .main-small-navigation a {
   display: block;
   color: #444444;
   padding: 10px 20px;
   text-decoration: none;
-  border-bottom: 1px solid #F8F8F8; }
+  border-bottom: 1px solid #F8F8F8;
+}
 
+/* line 159, css/sass/partials/_menu.scss */
 .main-small-navigation li {
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+}
 
+/* line 162, css/sass/partials/_menu.scss */
 .main-small-navigation li:hover {
   background-color: #77CC6D;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+}
 
+/* line 166, css/sass/partials/_menu.scss */
 .main-small-navigation ul ul a {
-  padding-left: 60px; }
+  padding-left: 60px;
+}
 
+/* line 169, css/sass/partials/_menu.scss */
 .main-small-navigation ul ul ul a {
-  padding-left: 80px; }
+  padding-left: 80px;
+}
 
-.main-small-navigation ul > .current_page_item, .main-small-navigation ul > .current-menu-item {
+/* line 173, css/sass/partials/_menu.scss */
+.main-small-navigation ul > .current_page_item,
+.main-small-navigation ul > .current-menu-item {
   background: #77CC6D;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+}
 
 @media screen and (max-width: 767px) {
-  .menu-toggle, header .toggled .nav-menu {
-    display: block; }
-  header nav ul {
-    display: none; }
-  header nav {
-    float: none; } }
+  /* line 180, css/sass/partials/_menu.scss */
+  .menu-toggle,
+  header .toggled .nav-menu {
+    display: block;
+  }
 
+  /* line 183, css/sass/partials/_menu.scss */
+  header nav ul {
+    display: none;
+  }
+
+  /* line 186, css/sass/partials/_menu.scss */
+  header nav {
+    float: none;
+  }
+}
 /* partials/collapse */
 /* breadcrumbs */
+/* line 4, css/sass/partials/_extras.scss */
 #breadcrumbs li {
   display: inline-block;
-  margin-right: 12px;
-  margin-right: 0.75rem; }
+  margin-right: 0.75rem;
+}
+
+/* icons for links */
+/* line 11, css/sass/partials/_extras.scss */
+a[rel="external"]:after {
+  font-family: icomoon;
+  content: "\ea7e";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 4px;
+}
+
+/* line 19, css/sass/partials/_extras.scss */
+a[href$='.pdf']:after {
+  font-family: icomoon;
+  content: "\eada";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 4px;
+}
+
+/* line 27, css/sass/partials/_extras.scss */
+a[rel="external"][href$='.pdf']:after {
+  font-family: icomoon;
+  content: "\eada  \ea7e";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 4px;
+}
+
+/* format toggle */
+/* hide the default marker */
+/* line 38, css/sass/partials/_extras.scss */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* line 42, css/sass/partials/_extras.scss */
+details summary:before {
+  font-family: 'icomoon';
+  content: "\e625";
+  padding-right: 10px;
+}
+
+/* line 50, css/sass/partials/_extras.scss */
+details[open] p, details[open] ul {
+  padding: 0 1rem;
+}
+/* line 53, css/sass/partials/_extras.scss */
+details[open] summary:before {
+  font-family: 'icomoon';
+  content: "\e623";
+  padding-right: 10px;
+}
+
+/* line 61, css/sass/partials/_extras.scss */
+details summary {
+  color: #004444;
+  padding: 10px;
+  font-size: 1.25rem;
+  font-family: "Lucida Sans", "Lucida Grande", "Myriad Pro", sans-serif;
+  border: 1px dotted;
+}
+
+/* line 70, css/sass/partials/_extras.scss */
+details summary:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* dt dd */
+/* line 76, css/sass/partials/_extras.scss */
+dt:before {
+  content: ‘\a’;
+  white-space: pre;
+}
