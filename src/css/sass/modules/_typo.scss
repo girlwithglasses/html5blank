@@ -1,7 +1,9 @@
 /* modules/typo */
 
-h1, h2, h3, h4, h5, h6, caption {
+h1, h2, h3, h4, h5, h6, caption, .h2, .h3, .h4, .h5, .h6 {
 	font-family: $typeface-display;
+	padding: 0;
+	margin: 0 0 $line-ht;
 }
 
 /** "Golden rhythm" font sizes
@@ -22,11 +24,6 @@ $h4-lines: 1;
 $h4-line-height: $line-ht * $h4-lines;
 */
 
-h1,h2,h3,h4,h5,h6 {
-	padding: 0;
-	margin: 0 0 $line-ht;
-}
-
 // 48px
 h1 {
 	font-size: 3rem;
@@ -35,31 +32,31 @@ h1 {
 }
 
 // 36px
-h2 {
+h2, .h2 {
 	font-size: 2.25rem;
 	line-height: 2*$line-ht;
 }
 
 // 28px
-h3 {
+h3, .h3 {
 	font-size: 1.75rem;
 	line-height: 2*$line-ht;
 }
 
 // 24px
-h4, caption {
+h4, caption, .h4 {
 	font-size: 1.5rem;
 	line-height: 2*$line-ht;
 }
 
 // 21px
-h5 {
+h5, .h5 {
 	font-size: 1.3333333333rem;
 	line-height: $line-ht;
 }
 
 // 18px
-h6 {
+h6, .h6 {
 	font-size: 1.125rem;
 	line-height: $line-ht;
 }

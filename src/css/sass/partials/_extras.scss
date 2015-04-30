@@ -1,4 +1,4 @@
-/* partials/collapse */
+/* partials/extras */
 
 /* breadcrumbs */
 #breadcrumbs li {
@@ -10,26 +10,26 @@
 /* icons for links */
 a[rel="external"]:after {
 	font-family: icomoon;
-    content: "\ea7e"; // external link icon
-    text-decoration: none; // removes underline from the icon in some browsers
-    display: inline-block; // removes underline from the icon in some browsers
-    padding-left: 4px; 
+	content: "\ea7e"; // external link icon
+	text-decoration: none; // removes underline from the icon in some browsers
+	display: inline-block; // removes underline from the icon in some browsers
+	padding-left: .25rem;
 }
 
 a[href$='.pdf']:after {
 	font-family: icomoon;
-    content: "\eada"; // pdf icon
-    text-decoration: none; // removes underline from the icon in some browsers
-    display: inline-block; // removes underline from the icon in some browsers
-    padding-left: 4px; 
+	content: "\eada"; // pdf icon
+	text-decoration: none; // removes underline from the icon in some browsers
+	display: inline-block; // removes underline from the icon in some browsers
+	padding-left: .25rem;
 }
 
 a[rel="external"][href$='.pdf']:after {
 	font-family: icomoon;
-    content: "\eada  \ea7e"; // external link icon
-    text-decoration: none; // removes underline from the icon in some browsers
-    display: inline-block; // removes underline from the icon in some browsers
-    padding-left: 4px; 
+	content: "\eada  \ea7e"; // external link icon
+	text-decoration: none; // removes underline from the icon in some browsers
+	display: inline-block; // removes underline from the icon in some browsers
+	padding-left: .25rem;
 }
 
 /* format toggle */
@@ -42,18 +42,15 @@ details summary::-webkit-details-marker {
 details summary:before {
 	font-family: 'icomoon';
     content: "\e625";
-	padding-right: 10px;
+	padding-right: $gutter;
 }
 
 details[open] {
-	// border: 1px solid $s-details-bg;	
-	p, ul {
-		padding: 0 1rem;
-	}
+	// border: 1px solid $s-details-bg;
+	padding: 0 $gutter;
+
 	summary:before {
-		font-family: 'icomoon';
-    	content: "\e623";
-		padding-right: 10px;
+		content: "\e623";
 	}
 }
 
@@ -61,19 +58,11 @@ details[open] {
 details summary {
 	// background: $s-details-bg;
 	color: $main-link;
-	padding: 10px;
+	padding: $gutter;
 	font-size: 1.25rem;
 	font-family: $typeface-display;
 	border: 1px dotted;
-}
-
-details summary:hover {
-	cursor: pointer;
-	cursor: hand;
-}
-
-/* dt dd */
-dt:before {
-	content: ‘\a’;
-	white-space: pre;
+	&:hover {
+		cursor: pointer;
+	}
 }

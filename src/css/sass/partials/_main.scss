@@ -2,16 +2,15 @@
 
 
 // General article body styling
-article {
+article a {
 
-	a {
-		border-bottom: 1px dotted $main-link;
-		&:hover, &:focus, &:active {
-			border-style: solid;
-		}
+	border-bottom: 1px dotted $main-link;
+
+	&:hover, &:focus, &:active {
+		border-style: solid;
 	}
-
-	a.img {
+	.img {
 		border: 1px dotted $main-link;
 	}
+
 }

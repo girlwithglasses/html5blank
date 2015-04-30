@@ -276,7 +276,7 @@ ol {
 a {
 	text-decoration: none;
 	color: $main-link;
-	border-bottom:1px dotted;
+//	border-bottom:1px dotted;
 // in normalize.css
 //	background: transparent;
 	@if variable-exists(main-link-bg) {

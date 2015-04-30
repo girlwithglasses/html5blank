@@ -49,28 +49,7 @@ header nav {
 	.sub-menu .current-menu-item > a {
 		border-left: .25rem $h-menu-current-hilite solid;
 	}
-
-/*
-	a:hover,
-	li.current-menu-item a,
-	li.current_page_ancestor a,
-	li.current-menu-ancestor a,
-	li.current_page_item a,
-	li:hover > a {
-		color: $h-menu-link;
-		background-color: $h-menu-link-bg;
-	}
-*/
 }
-
-
-
-
-/*
-li.default-menu {
-	display: none;
-}
-*/
 
 @include minw($med) {
 	#navlink {
@@ -103,18 +82,11 @@ li.default-menu {
 		}
 
 		li ul,
-		li:hover ul ul /*,
-		li li:hover ul ul,
-		li li li:hover ul ul,
-		li li li li:hover ul ul */ {
+		li:hover ul ul {
 			display: none;
-			z-index: 100;
+		//	z-index: 100;
 		}
-		li:hover ul /*,
-		li li:hover ul,
-		li li li:hover ul,
-		li li li li:hover ul,
-		li li li li li:hover ul */ {
+		li:hover ul {
 			display:block;
 		}
 
@@ -151,18 +123,6 @@ li.default-menu {
 		a:hover, a:focus {
 			color: $selcn;
 		}
-/*
-		a:hover:before, a:focus:before {
-			content: "";
-			top: 0;
-			left: 1em;
-			position: absolute;
-			width: 1.5em;
-			height: .25em;
-			border-top: .75em double $selcn;
-			border-bottom: .25em solid $selcn;
-		}
-*/
 	}
 
 	nav {
@@ -180,17 +140,3 @@ li.default-menu {
 		}
 	}
 }
-/*
-@media screen and (max-width: 767px) {
-	.menu-toggle,
-	header .toggled .nav-menu {
-		display: block;
-	}
-	header nav ul {
-		display: none;
-	}
-	header nav {
-		float: none;
-	}
-}
-*/
