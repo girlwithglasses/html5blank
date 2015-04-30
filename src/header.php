@@ -23,8 +23,8 @@
 						</a>
 					</div>
 					<!-- h1><?php bloginfo('name') ?></h1 -->
-					<!-- /logo -->
-					<nav class="nav" role="navigation">
+					<nav role="navigation" id="mainNav">
+						<div id="navlink"><a id="navlinkA" href="#mainNav">Navigation</a></div>
 						<?php html5blank_nav(); ?>
 					</nav>
 			</header>

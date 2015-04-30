@@ -5,13 +5,10 @@ article img {
 	height: auto;
 }
 
+// give images that are links the class 'img'
 a.img { display: block }
 
-.img img { padding: $gutter; }
-
-article img.alignright {
-	margin: 0 0 $gutter $gutter;
-}
+.img img { margin: $gutter; }
 
 @include minw(856px) {
 	.landscape {

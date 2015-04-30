@@ -17,14 +17,15 @@
 @import "partials/wordpress";
 @import "partials/utils";
 @import "partials/wrapper";
+@import "partials/main";
 @import "partials/header";
-@import "partials/nav";
-@import "partials/sidebar";
 @import "partials/footer";
-@import "partials/print";
-@import "partials/images";
-@import "partials/layout";
 @import "partials/menu";
+@import "partials/sidebar";
+@import "partials/images";
+@import "partials/icons";
 @import "partials/extras";
+@import "partials/layout";
+@import "partials/print";
 
 // body { @include background-grid(1.5em, #ccc); }
