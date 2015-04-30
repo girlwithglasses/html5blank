@@ -266,7 +266,7 @@ blockquote > p {
 
 /* LISTS */
 ul {
-	list-style: disc inside;
+	list-style: square inside;
 }
 ol {
 	list-style: decimal inside;
@@ -276,6 +276,7 @@ ol {
 a {
 	text-decoration: none;
 	color: $main-link;
+	border-bottom:1px dotted;
 // in normalize.css
 //	background: transparent;
 	@if variable-exists(main-link-bg) {

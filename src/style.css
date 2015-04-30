@@ -423,6 +423,7 @@ th {
   padding: 0;
 }
 
+@charset "UTF-8";
 /*
 Theme Name: ICRA HTML5 no-longer-blank
 Theme URI: http://icraeastbay.org
@@ -434,6 +435,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: cats, awesomeness, who-needs-a-logo-anyway?
 Text Domain: html5blank
 */
+/* // summary details
+$s-details-bg: #B8B8B8;
+$s-details-txt: #FFF; */
 /*
 @font-face {
   font-family: "Font-Name";
@@ -649,7 +653,7 @@ blockquote > p {
 
 /* LISTS */
 ul {
-  list-style: disc inside; }
+  list-style: square inside; }
 
 ol {
   list-style: decimal inside; }
@@ -657,7 +661,8 @@ ol {
 /* LINKS */
 a {
   text-decoration: none;
-  color: #044; }
+  color: #044;
+  border-bottom: 1px dotted; }
   a:hover, a:focus {
     text-decoration: none; }
   a:focus {
@@ -1311,6 +1316,63 @@ a.img {
   display: inline-block;
   margin-right: 12px;
   margin-right: 0.75rem; }
+
+/* icons for links */
+a[rel="external"]:after {
+  font-family: icomoon;
+  content: "\ea7e";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 4px; }
+
+a[href$='.pdf']:after {
+  font-family: icomoon;
+  content: "\eada";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 4px; }
+
+a[rel="external"][href$='.pdf']:after {
+  font-family: icomoon;
+  content: "\eada  \ea7e";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 4px; }
+
+/* format toggle */
+/* hide the default marker */
+details summary::-webkit-details-marker {
+  display: none; }
+
+details summary:before {
+  font-family: 'icomoon';
+  content: "\e625";
+  padding-right: 10px; }
+
+details[open] p, details[open] ul {
+  padding: 0 16px;
+  padding: 0 1rem; }
+details[open] summary:before {
+  font-family: 'icomoon';
+  content: "\e623";
+  padding-right: 10px; }
+
+details summary {
+  color: #044;
+  padding: 10px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-family: 'Lucida Sans', 'Lucida Grande', 'Myriad Pro', sans-serif;
+  border: 1px dotted; }
+
+details summary:hover {
+  cursor: pointer;
+  cursor: hand; }
+
+/* dt dd */
+dt:before {
+  content: ‘\a’;
+  white-space: pre; }
 
 article {
   *zoom: 1; }
