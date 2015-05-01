@@ -16,3 +16,29 @@ a.img { display: block }
 	}
 }
 
+// not sure where this should go
+.ib > div {
+  display: inline-block;
+}
+
+// captions
+.imgcaption { 
+	position: relative; 
+	// width: 100%; /* for IE 6 */
+}
+
+.imgcaption h4 { 
+	position: absolute; 
+	bottom: 0px;
+	left: 0; 
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.imgcaption h4 span { 
+	color: white; 
+	// letter-spacing: -1px;  
+	background: rgb(0, 0, 0); /* fallback color */
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px; 
+}
