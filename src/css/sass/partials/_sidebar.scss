@@ -1,0 +1,25 @@
+/* partials/sidebar */
+
+.sidebar {}
+
+aside ul {
+	li {
+		// margin: 0 0 $gutter 0;
+		list-style-type: none;
+		border-top: solid 1px;
+		// background-color: $s-button-bg;
+		a {
+			padding: $gutter;
+			display: block;
+		}
+	}
+	ul li {
+		margin: 0 0 .25rem 0;
+		list-style-type: square;
+		// background-color: $body-bg;
+		a {
+			padding: 0 $gutter;
+			display: block;
+		}
+	}
+}

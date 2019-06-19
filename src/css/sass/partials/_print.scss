@@ -1,7 +1,4 @@
-/**
- * partials/print
- * ---
- * Print version
+/* partials/print
  * (from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
  */
 
@@ -11,7 +8,7 @@
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    color: #000 !important; // Black prints faster: h5bp.com/s
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -29,10 +26,7 @@
     content: " (" attr(title) ")";
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
+// Don't show links that are fragment identifiers or use the `javascript:` pseudo protocol
 
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
@@ -46,7 +40,7 @@
   }
 
   thead {
-    display: table-header-group; /* h5bp.com/t */
+    display: table-header-group; // h5bp.com/t
   }
 
   tr,
@@ -68,5 +62,9 @@
   h2,
   h3 {
     page-break-after: avoid;
+  }
+// addition: don't show nav elements
+  nav {
+  	display: none;
   }
 }

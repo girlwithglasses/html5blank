@@ -1,5 +1,16 @@
 .DS_Store
 node_modules
 src/bower_components
+<<<<<<< HEAD
 src/css/maps
 .idea
+=======
+.sass-cache
+Thumbs.db
+dist
+config.rb
+style.css.map
+src/style.css
+src/css/style.css
+
+>>>>>>> 0b9cfbf... Squashed commit of the following:

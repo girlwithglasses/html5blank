@@ -1,0 +1,68 @@
+/* partials/extras */
+
+/* breadcrumbs */
+#breadcrumbs li {
+	display: inline-block;
+	margin-right: $gutter;
+}
+
+
+/* icons for links */
+a[rel="external"]:after {
+	font-family: icomoon;
+	content: "\ea7e"; // external link icon
+	text-decoration: none; // removes underline from the icon in some browsers
+	display: inline-block; // removes underline from the icon in some browsers
+	padding-left: .25rem;
+}
+
+a[href$='.pdf']:after {
+	font-family: icomoon;
+	content: "\eada"; // pdf icon
+	text-decoration: none; // removes underline from the icon in some browsers
+	display: inline-block; // removes underline from the icon in some browsers
+	padding-left: .25rem;
+}
+
+a[rel="external"][href$='.pdf']:after {
+	font-family: icomoon;
+	content: "\eada  \ea7e"; // external link icon
+	text-decoration: none; // removes underline from the icon in some browsers
+	display: inline-block; // removes underline from the icon in some browsers
+	padding-left: .25rem;
+}
+
+/* format toggle */
+
+/* hide the default marker */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary:before {
+	font-family: 'icomoon';
+    content: "\e625";
+	padding-right: $gutter;
+}
+
+details[open] {
+	// border: 1px solid $s-details-bg;
+	padding: 0 $gutter;
+
+	summary:before {
+		content: "\e623";
+	}
+}
+
+
+details summary {
+	// background: $s-details-bg;
+	color: $main-link;
+	padding: $gutter;
+	font-size: 1.25rem;
+	font-family: $typeface-display;
+	border: 1px dotted;
+	&:hover {
+		cursor: pointer;
+	}
+}

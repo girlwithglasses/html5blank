@@ -1,0 +1,80 @@
+// modules/colours
+
+$text-color: #444;
+$body-bg: #fff;
+
+// primary colour for the theme
+$primary: null;
+// secondary colour
+$secondary: null;
+
+// selected text, selection background
+$selcn: #04A4CC;
+$selcn-bg: #444;
+
+// inserted text (<ins> element)
+$inserted-text-bg: deepskyblue;
+
+// change 'null' to a value to set these colours
+// link colours in main body text
+$main-link: #044;
+$main-link-bg: null;
+
+// visited link
+$main-vlink: darken($main-link, 20%);
+$main-vlink-bg: null;
+
+// hover/focus link, background
+$main-hflink: null;
+$main-hflink-bg: null;
+
+// active link
+$main-alink: null;
+$main-alink-bg: null;
+
+// the bar on the left of a blockquote
+$blockquote-left-bar: #666;
+
+// form element border (e.g. on inputs)
+$form-element-border: #333;
+
+// header nav colours:
+$h-menu-border: #999;
+// background
+$h-menu-bg: aliceblue;
+// link colour
+$h-menu-link: #044;
+// link background
+$h-menu-link-bg: #eee;
+// hover/focus/active link
+$h-menu-hfa-link: #fff;
+// hover/focus/active link bg
+$h-menu-hfa-link-bg: #044;
+
+// the current menu item
+$h-menu-current: $h-menu-link;
+$h-menu-current-bg: $h-menu-link-bg;
+$h-menu-current-hilite: deepskyblue;
+
+// table colours
+$caption-bg: null;
+
+// table head text, bg
+$thead: null;
+$thead-bg: darken(aliceblue, 5%);
+
+// table contents, even row
+$tr: null;
+$tr-bg: aliceblue;
+// table contents, odd row
+$tr-odd: null;
+$tr-odd-bg: lighten(aliceblue, 5%);
+
+// sidebar buttons
+$s-button-bg: orange;
+// sidebar bg
+$sidebar-bg: #f6f6f6;
+
+/* // summary details
+$s-details-bg: #B8B8B8;
+$s-details-txt: #FFF; */

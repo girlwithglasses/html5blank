@@ -17,18 +17,14 @@ require_once 'modules/is-debug.php';
     Theme Support
 \*------------------------------------*/
 
-if ( ! isset( $content_width ) ) {
-    $content_width = 900;
-}
-
 if ( function_exists( 'add_theme_support' ) ) {
 
     // Add Thumbnail Theme Support.
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'large', 700, '', true ); // Large Thumbnail.
-    add_image_size( 'medium', 250, '', true ); // Medium Thumbnail.
-    add_image_size( 'small', 120, '', true ); // Small Thumbnail.
-    add_image_size( 'custom-size', 700, 200, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+//    add_image_size( 'large', 700, '', true ); // Large Thumbnail.
+    add_image_size( 'medium', 350, '', true ); // Medium Thumbnail.
+//     add_image_size( 'small', 120, '', true ); // Small Thumbnail.
+//     add_image_size( 'custom-size', 700, 200, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use.
     /*add_theme_support('custom-background', array(
@@ -106,8 +102,8 @@ function html5blank_header_scripts() {
                 'html5blankscripts',
                 get_template_directory_uri() . '/js/scripts.js',
                 array(
-                    'conditionizr',
-                    'modernizr',
+//                     'conditionizr',
+//                     'modernizr',
                     'jquery'
                 ),
                 '1.0.0' );
@@ -126,6 +122,7 @@ function html5blank_header_scripts() {
 }
 
 // Load HTML5 Blank conditional scripts
+/*
 function html5blank_conditional_scripts() {
     if ( is_page( 'pagenamehere' ) ) {
         // Conditional script(s)
@@ -133,7 +130,7 @@ function html5blank_conditional_scripts() {
         wp_enqueue_script( 'scriptname' );
     }
 }
-
+*/
 // Load HTML5 Blank styles
 function html5blank_styles() {
     if ( HTML5_DEBUG ) {
@@ -157,6 +154,7 @@ function html5blank_styles() {
 function register_html5_menu() {
     register_nav_menus( array( // Using array to specify more menus if needed
         'header-menu'  => esc_html( 'Header Menu', 'html5blank' ), // Main Navigation
+        'sidebar-menu' => esc_html( 'Sidebar Menu', 'html5blank' ), // Main Navigation
         'extra-menu'   => esc_html( 'Extra Menu', 'html5blank' ) // Extra Navigation if needed (duplicate as many as you need!)
     ) );
 }
@@ -205,9 +203,9 @@ function remove_width_attribute( $html ) {
 if ( function_exists( 'register_sidebar' ) ) {
     // Define Sidebar Widget Area 1
     register_sidebar( array(
-        'name'          => esc_html( 'Widget Area 1', 'html5blank' ),
-        'description'   => esc_html( 'Description for this widget-area...', 'html5blank' ),
-        'id'            => 'widget-area-1',
+        'name'          => esc_html( 'Left Sidebar', 'html5blank' ),
+        'description'   => esc_html( 'This is the widget area for the left sidebar.', 'html5blank' ),
+        'id'            => 'left',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
@@ -216,9 +214,20 @@ if ( function_exists( 'register_sidebar' ) ) {
 
     // Define Sidebar Widget Area 2
     register_sidebar( array(
-        'name'          => esc_html( 'Widget Area 2', 'html5blank' ),
-        'description'   => esc_html( 'Description for this widget-area...', 'html5blank' ),
-        'id'            => 'widget-area-2',
+        'name'          => esc_html( 'Right Sidebar', 'html5blank' ),
+        'description'   => esc_html( 'This is the widget area for the right sidebar.', 'html5blank' ),
+        'id'            => 'right',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    ) );
+
+    // Define Footer Widget Area
+    register_sidebar(array(
+        'name'          => esc_html('Footer Widget', 'html5blank'),
+        'description'   => esc_html('This is the widget area for the footer.', 'html5blank'),
+        'id'            => 'footer',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
@@ -284,7 +293,7 @@ function html5_blank_view_article( $more ) {
 
 // Remove Admin bar
 function remove_admin_bar() {
-    return false;
+    return true;
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -363,13 +372,24 @@ function html5blankcomments( $comment, $args, $depth ) {
 
 // Add Actions
 add_action( 'wp_enqueue_scripts', 'html5blank_header_scripts' ); // Add Custom Scripts to wp_head
-add_action( 'wp_print_scripts', 'html5blank_conditional_scripts' ); // Add Conditional Page Scripts
+// add_action( 'wp_print_scripts', 'html5blank_conditional_scripts' ); // Add Conditional Page Scripts
 add_action( 'get_header', 'enable_threaded_comments' ); // Enable Threaded Comments
 add_action( 'wp_enqueue_scripts', 'html5blank_styles' ); // Add Theme Stylesheet
 add_action( 'init', 'register_html5_menu' ); // Add HTML5 Blank Menu
-add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
+// add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
 add_action( 'widgets_init', 'my_remove_recent_comments_style' ); // Remove inline Recent Comment Styles from wp_head()
 add_action( 'init', 'html5wp_pagination' ); // Add our HTML5 Pagination
+
+// move all the JS to the page footer
+function footer_enqueue_scripts() {
+	remove_action('wp_head', 'wp_print_scripts');
+	remove_action('wp_head', 'wp_print_head_scripts', 9);
+	remove_action('wp_head', 'wp_enqueue_scripts', 1);
+	add_action('wp_footer', 'wp_print_scripts', 5);
+	add_action('wp_footer', 'wp_enqueue_scripts', 5);
+	add_action('wp_footer', 'wp_print_head_scripts', 5);
+}
+add_action('after_setup_theme', 'footer_enqueue_scripts');
 
 // Remove Actions
 remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
@@ -399,12 +419,33 @@ add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 ); // Remov
 add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
 add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
 
+add_filter( 'jpeg_quality', 'top_quality' );
 // Remove Filters
-remove_filter( 'the_excerpt', 'wpautop' ); // Remove <p> tags from Excerpt altogether
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
+function top_quality() { return 100; }  // JPEG quality: 100%
+/*
+if (version_compare( '4.1', get_bloginfo('version') ) >= 0) {
+	add_filter( 'clean_url', function( $url ) {
+#		print "Running the clean_url filter" . PHP_EOL;
+		if ( FALSE === strpos( $url, '.js' ) ) {
+			return $url;
+		}
+		return "$url' defer='defer";
+	}, 10, 1 );
+}
+else {
+	add_filter( 'script_loader_tag', function ( $tag, $handle ) {
+#		print "Running the script_loader_tag filter" . PHP_EOL;
+		return str_replace( ' src', ' defer="defer" src', $tag );
+	}, 10, 2 );
+}
+*/
 
 // Shortcodes
-add_shortcode( 'html5_shortcode_demo', 'html5_shortcode_demo' ); // You can place [html5_shortcode_demo] in Pages, Posts now.
-add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [html5_shortcode_demo_2] in Pages, Posts now.
+// add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
+// add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
 
 // Shortcodes above would be nested like this -
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
@@ -449,6 +490,151 @@ function create_post_type_html5() {
         ) // Add Category and Post Tags support
     ) );
 }
+
+// breadcrumbs
+function the_breadcrumb () {
+
+    // Settings
+    $separator  = '&gt;';
+    $id         = 'breadcrumbs';
+//    $class      = 'breadcrumbs';
+	$class = 'noDot';
+    $home_title = 'Home';
+
+    // Get the query & post information
+    global $post, $wp_query;
+    $category = get_the_category();
+
+    // Build the breadcrums
+    echo '<ul id="' . $id . '" class="' . $class . '">';
+
+    // Do not display on the homepage
+    if ( ! is_front_page() ) {
+
+        // Home page
+        echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
+        echo '<li class="separator separator-home"> ' . $separator . ' </li>';
+
+        if ( is_single() ) {
+
+            // Single post (Only display the first category)
+            echo '<li class="item-cat item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><a class="bread-cat bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '" href="' . get_category_link($category[0]->term_id ) . '" title="' . $category[0]->cat_name . '">' . $category[0]->cat_name . '</a></li>';
+            echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
+            echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+
+        } else if ( is_category() ) {
+
+            // Category page
+            echo '<li class="item-current item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><strong class="bread-current bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '">' . $category[0]->cat_name . '</strong></li>';
+
+        } else if ( is_page() ) {
+
+            // Standard page
+            if( $post->post_parent ){
+
+                // If child page, get parents
+                $anc = get_post_ancestors( $post->ID );
+
+                // Get parents in the right order
+                $anc = array_reverse($anc);
+
+                // Parent page loop
+                foreach ( $anc as $ancestor ) {
+                    $parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>';
+                    $parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
+                }
+
+                // Display parent pages
+                echo $parents;
+
+                // Current page
+                echo '<li class="item-current item-' . $post->ID . '"><strong title="' . get_the_title() . '"> ' . get_the_title() . '</strong></li>';
+
+            } else {
+
+                // Just display current page if not parents
+                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '"> ' . get_the_title() . '</strong></li>';
+
+            }
+
+        } else if ( is_tag() ) {
+
+            // Tag page
+
+            // Get tag information
+            $term_id = get_query_var('tag_id');
+            $taxonomy = 'post_tag';
+            $args ='include=' . $term_id;
+            $terms = get_terms( $taxonomy, $args );
+
+            // Display the tag name
+            echo '<li class="item-current item-tag-' . $terms[0]->term_id . ' item-tag-' . $terms[0]->slug . '"><strong class="bread-current bread-tag-' . $terms[0]->term_id . ' bread-tag-' . $terms[0]->slug . '">' . $terms[0]->name . '</strong></li>';
+
+        } elseif ( is_day() ) {
+
+            // Day archive
+
+            // Year link
+            echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
+            echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
+
+            // Month link
+            echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="bread-month bread-month-' . get_the_time('m') . '" href="' . get_month_link( get_the_time('Y'), get_the_time('m') ) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</a></li>';
+            echo '<li class="separator separator-' . get_the_time('m') . '"> ' . $separator . ' </li>';
+
+            // Day display
+            echo '<li class="item-current item-' . get_the_time('j') . '"><strong class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></li>';
+
+        } else if ( is_month() ) {
+
+            // Month Archive
+
+            // Year link
+            echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
+            echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
+
+            // Month display
+            echo '<li class="item-month item-month-' . get_the_time('m') . '"><strong class="bread-month bread-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</strong></li>';
+
+        } else if ( is_year() ) {
+
+            // Display year archive
+            echo '<li class="item-current item-current-' . get_the_time('Y') . '"><strong class="bread-current bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</strong></li>';
+
+        } else if ( is_author() ) {
+
+            // Auhor archive
+
+            // Get the author information
+            global $author;
+            $userdata = get_userdata( $author );
+
+            // Display author name
+            echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . 'Author: ' . $userdata->display_name . '</strong></li>';
+
+        } else if ( get_query_var('paged') ) {
+
+            // Paginated archives
+            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'.__('Page') . ' ' . get_query_var('paged') . '</strong></li>';
+
+        } else if ( is_search() ) {
+
+            // Search results page
+            echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</strong></li>';
+
+        } elseif ( is_404() ) {
+
+            // 404 page
+            echo '<li>' . 'Error 404' . '</li>';
+        }
+
+    }
+
+    echo '</ul>';
+
+}
+
+
 
 /*------------------------------------*\
     ShortCode Functions

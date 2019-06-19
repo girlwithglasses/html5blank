@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main" aria-label="Content">
+	<main class="main" role="main" aria-label="Content">
 		<!-- section -->
 		<section>
 
@@ -12,7 +12,7 @@
 
 		</section>
 		<!-- /section -->
-	</main>
+	</div>
 
 <?php get_sidebar(); ?>
 

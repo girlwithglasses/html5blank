@@ -1,0 +1,35 @@
+// modules/variables
+
+
+// Typography
+
+$typeface-page-text: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$typeface-display: 'Lucida Sans', 'Lucida Grande', 'Myriad Pro', sans-serif;
+$typeface-fixed-width: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
+
+// $base-font-size: 16px;
+// $base-line-height: 24px;
+
+$font-size: 1rem;
+
+// line height as a proportion of font size
+$line-ht-prop: 1.5;
+$line-ht: 1.5rem;
+
+$gutter: .75rem;
+
+$nar-: 479px;
+$nar: 480px;	// = 30rem
+$med-: 767px;
+$med: 768px;	// = 48rem
+
+
+// Grid
+$wrapper-width: 80rem;
+
+$padding-horizontal-base: $gutter;
+$padding-vertical-base: $gutter;
+$margin-horizontal-base: $gutter;
+$margin-vertical-base: $gutter;
+$margin-horizontal-large: $line-ht;
+$margin-vertical-large: $line-ht;

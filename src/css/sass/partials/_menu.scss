@@ -1,0 +1,142 @@
+// NAVIGATION
+
+
+nav li > ul,
+nav li > ol {
+	margin: 0;
+	list-style: none;
+}
+
+#navlink {
+	display: none;
+	cursor: pointer;
+}
+
+#navlinkA {
+	display: block;
+	padding: $gutter $font-size;
+}
+
+#navlink a:before {
+	font-family: 'icomoon';
+	content: "\e625";
+	padding-right: .75rem;
+}
+
+#navlink.open a:before {
+	content: "\e623";
+}
+
+header nav {
+	@include cf;
+	width: 100%;
+	background-color: $h-menu-bg;
+
+	a {
+		color: $h-menu-link;
+		background-color: $h-menu-link-bg;
+		padding: $gutter $font-size;
+
+		&:hover, &:focus, &:active {
+			color: $h-menu-hfa-link;
+			background-color: $h-menu-hfa-link-bg;
+		}
+	}
+	.current-menu-item > a {
+		color: $h-menu-current;
+		background-color: $h-menu-current-bg;
+	}
+	.sub-menu .current-menu-item > a {
+		border-left: .25rem $h-menu-current-hilite solid;
+	}
+}
+
+@include minw($med) {
+	#navlink {
+		display: none;
+	}
+	header nav {
+		li {
+			float: left;
+			position: relative;
+		}
+		a {
+			display: block;
+			float: left;
+		}
+
+		// drop down
+		.sub-menu li {
+			margin-left: -1px;
+			border-left: 1px solid $h-menu-border;
+			border-right: 1px solid $h-menu-border;
+			border-bottom: 1px solid $h-menu-border;
+
+			li {
+				border-bottom: 1px solid $h-menu-border;
+				&:last-child {
+			//		float: none;
+					border-bottom: none;
+				}
+			}
+		}
+
+		li ul,
+		li:hover ul ul {
+			display: none;
+		//	z-index: 100;
+		}
+		li:hover ul {
+			display:block;
+		}
+
+		li {
+			ul {
+				position: absolute;
+				width: 12.5rem;
+				top: $font-size*3;
+			}
+			li ul {
+				left: 12.5rem;
+				top: 0;
+			}
+			li {
+				float: none;
+			}
+			li a,
+			.current-menu-item li a,
+			li.current-menu-item a,
+			.current_page_ancestor li a,
+			.current-menu-ancestor li a,
+			.current_page_item li a {
+				float: none;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@include maxw($med-) {
+	#navlink {
+		display: block;
+
+		a:hover, a:focus {
+			color: $selcn;
+		}
+	}
+
+	nav {
+		a {
+			display: block;
+			border-bottom: 1px solid #F8F8F8;
+		}
+		li {
+			li a {
+				padding-left: 2rem;
+			}
+			li li a {
+				padding-left: 4rem;
+			}
+		}
+	}
+}
