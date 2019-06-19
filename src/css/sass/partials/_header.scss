@@ -1,0 +1,15 @@
+/* partials/headers */
+
+
+// Header container
+.header {
+	@include cf;
+	margin-bottom: $line-ht;
+}
+
+// Logo
+.logo {
+	padding: $gutter 0;
+}
+
+.logo-img {}

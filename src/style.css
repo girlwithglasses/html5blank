@@ -1,42 +1,17 @@
-/*!
- * Theme Name: HTML5 Blank
- * Theme URI: http://html5blank.com
- * Description: HTML5 Blank WordPress Theme
- * Version: 1.5.0
- * Author: Todd Motto (@toddmotto)
- * Author URI: http://toddmotto.com
- * Tags: Blank, HTML5, CSS3
- *
- * License: MIT
- * License URI: http://opensource.org/licenses/mit-license.php
- */
-/**
- * styles.scss
- * ---
- * Main `sass` file. Import here `sass` files
- */
-/**
- * modules/variables
- * ---
- */
-/**
- * Typography
- */
-/**
- * Colors
- */
-/**
- * Grid
- */
-/**
- * modules/mixins
- * ---
- */
-/**
- * modules/fonts
- * ---
- * Declare fonts here
- */
+/*
+Theme Name: ICRA HTML5 no-longer-blank
+Theme URI: http://icraeastbay.org
+Author: @girlwithglasses, @jbgriswold
+Description: theme for the new and improved ICRA site, based on html5blank
+Version: alpha
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: cats, awesomeness, who-needs-a-logo-anyway?
+Text Domain: html5blank
+*/
+/* // summary details
+$s-details-bg: #B8B8B8;
+$s-details-txt: #FFF; */
 /*
 @font-face {
   font-family: "Font-Name";
@@ -49,223 +24,1412 @@
   font-style: normal;
 }
 */
-/**
- * partials/reset
- * ---
- * Reset file
- * NOTE: also `normalize.css` is used
- */
-*,
-*:after,
-*:before {
-  -moz-box-sizing: border-box;
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?-dwdsew");
+  src: url("fonts/icomoon.eot?#iefix-dwdsew") format("embedded-opentype"), url("fonts/icomoon.woff?-dwdsew") format("woff"), url("fonts/icomoon.ttf?-dwdsew") format("truetype"), url("fonts/icomoon.svg?-dwdsew#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* css reset plus some sensible default styling. */
+/* line 3, css/sass/partials/_base.scss */
+*, *:after, *:before {
   box-sizing: border-box;
 }
 
+/* BASE */
+/* line 9, css/sass/partials/_base.scss */
 html {
-  font-size: 62.5%;
-  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/* line 18, css/sass/partials/_base.scss */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-  font-size: 140%;
-  line-height: 1.5;
+  min-height: 100%;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font: 1rem / 1.5 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   color: #444444;
   background-color: white;
 }
 
+/* line 62, css/sass/partials/_base.scss */
+html, body,
+address, article, aside, footer, header, hgroup, nav, section,
+p, blockquote, pre, div,
+dl, dt, dd, ol, ul, li,
+figcaption, figure, main,
+abbr, cite, dfn, em, q, s, small, span, strong, time, var,
+code, kbd, samp,
+b, u, i,
+del, ins, mark,
+sub, sup,
+table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td,
+img,
+embed, iframe, object, audio, video,
+a, map, area,
+fieldset, form, label, legend, meter, progress,
+details, summary,
+canvas, template {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* line 70, css/sass/partials/_base.scss */
+button, input, optgroup, select, textarea {
+  /*	in normalize.css
+  	margin: 0;
+  	font: inherit;
+  */
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* line 91, css/sass/partials/_base.scss */
+html, body,
+address, article, aside, footer, header, hgroup, nav, section,
+p, blockquote, pre, div,
+dl, dt, dd, ol, ul, li,
+figcaption, figure, main,
+table, caption, col, colgroup, tbody, tfoot, thead, tr, th, td,
+img,
+embed, iframe, object, audio, video,
+fieldset, form, label, legend,
+input, textarea,
+details, summary,
+canvas, template {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* HTML5 DECLARATIONS */
+/*	- all covered by normalize.css
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+
+audio, canvas, progress, video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden], template {
+	display: none;
+}
+*/
+/* line 116, css/sass/partials/_base.scss */
 img {
   max-width: 100%;
   vertical-align: middle;
+  /*	in normalize.css
+  	border: 0;
+  */
+  -ms-interpolation-mode: bicubic;
 }
 
+/* in normalize.css
+svg:not(:root) { overflow: hidden; }
+*/
+/* CODE */
+/* line 133, css/sass/partials/_base.scss */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  /*	in normalize.css
+  	overflow: auto;
+  */
+}
+
+/* line 141, css/sass/partials/_base.scss */
+pre, code, kbd, samp {
+  font: 1rem / 1.5 Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
+}
+
+/* line 145, css/sass/partials/_base.scss */
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, fieldset, menu, label, details, summary {
+  margin: 0 0 1.5rem;
+}
+
+/* TABLES */
+/* line 150, css/sass/partials/_base.scss */
+table {
+  /*	in normalize.css
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  */
+  border-width: 0;
+  margin-bottom: 1.5rem;
+  empty-cells: show;
+}
+
+/* line 160, css/sass/partials/_base.scss */
+th, td {
+  padding: 0 0.75rem;
+  border-bottom: 0 solid;
+}
+
+/* line 164, css/sass/partials/_base.scss */
+th {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* FORMS */
+/* line 171, css/sass/partials/_base.scss */
+form {
+  overflow: auto;
+}
+
+/* line 175, css/sass/partials/_base.scss */
+textarea {
+  vertical-align: top;
+  margin: 0 0 -2px 0;
+  display: block;
+  clear: left;
+  border: 1px solid #333333;
+  /*	in normalize.css
+  	overflow: auto;
+  */
+}
+
+/* line 187, css/sass/partials/_base.scss */
+legend {
+  padding-bottom: 1.5rem;
+}
+
+/*	in normalize.css
+button, input {
+	overflow: visible;
+}
+*/
+/* line 199, css/sass/partials/_base.scss */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  /*	in normalize.css
+  	cursor: pointer;
+  	-webkit-appearance: button;
+  */
+  margin-bottom: 1.5rem;
+}
+
+/*	in normalize.css
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input[type="search"] {
+	box-sizing: content-box;
+	-webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+*/
+/* line 227, css/sass/partials/_base.scss */
+input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="tel"] {
+  font-size: inherit;
+  border: 1px solid #333333;
+  line-height: 20px;
+  display: block;
+  padding: 1px 0;
+  margin: 0;
+}
+
+/* line 238, css/sass/partials/_base.scss */
+input[type="select"], select {
+  display: block;
+  height: 1.5rem;
+  border: 0 solid;
+  padding: 0;
+}
+
+/* QUOTES */
+/* line 247, css/sass/partials/_base.scss */
+blockquote {
+  quotes: none;
+}
+
+/* line 250, css/sass/partials/_base.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* line 253, css/sass/partials/_base.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none;
+}
+
+/* line 256, css/sass/partials/_base.scss */
+blockquote, q, cite {
+  font-style: italic;
+}
+
+/* line 259, css/sass/partials/_base.scss */
+blockquote {
+  padding-left: 1.5rem;
+  border-left: 0.25em solid #666666;
+}
+
+/* line 263, css/sass/partials/_base.scss */
+blockquote > p {
+  padding: 0;
+}
+
+/* LISTS */
+/* line 268, css/sass/partials/_base.scss */
+ul {
+  list-style: square inside;
+}
+
+/* line 271, css/sass/partials/_base.scss */
+ol {
+  list-style: decimal inside;
+}
+
+/* LINKS */
+/* line 276, css/sass/partials/_base.scss */
 a {
-  color: #444444;
+  text-decoration: none;
+  color: #004444;
+}
+/* line 286, css/sass/partials/_base.scss */
+a:hover, a:focus {
   text-decoration: none;
 }
-a:focus, a:hover {
-  text-decoration: underline;
+/* line 296, css/sass/partials/_base.scss */
+a:focus {
+  outline: thin dotted;
+}
+/* line 309, css/sass/partials/_base.scss */
+a:visited {
+  color: black;
 }
 
-input[type="text"],
-input[type="search"] {
-  font-size: inherit;
-  line-height: inherit;
+/* ABBREVIATION */
+/* line 318, css/sass/partials/_base.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #444444;
+  cursor: help;
 }
 
-::-moz-selection {
-  background-color: #04a4cc;
-  color: white;
+/* MARKED/INSERTED/DELETED AND SELECTED TEXT */
+/* line 324, css/sass/partials/_base.scss */
+ins, mark {
+  text-decoration: none;
+}
+
+/* line 327, css/sass/partials/_base.scss */
+ins {
+  background: deepskyblue;
+}
+
+/* line 330, css/sass/partials/_base.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* selected text */
+/* line 335, css/sass/partials/_base.scss */
+::selection, ::-moz-selection {
+  background: #444444;
+  color: #04a4cc;
   text-shadow: none;
 }
 
-::selection {
-  background-color: #04a4cc;
-  color: white;
-  text-shadow: none;
+/*	in normalize.css
+mark {
+	background-color: #FF3;
+	color: #000;
+}
+*/
+/* OTHERS */
+/* line 349, css/sass/partials/_base.scss */
+strong, b, dt {
+  font-weight: bold;
 }
 
-/**
- * partials/wordpress
- * ---
- * Wordpess core classes
- */
-/**
- * Alignment
- */
-.alignnone {
-  margin: 5px 15px 15px 0;
+/*	in normalize.css
+dfn {
+	font-style: italic;
+}
+*/
+/* line 357, css/sass/partials/_base.scss */
+var, address {
+  font-style: normal;
 }
 
-.aligncenter {
-  display: block;
-  margin: 5px auto;
+/*	in normalize.css
+Position 'sub' and 'sup' without affecting line-height
+
+sub, sup {
+	font-size: .75em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+*/
+/* Best available ampersand */
+/* line 379, css/sass/partials/_base.scss */
+.amp {
+  font-family: Adobe Caslon Pro, Baskerville, "Goudy Old Style", "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 110%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
-.alignright {
-  float: right;
-  margin: 5px 0 20px 20px;
-  margin: 5px 0 15px 15px;
+/* line 388, css/sass/partials/_base.scss */
+li ul, li ol {
+  margin: 0 0 0 2rem;
 }
 
-.alignleft {
-  float: left;
-  margin: 5px 15px 15px 0;
+/* line 392, css/sass/partials/_base.scss */
+.noDot, .noDot, nav ul {
+  list-style: none;
+  margin-left: 0;
 }
 
-/**
- * Gallery & images
- */
-.wp-caption {
-  background: white;
-  border: thin solid #F0F0F0;
-  max-width: 95%;
-  padding: 5px 5px;
+/* line 396, css/sass/partials/_base.scss */
+dd + dt {
+  margin-top: 1.5rem;
+}
+
+/* modules/typo */
+/* line 3, css/sass/modules/_typo.scss */
+h1, h2, h3, h4, h5, h6, caption, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Lucida Sans", "Lucida Grande", "Myriad Pro", sans-serif;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+/** "Golden rhythm" font sizes
+$h1-font-size: 4.25rem; // 68px
+$h1-lines: 3;
+$h1-line-height: $line-ht * $h1-lines;
+
+$h2-font-size: 2.625rem;	// 42px
+$h2-lines: 2;
+$h2-line-height: $line-ht * $h2-lines;
+
+$h3-font-size: 1.625rem;	// 26px
+$h3-lines: 2;
+$h3-line-height: $line-ht * $h3-lines;
+
+$h4-font-size: 1.25rem; 	// 20px
+$h4-lines: 1;
+$h4-line-height: $line-ht * $h4-lines;
+*/
+/* line 28, css/sass/modules/_typo.scss */
+h1 {
+  font-size: 3rem;
+  line-height: 1;
   text-align: center;
 }
-.wp-caption img {
-  width: auto;
-  max-width: 98.5%;
-  height: auto;
-  border: 0 none;
-  padding: 0;
-  margin: 0;
+
+/* line 35, css/sass/modules/_typo.scss */
+h2, .h2 {
+  font-size: 2.25rem;
+  line-height: 3rem;
 }
 
-.wp-caption .wp-caption-text,
-.gallery-caption {
-  margin: 0;
-  padding: 0 5px 5px;
-  font-size: 140%;
-  line-height: 1.5;
+/* line 41, css/sass/modules/_typo.scss */
+h3, .h3 {
+  font-size: 1.75rem;
+  line-height: 3rem;
 }
 
+/* line 47, css/sass/modules/_typo.scss */
+h4, caption, .h4 {
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+/* line 53, css/sass/modules/_typo.scss */
+h5, .h5 {
+  font-size: 1.3333333333rem;
+  line-height: 1.5rem;
+}
+
+/* line 59, css/sass/modules/_typo.scss */
+h6, .h6 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+/* standard text size is 16px */
 /**
- * partials/utils
- * ---
- * Utils classes
- */
-.clear:before, .clear:after {
-  content: " ";
-  display: table;
+@media only screen and (max-width: 479px) {
+	h1 { @include adjust-font-size-to(36px); }
+	h2 { @include adjust-font-size-to(30px); }
+	h3 { @include adjust-font-size-to(24px); }
+	h4 { @include adjust-font-size-to(22px); }
+	h5 { @include adjust-font-size-to(20px); }
+	h6 { @include adjust-font-size-to(18px); }
 }
-.clear:after {
+*/
+/* partials/wordpress */
+/* Alignment */
+/* line 10, css/sass/partials/_wordpress.scss */
+.alignnone {
+  margin: 0 0 0.75rem;
+}
+
+/* line 15, css/sass/partials/_wordpress.scss */
+.aligncenter {
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+
+/* line 20, css/sass/partials/_wordpress.scss */
+.alignright {
+  float: right;
+  margin: 0 0 0.75rem 1.5rem;
+}
+
+/* line 25, css/sass/partials/_wordpress.scss */
+.alignleft {
+  float: left;
+  margin: 0 1.5rem 0.75rem 0;
+}
+
+/* Gallery & images */
+/* line 33, css/sass/partials/_wordpress.scss */
+.wp-caption {
+  background: white;
+  border: 1px solid #F0F0F0;
+  max-width: 100%;
+  padding: 4px 4px 0 4px;
+  text-align: center;
   clear: both;
 }
 
+/* line 49, css/sass/partials/_wordpress.scss */
+.wp-caption .wp-caption-text,
+.gallery-caption {
+  margin: .75rem 0;
+}
+
+/* partials/utils */
+/* line 5, css/sass/partials/_utils.scss */
+.floatR {
+  float: right;
+}
+
+/* line 6, css/sass/partials/_utils.scss */
+.floatL {
+  float: left;
+}
+
+/* line 7, css/sass/partials/_utils.scss */
+.L {
+  text-align: left;
+}
+
+/* line 8, css/sass/partials/_utils.scss */
+.C {
+  text-align: center;
+}
+
+/* line 9, css/sass/partials/_utils.scss */
+.R {
+  text-align: right;
+}
+
+/* line 10, css/sass/partials/_utils.scss */
+.clearR {
+  clear: right;
+}
+
+/* line 11, css/sass/partials/_utils.scss */
+.clearL {
+  clear: left;
+}
+
+/* line 12, css/sass/partials/_utils.scss */
+.clear {
+  clear: both;
+}
+
+/* line 14, css/sass/partials/_utils.scss */
 .reset-box {
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
-/**
- * partials/wrapper
- * ---
- */
+/* line 20, css/sass/partials/_utils.scss */
+.cf {
+  *zoom: 1;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+.cf:after {
+  clear: both;
+}
+
+/* partials/wrapper */
+/* line 3, css/sass/partials/_wrapper.scss */
 .wrapper {
-  max-width: 1280px;
-  padding: 0 15px;
+  max-width: 80rem;
+  padding: 0 1.5rem;
   margin: 0 auto;
+}
+
+/* line 2, css/sass/partials/_layout.scss */
+article {
+  *zoom: 1;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+article:before, article:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+article:after {
+  clear: both;
+}
+
+/* line 6, css/sass/partials/_layout.scss */
+#primary, #primary-left, #primary-right, #primary-middle {
+  width: 100%;
+}
+
+/* line 10, css/sass/partials/_layout.scss */
+#primary, #primary-left, #primary-right, #primary-middle, aside {
+  padding: 0 1rem;
+}
+
+@media only screen and (max-width: 479px) {
+  /* line 15, css/sass/partials/_layout.scss */
+  aside, #primary, #primary-left, #primary-right, #primary-middle {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 20, css/sass/partials/_layout.scss */
+  aside {
+    width: 40%;
+  }
+
+  /* line 23, css/sass/partials/_layout.scss */
+  #primary-left, #primary-right {
+    width: 60%;
+    background-color: #f6f6f6;
+  }
+}
+@media only screen and (min-width: 480px) {
+  /* line 30, css/sass/partials/_layout.scss */
+  #primary-left, .sidebar.left, #primary-middle {
+    float: left;
+  }
+
+  /* line 33, css/sass/partials/_layout.scss */
+  #primary-right, .sidebar.right {
+    float: right;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 38, css/sass/partials/_layout.scss */
+  aside {
+    width: 30%;
+  }
+
+  /* line 42, css/sass/partials/_layout.scss */
+  #primary-left, #primary-right {
+    width: 70%;
+  }
+
+  /* line 45, css/sass/partials/_layout.scss */
+  #primary-middle {
+    width: 40%;
+    float: left;
+  }
+}
+/* line 54, css/sass/partials/_layout.scss */
+.cf > .pie-chartify, .cf > .piechart {
+  float: left;
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+@media only screen and (max-width: 479px) {
+  /* line 62, css/sass/partials/_layout.scss */
+  .bigpic h2 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 479px) and (max-width: 767px) {
+  /* line 67, css/sass/partials/_layout.scss */
+  .bigpic h2 {
+    width: 50%;
+    float: left;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 73, css/sass/partials/_layout.scss */
+  .bigpic h2 {
+    float: left;
+    width: 25%;
+  }
+}
+/* partials/headers */
+/* line 5, css/sass/partials/_header.scss */
+.header {
+  *zoom: 1;
+  margin-bottom: 1.5rem;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+.header:before, .header:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+.header:after {
+  clear: both;
+}
+
+/* line 11, css/sass/partials/_header.scss */
+.logo {
+  padding: 0.75rem 0;
+}
+
+/* partials/footer */
+/* line 3, css/sass/partials/_footer.scss */
+.footer {
+  clear: both;
+}
+
+/* line 6, css/sass/partials/_footer.scss */
+footer p {
+  text-align: center;
+  margin: 1.5rem;
+}
+
+/* partials/main */
+/* line 5, css/sass/partials/_main.scss */
+article a {
+  border-bottom: 1px dotted #004444;
+}
+/* line 9, css/sass/partials/_main.scss */
+article a:hover, article a:focus, article a:active {
+  border-style: solid;
+}
+/* line 12, css/sass/partials/_main.scss */
+article a .img {
+  border: 1px dotted #004444;
+}
+
+/* partials/sidebar */
+/* line 6, css/sass/partials/_sidebar.scss */
+aside ul li {
+  list-style-type: none;
+  border-top: solid 1px;
+}
+/* line 11, css/sass/partials/_sidebar.scss */
+aside ul li a {
+  padding: 0.75rem;
+  display: block;
+}
+/* line 16, css/sass/partials/_sidebar.scss */
+aside ul ul li {
+  margin: 0 0 .25rem 0;
+  list-style-type: square;
+}
+/* line 20, css/sass/partials/_sidebar.scss */
+aside ul ul li a {
+  padding: 0 0.75rem;
+  display: block;
+}
+
+/* line 5, css/sass/partials/_menu.scss */
+nav li > ul,
+nav li > ol {
+  margin: 0;
+  list-style: none;
+}
+
+/* line 10, css/sass/partials/_menu.scss */
+#navlink {
+  display: none;
+  cursor: pointer;
+}
+
+/* line 15, css/sass/partials/_menu.scss */
+#navlinkA {
+  display: block;
+  padding: 0.75rem 1rem;
+}
+
+/* line 20, css/sass/partials/_menu.scss */
+#navlink a:before {
+  font-family: 'icomoon';
+  content: "\e625";
+  padding-right: .75rem;
+}
+
+/* line 26, css/sass/partials/_menu.scss */
+#navlink.open a:before {
+  content: "\e623";
+}
+
+/* line 30, css/sass/partials/_menu.scss */
+header nav {
+  *zoom: 1;
+  width: 100%;
+  background-color: aliceblue;
+}
+/* line 29, css/sass/modules/_mixins.scss */
+header nav:before, header nav:after {
+  content: " ";
+  display: table;
+}
+/* line 33, css/sass/modules/_mixins.scss */
+header nav:after {
+  clear: both;
+}
+/* line 35, css/sass/partials/_menu.scss */
+header nav a {
+  color: #004444;
+  background-color: #eeeeee;
+  padding: 0.75rem 1rem;
+}
+/* line 40, css/sass/partials/_menu.scss */
+header nav a:hover, header nav a:focus, header nav a:active {
+  color: white;
+  background-color: #004444;
+}
+/* line 45, css/sass/partials/_menu.scss */
+header nav .current-menu-item > a {
+  color: #004444;
+  background-color: #eeeeee;
+}
+/* line 49, css/sass/partials/_menu.scss */
+header nav .sub-menu .current-menu-item > a {
+  border-left: 0.25rem deepskyblue solid;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 55, css/sass/partials/_menu.scss */
+  #navlink {
+    display: none;
+  }
+
+  /* line 59, css/sass/partials/_menu.scss */
+  header nav li {
+    float: left;
+    position: relative;
+  }
+  /* line 63, css/sass/partials/_menu.scss */
+  header nav a {
+    display: block;
+    float: left;
+  }
+  /* line 69, css/sass/partials/_menu.scss */
+  header nav .sub-menu li {
+    margin-left: -1px;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+  /* line 75, css/sass/partials/_menu.scss */
+  header nav .sub-menu li li {
+    border-bottom: 1px solid #999999;
+  }
+  /* line 77, css/sass/partials/_menu.scss */
+  header nav .sub-menu li li:last-child {
+    border-bottom: none;
+  }
+  /* line 85, css/sass/partials/_menu.scss */
+  header nav li ul,
+  header nav li:hover ul ul {
+    display: none;
+  }
+  /* line 89, css/sass/partials/_menu.scss */
+  header nav li:hover ul {
+    display: block;
+  }
+  /* line 94, css/sass/partials/_menu.scss */
+  header nav li ul {
+    position: absolute;
+    width: 12.5rem;
+    top: 3rem;
+  }
+  /* line 99, css/sass/partials/_menu.scss */
+  header nav li li ul {
+    left: 12.5rem;
+    top: 0;
+  }
+  /* line 103, css/sass/partials/_menu.scss */
+  header nav li li {
+    float: none;
+  }
+  /* line 111, css/sass/partials/_menu.scss */
+  header nav li li a,
+  header nav li .current-menu-item li a,
+  header nav li li.current-menu-item a,
+  header nav li .current_page_ancestor li a,
+  header nav li .current-menu-ancestor li a,
+  header nav li .current_page_item li a {
+    float: none;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* line 120, css/sass/partials/_menu.scss */
+  #navlink {
+    display: block;
+  }
+  /* line 123, css/sass/partials/_menu.scss */
+  #navlink a:hover, #navlink a:focus {
+    color: #04a4cc;
+  }
+
+  /* line 129, css/sass/partials/_menu.scss */
+  nav a {
+    display: block;
+    border-bottom: 1px solid #F8F8F8;
+  }
+  /* line 134, css/sass/partials/_menu.scss */
+  nav li li a {
+    padding-left: 2rem;
+  }
+  /* line 137, css/sass/partials/_menu.scss */
+  nav li li li a {
+    padding-left: 4rem;
+  }
+}
+/* line 3, css/sass/partials/_images.scss */
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 9, css/sass/partials/_images.scss */
+a.img {
+  display: block;
+}
+
+/* line 11, css/sass/partials/_images.scss */
+.img img {
+  margin: 0.75rem;
+}
+
+@media only screen and (min-width: 856px) {
+  /* line 14, css/sass/partials/_images.scss */
+  .landscape {
+    width: 50%;
+  }
+}
+/* line 20, css/sass/partials/_images.scss */
+.ib > div {
+  display: inline-block;
+}
+
+/* line 25, css/sass/partials/_images.scss */
+.imgcaption {
   position: relative;
 }
 
-/**
- * partial/header
- * ---
- */
-/**
- * partials/nav
- * ---
- * Menus
- */
-/**
- * partials/sidebar
- * ---
- */
-/**
- * partials/footer
- * ---
- */
-/**
- * partials/print
- * ---
- * Print version
+/* line 30, css/sass/partials/_images.scss */
+.imgcaption h4 {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* line 38, css/sass/partials/_images.scss */
+.imgcaption h4 span {
+  color: white;
+  background: black;
+  /* fallback color */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+/* line 4, css/sass/partials/_icons.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 18, css/sass/partials/_icons.scss */
+.icon-mail3:before {
+  content: "\e608";
+}
+
+/* line 22, css/sass/partials/_icons.scss */
+.icon-arrow-drop-up:before {
+  content: "\e609";
+}
+
+/* line 26, css/sass/partials/_icons.scss */
+.icon-arrow-drop-down:before {
+  content: "\e60a";
+}
+
+/* line 30, css/sass/partials/_icons.scss */
+.icon-mail5:before {
+  content: "\e60b";
+}
+
+/* line 34, css/sass/partials/_icons.scss */
+.icon-minus:before {
+  content: "\e60c";
+}
+
+/* line 38, css/sass/partials/_icons.scss */
+.icon-plus:before {
+  content: "\e60d";
+}
+
+/* line 42, css/sass/partials/_icons.scss */
+.icon-keyboard-arrow-up:before {
+  content: "\e602";
+}
+
+/* line 46, css/sass/partials/_icons.scss */
+.icon-keyboard-arrow-right:before {
+  content: "\e603";
+}
+
+/* line 50, css/sass/partials/_icons.scss */
+.icon-keyboard-arrow-left:before {
+  content: "\e604";
+}
+
+/* line 54, css/sass/partials/_icons.scss */
+.icon-keyboard-arrow-down:before {
+  content: "\e605";
+}
+
+/* line 58, css/sass/partials/_icons.scss */
+.icon-instagram2:before {
+  content: "\e60e";
+}
+
+/* line 62, css/sass/partials/_icons.scss */
+.icon-circle-left2:before {
+  content: "\e60f";
+}
+
+/* line 66, css/sass/partials/_icons.scss */
+.icon-circle-down2:before {
+  content: "\e610";
+}
+
+/* line 70, css/sass/partials/_icons.scss */
+.icon-circle-right2:before {
+  content: "\e611";
+}
+
+/* line 74, css/sass/partials/_icons.scss */
+.icon-circle-up2:before {
+  content: "\e612";
+}
+
+/* line 78, css/sass/partials/_icons.scss */
+.icon-tumblr3:before {
+  content: "\e613";
+}
+
+/* line 82, css/sass/partials/_icons.scss */
+.icon-tumblr4:before {
+  content: "\e614";
+}
+
+/* line 86, css/sass/partials/_icons.scss */
+.icon-youtube:before {
+  content: "\e615";
+}
+
+/* line 90, css/sass/partials/_icons.scss */
+.icon-youtube2:before {
+  content: "\e616";
+}
+
+/* line 94, css/sass/partials/_icons.scss */
+.icon-twitter4:before {
+  content: "\e617";
+}
+
+/* line 98, css/sass/partials/_icons.scss */
+.icon-twitter5:before {
+  content: "\e618";
+}
+
+/* line 102, css/sass/partials/_icons.scss */
+.icon-twitter6:before {
+  content: "\e619";
+}
+
+/* line 106, css/sass/partials/_icons.scss */
+.icon-instagram3:before {
+  content: "\e61a";
+}
+
+/* line 110, css/sass/partials/_icons.scss */
+.icon-facebook4:before {
+  content: "\e61b";
+}
+
+/* line 114, css/sass/partials/_icons.scss */
+.icon-facebook5:before {
+  content: "\e61c";
+}
+
+/* line 118, css/sass/partials/_icons.scss */
+.icon-facebook6:before {
+  content: "\e61d";
+}
+
+/* line 122, css/sass/partials/_icons.scss */
+.icon-google-plus:before {
+  content: "\e61e";
+}
+
+/* line 126, css/sass/partials/_icons.scss */
+.icon-google-plus2:before {
+  content: "\e61f";
+}
+
+/* line 130, css/sass/partials/_icons.scss */
+.icon-google-plus3:before {
+  content: "\e620";
+}
+
+/* line 134, css/sass/partials/_icons.scss */
+.icon-mail6:before {
+  content: "\e621";
+}
+
+/* line 138, css/sass/partials/_icons.scss */
+.icon-link-external:before {
+  content: "\e600";
+}
+
+/* line 142, css/sass/partials/_icons.scss */
+.icon-envelope:before {
+  content: "\e601";
+}
+
+/* line 146, css/sass/partials/_icons.scss */
+.icon-home3:before {
+  content: "\e902";
+}
+
+/* line 150, css/sass/partials/_icons.scss */
+.icon-circle-up:before {
+  content: "\ea41";
+}
+
+/* line 154, css/sass/partials/_icons.scss */
+.icon-circle-right:before {
+  content: "\ea42";
+}
+
+/* line 158, css/sass/partials/_icons.scss */
+.icon-circle-down:before {
+  content: "\ea43";
+}
+
+/* line 162, css/sass/partials/_icons.scss */
+.icon-circle-left:before {
+  content: "\ea44";
+}
+
+/* line 166, css/sass/partials/_icons.scss */
+.icon-new-tab:before {
+  content: "\ea7e";
+}
+
+/* line 170, css/sass/partials/_icons.scss */
+.icon-mail4:before {
+  content: "\ea86";
+}
+
+/* line 174, css/sass/partials/_icons.scss */
+.icon-facebook:before {
+  content: "\ea8c";
+}
+
+/* line 178, css/sass/partials/_icons.scss */
+.icon-facebook2:before {
+  content: "\ea8d";
+}
+
+/* line 182, css/sass/partials/_icons.scss */
+.icon-facebook3:before {
+  content: "\ea8e";
+}
+
+/* line 186, css/sass/partials/_icons.scss */
+.icon-instagram:before {
+  content: "\ea90";
+}
+
+/* line 190, css/sass/partials/_icons.scss */
+.icon-twitter:before {
+  content: "\ea91";
+}
+
+/* line 194, css/sass/partials/_icons.scss */
+.icon-twitter2:before {
+  content: "\ea92";
+}
+
+/* line 198, css/sass/partials/_icons.scss */
+.icon-twitter3:before {
+  content: "\ea93";
+}
+
+/* line 202, css/sass/partials/_icons.scss */
+.icon-youtube3:before {
+  content: "\ea99";
+}
+
+/* line 206, css/sass/partials/_icons.scss */
+.icon-youtube4:before {
+  content: "\ea9a";
+}
+
+/* line 210, css/sass/partials/_icons.scss */
+.icon-tumblr:before {
+  content: "\eabb";
+}
+
+/* line 214, css/sass/partials/_icons.scss */
+.icon-tumblr2:before {
+  content: "\eabc";
+}
+
+/* line 218, css/sass/partials/_icons.scss */
+.icon-paypal:before {
+  content: "\ead6";
+}
+
+/* line 222, css/sass/partials/_icons.scss */
+.icon-paypal2:before {
+  content: "\ead7";
+}
+
+/* line 226, css/sass/partials/_icons.scss */
+.icon-paypal3:before {
+  content: "\ead8";
+}
+
+/* line 230, css/sass/partials/_icons.scss */
+.icon-file-pdf:before {
+  content: "\eada";
+}
+
+/* line 234, css/sass/partials/_icons.scss */
+.icon-file-word:before {
+  content: "\eadc";
+}
+
+/* line 238, css/sass/partials/_icons.scss */
+.icon-file-pdf-o:before {
+  content: "\e622";
+}
+
+/* line 242, css/sass/partials/_icons.scss */
+.icon-minus-square-o:before {
+  content: "\e623";
+}
+
+/* line 246, css/sass/partials/_icons.scss */
+.icon-minus-square:before {
+  content: "\e624";
+}
+
+/* line 250, css/sass/partials/_icons.scss */
+.icon-plus-square-o:before {
+  content: "\e625";
+}
+
+/* line 254, css/sass/partials/_icons.scss */
+.icon-plus-square:before {
+  content: "\e626";
+}
+
+/* line 258, css/sass/partials/_icons.scss */
+.icon-mail:before {
+  content: "\e606";
+}
+
+/* line 262, css/sass/partials/_icons.scss */
+.icon-mail2:before {
+  content: "\e607";
+}
+
+/* partials/extras */
+/* breadcrumbs */
+/* line 4, css/sass/partials/_extras.scss */
+#breadcrumbs li {
+  display: inline-block;
+  margin-right: 0.75rem;
+}
+
+/* icons for links */
+/* line 11, css/sass/partials/_extras.scss */
+a[rel="external"]:after {
+  font-family: icomoon;
+  content: "\ea7e";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: .25rem;
+}
+
+/* line 19, css/sass/partials/_extras.scss */
+a[href$='.pdf']:after {
+  font-family: icomoon;
+  content: "\eada";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: .25rem;
+}
+
+/* line 27, css/sass/partials/_extras.scss */
+a[rel="external"][href$='.pdf']:after {
+  font-family: icomoon;
+  content: "\eada  \ea7e";
+  text-decoration: none;
+  display: inline-block;
+  padding-left: .25rem;
+}
+
+/* format toggle */
+/* hide the default marker */
+/* line 38, css/sass/partials/_extras.scss */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* line 42, css/sass/partials/_extras.scss */
+details summary:before {
+  font-family: 'icomoon';
+  content: "\e625";
+  padding-right: 0.75rem;
+}
+
+/* line 48, css/sass/partials/_extras.scss */
+details[open] {
+  padding: 0 0.75rem;
+}
+/* line 52, css/sass/partials/_extras.scss */
+details[open] summary:before {
+  content: "\e623";
+}
+
+/* line 58, css/sass/partials/_extras.scss */
+details summary {
+  color: #004444;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  font-family: "Lucida Sans", "Lucida Grande", "Myriad Pro", sans-serif;
+  border: 1px dotted;
+}
+/* line 65, css/sass/partials/_extras.scss */
+details summary:hover {
+  cursor: pointer;
+}
+
+/* partials/print
  * (from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
  */
 @media print {
+  /* line 9, css/sass/partials/_print.scss */
   *,
   *:before,
   *:after {
     background: transparent !important;
     color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
+  /* line 17, css/sass/partials/_print.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
+  /* line 21, css/sass/partials/_print.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
+  /* line 25, css/sass/partials/_print.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
+  /* line 32, css/sass/partials/_print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
+  /* line 37, css/sass/partials/_print.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
+  /* line 42, css/sass/partials/_print.scss */
   thead {
     display: table-header-group;
-    /* h5bp.com/t */
   }
 
+  /* line 47, css/sass/partials/_print.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
+  /* line 51, css/sass/partials/_print.scss */
   img {
     max-width: 100% !important;
   }
 
+  /* line 57, css/sass/partials/_print.scss */
   p,
   h2,
   h3 {
@@ -273,8 +1437,14 @@ input[type="search"] {
     widows: 3;
   }
 
+  /* line 63, css/sass/partials/_print.scss */
   h2,
   h3 {
     page-break-after: avoid;
+  }
+
+  /* line 67, css/sass/partials/_print.scss */
+  nav {
+    display: none;
   }
 }

@@ -1,32 +1,33 @@
 <?php
 /*
-Template Name: No Sidebars
+Template Name: Left Sidebar
 */
 	get_header(); ?>
     
     <?php the_breadcrumb(); ?>
 
-	<div class="main" id="primary" role="main">
+	<div class="main" id="primary-right" role="main">
+    
 		<!-- section -->
 		<section>
+			<h1><?php the_title(); ?></h1>
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php	#$arr = get_category_parents( the_ID(), true, ' &raquo; ', true, true);
-		print the_category( ' &raquo; ' );
-
-?>				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
+
+				<!-- ?php comments_template( '', true ); // Remove if you don't want comments ?>
+				<br class="clear">
+				<?php edit_post_link(); ?> -->
+
 			</article>
 		<?php endwhile; ?>
 		<?php else: ?>
-				<h1><?php the_title(); ?></h1>
+			<article>
 				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 			</article>
 		<?php endif; ?>
 		</section>
 	</div>
-
-<?php // get_sidebar(); ?>
-
+<?php get_sidebar('left'); ?>
 <?php get_footer(); ?>
