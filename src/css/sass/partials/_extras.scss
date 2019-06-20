@@ -6,18 +6,17 @@
 	margin-right: $gutter;
 }
 
-
 /* icons for links */
-a[rel="external"]:after {
-	font-family: icomoon;
+a[rel="external"]:not(.img):not(.social-icon):after {
+	font-family: $icon-font-name;
 	content: "\ea7e"; // external link icon
 	text-decoration: none; // removes underline from the icon in some browsers
 	display: inline-block; // removes underline from the icon in some browsers
 	padding-left: .25rem;
 }
 
-a[href$='.pdf']:after {
-	font-family: icomoon;
+a[href$='.pdf']:not(.img):after {
+	font-family: $icon-font-name;
 	content: "\eada"; // pdf icon
 	text-decoration: none; // removes underline from the icon in some browsers
 	display: inline-block; // removes underline from the icon in some browsers
@@ -25,7 +24,7 @@ a[href$='.pdf']:after {
 }
 
 a[rel="external"][href$='.pdf']:after {
-	font-family: icomoon;
+	font-family: $icon-font-name;
 	content: "\eada  \ea7e"; // external link icon
 	text-decoration: none; // removes underline from the icon in some browsers
 	display: inline-block; // removes underline from the icon in some browsers
@@ -40,29 +39,85 @@ details summary::-webkit-details-marker {
 }
 
 details summary:before {
-	font-family: 'icomoon';
+	font-family: $icon-font-name;
     content: "\e625";
 	padding-right: $gutter;
 }
 
-details[open] {
-	// border: 1px solid $s-details-bg;
+details {
 	padding: 0 $gutter;
+}
 
+details[open] {
 	summary:before {
 		content: "\e623";
 	}
 }
 
-
 details summary {
-	// background: $s-details-bg;
 	color: $main-link;
+	margin: 0 $neg-gutter $gutter;
 	padding: $gutter;
 	font-size: 1.25rem;
 	font-family: $typeface-display;
-	border: 1px dotted;
+	background-color: $t-details-bg;
 	&:hover {
 		cursor: pointer;
+		background-color: $main-hflink-bg;
 	}
+}
+
+/* donate button */
+a.donate {
+	padding: $gutter;
+	background-color: $d-button-bg;
+	color: $d-button-t;
+}
+
+.social-link {
+    padding: 5px 10px;
+    color: white;
+    font-size: 12px;
+}
+
+.social-link:hover,.social-link:active {
+    color: white;
+}
+
+.social-twitter {
+    background: #41B7D8;
+}
+
+.social-twitter:hover,.social-twitter:active {
+    background: #279ebf;
+}
+
+.social-facebook {
+    background: #3B5997;
+}
+
+.social-facebook:hover,.social-facebook:active {
+    background: #2d4372;
+}
+
+.social-googleplus {
+    background: #D64937;
+}
+
+.social-googleplus:hover,.social-googleplus:active {
+    background: #b53525;
+}
+
+.social-email {
+    background: #444;
+}
+
+.social-eamil:hover,.social-email:active {
+    background: #222;
+}
+
+.social-social {
+    margin: 20px 0px 25px 0px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
 }

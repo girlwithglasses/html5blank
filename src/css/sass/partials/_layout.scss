@@ -1,32 +1,62 @@
+/* partials/layout */
+
 // make sure that all the article content stays in the container
 article {
 	@include cf;
+
+//	possibly dodgy - check!
+	overflow: visible;
+	z-index: 1;
+
+	// link styling within articles
+	a {
+
+		border-bottom: 1px dotted $main-link;
+
+		&:hover, &:focus, &:active {
+			border-style: solid;
+		}
+
+		// give images that are links the class 'img'
+		.img {
+			display: block;
+
+			border-style: none;
+
+			&:hover {
+				background-color: #fff;
+				border-style: none;
+			}
+		}
+
+		.img img { margin: $gutter; }
+	}
 }
 
 #primary, #primary-left, #primary-right, #primary-middle {
 	width: 100%;
 }
 
-#primary, #primary-left, #primary-right, #primary-middle, aside {
+aside, #primary, #primary-left, #primary-right, #primary-middle {
 	padding: 0 1rem;
 }
 
-@include maxw( $nar- ) {
+@include maxw( 600px ) {
 	aside, #primary, #primary-left, #primary-right, #primary-middle {
 		width: 100%;
+		padding: 0;
 	}
 }
-@include minmax( $nar, $med- ) {
+@include minmax(601px, $med- ) {
 	aside {
 		width: 40%;
 	}
 	#primary-left, #primary-right {
 		width: 60%;
-		background-color: $sidebar-bg;
 	}
 
 }
-@include minw( $nar ) {
+@include minw( 601px ) {
 	#primary-left, .sidebar.left, #primary-middle {
 		float: left;
 	}
@@ -37,7 +67,6 @@ article {
 @include minw( $med ) {
 	aside {
 		width: 30%;
-		// background-color: goldenrod;
 	}
 	#primary-left, #primary-right {
 		width: 70%;
@@ -54,24 +83,5 @@ article {
 	> .pie-chartify, > .piechart {
 		float: left;
 		margin: 0 $line-ht $line-ht 0;
-	}
-}
-
-// front page
-@include maxw( $nar- ) {
-	.bigpic h2 {
-		width: 100%;
-	}
-}
-@include minmax( $nar-, $med- ) {
-	.bigpic h2 {
-		width: 50%;
-		float: left;
-	}
-}
-@include minw( $med ) {
-	.bigpic h2 {
-		float: left;
-		width: 25%;
 	}
 }

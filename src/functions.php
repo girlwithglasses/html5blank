@@ -5,7 +5,8 @@
  * Custom functions, support, custom post types and more.
  */
 
-require_once "modules/is-debug.php";
+#require_once "modules/is-debug.php";
+define('HTML5_DEBUG', false);
 
 /*------------------------------------*\
     External Modules/Files
@@ -85,52 +86,103 @@ function html5blank_nav()
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
+
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+
+//		wp_deregister_script('jquery');
+
+		wp_register_script('html5shiv',
+		get_template_directory_uri() . '/bower_components/html5shiv/dist/html5shiv.js',
+		array(),
+		'1.0.0',
+		true);
+
         if (HTML5_DEBUG) {
-            // jQuery
-            wp_deregister_script('jquery');
-            wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.js', array(), '1.11.1');
+			//	es5-shim
+			wp_register_script(
+				'es5-shim',
+				get_template_directory_uri() . "/bower_components/es5-shim/es5-shim.min.js",
+				array(),
+				'1.0.0',
+				true);
 
-            // Conditionizr
-//            wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0');
+	//	getElementsByClassName
+			//	es5-shim
+			wp_register_script(
+				'getElByClN',
+				get_template_directory_uri() . "/bower_components/getElementsByClassName-polyfill/dist/getElementsByClassName-polyfill.js",
+				array(),
+				'1.0.0',
+				true);
 
-            // Modernizr
-//            wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), '2.8.3');
+	//	classList
+			wp_register_script(
+				'cL',
+				get_template_directory_uri() .
+				"/js/classList.js",
+				array(),
+				'1.0.0',
+				true);
 
-            // Custom scripts
-            wp_register_script(
-                'html5blankscripts',
-                get_template_directory_uri() . '/js/scripts.js',
-                array(
-//                    'conditionizr',
-//                    'modernizr',
-                    'jquery'),
-                '1.0.0');
+	//	 addEventListener
+			wp_register_script(
+				'evList',
+				get_template_directory_uri() . "/js/addeventlistener-ie8.js",
+				array(),
+				'1.0.0',
+				true);
 
-            // Enqueue Scripts
-        #    wp_enqueue_script('html5blankscripts');
-            wp_enqueue_script('html5blankscripts', false, false, false, true);
+	//	details/summary
+			wp_register_script(
+				'details',
+				get_template_directory_uri() . "/js/details.js",
+				array(),
+				'1.0.0',
+				true);
+
+			// Custom scripts
+			wp_register_script(
+				'html5blankscripts',
+				get_template_directory_uri() . '/js/scripts.js',
+				array(
+				//	'html5shiv',
+				'es5-shim',
+		//		'getElByClN',
+				'cL','evList','details'),
+		//		array(),
+				'1.0.0',
+				true);
+
+//comment-reply.min.js
 
         // If production
         } else {
-            // Scripts minify
-            wp_register_script('html5blankscripts-min', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0.0', true);
-            // Enqueue Scripts
-#            wp_enqueue_script('html5blankscripts-min', false, false, false, true);
-            wp_enqueue_script('html5blankscripts-min');
+
+			// Minified scripts
+			wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0.0', true);
         }
+
+#		wp_enqueue_script( '_s-html5shiv', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.2', false );
+		global $wp_scripts;
+		$wp_scripts->add_data( 'html5shiv', 'conditional', 'lt IE 9' );
+
+		// Enqueue Scripts
+		wp_enqueue_script('html5blankscripts', false, false, false, true);
     }
 }
 
 // Load HTML5 Blank conditional scripts
 /*
-function html5blank_conditional_scripts()
-{
+function html5blank_conditional_scripts() {
     if (is_page('pagenamehere')) {
-        // Conditional script(s)
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0');
-        wp_enqueue_script('scriptname');
+		// Conditional script(s)
+		wp_register_script('homepage', get_template_directory_uri() . '/js/home.js', array('jquery'), '1.0.0');
+		wp_enqueue_script('homepage');
     }
+    else if (is_page('pagenamehere')) {
+		// Conditional script(s)
+		wp_register_script('charts', get_template_directory_uri() . '/js/charts.js', array(), '1.0.0');
+		wp_enqueue_script('charts');
 }
 */
 // Load HTML5 Blank styles
@@ -141,17 +193,15 @@ function html5blank_styles()
         wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize.css/normalize.css', array(), '3.0.1');
 
         // Custom CSS
-        wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
-//        wp_register_style('html5blank', get_template_directory_uri() . '/css/style.css', array('normalize'), '1.0');
+        wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0');
 
         // Register CSS
-        wp_enqueue_style('html5blank');
+//        wp_enqueue_style('html5blank');
     } else {
         // Custom CSS
         wp_register_style('html5blankcssmin', get_template_directory_uri() . '/style.css', array(), '1.0');
-//        wp_register_style('html5blankcssmin', get_template_directory_uri() . '/css/style.css', array(), '1.0');
         // Register CSS
-        wp_enqueue_style('html5blankcssmin');
+//        wp_enqueue_style('html5blankcssmin'); // now hardcoded in header
     }
 }
 
@@ -308,7 +358,34 @@ function html5_blank_view_article($more)
 // Remove Admin bar
 function remove_admin_bar()
 {
-    return true;
+//	return true;
+	if (! current_user_can('administrator') && ! is_admin()) {
+		show_admin_bar(false);
+	}
+}
+
+// get rid of those ridiculous emojis
+function disable_wp_emojicons() {
+
+  // all actions related to emojis
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+  // filter to remove TinyMCE emojis
+  add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+}
+
+function disable_emojicons_tinymce( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -386,20 +463,59 @@ function html5blankcomments($comment, $args, $depth)
     <?php endif; ?>
 <?php }
 
+/* widget shortcode stuff */
+
+add_shortcode( 'widget', 'html5_widget_sc' );
+
+function html5_widget_sc( $atts ) {
+
+	// Configure defaults and extract the attributes into variables
+	extract( shortcode_atts(
+		array(
+			'type'  => '',
+			'title' => '',
+		),
+		$atts
+	));
+
+	$args = array(
+		'before_widget' => '<div class="box widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-title">',
+		'after_title'   => '</div>',
+	);
+
+	ob_start();
+	the_widget( $type, $atts, $args );
+	$output = ob_get_clean();
+
+	return $output;
+}
+
+
+
+
 /*------------------------------------*\
     Actions + Filters + ShortCodes
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
+add_action( 'init', 'disable_wp_emojicons' ); // get rid of emojis
+
+add_action('wp_enqueue_scripts', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
+// add_action('wp_head', 'html5blank_styles'); // Add Theme Stylesheet
 // add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_head', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 // add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+add_action('init','remove_comment_reply'); // get rid of comment reply script
+// add_action('after_setup_theme', 'footer_enqueue_scripts');
 
+
+function remove_comment_reply(){
+	wp_deregister_script( 'comment-reply' );
+}
 // move all the JS to the page footer
 function footer_enqueue_scripts() {
 	remove_action('wp_head', 'wp_print_scripts');
@@ -409,7 +525,6 @@ function footer_enqueue_scripts() {
 	add_action('wp_footer', 'wp_enqueue_scripts', 5);
 	add_action('wp_footer', 'wp_print_head_scripts', 5);
 }
-add_action('after_setup_theme', 'footer_enqueue_scripts');
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -433,7 +548,9 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+
 add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
@@ -444,7 +561,7 @@ remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
 function top_quality() { return 100; }  // JPEG quality: 100%
-
+/*
 if (version_compare( '4.1', get_bloginfo('version') ) >= 0) {
 	add_filter( 'clean_url', function( $url ) {
 #		print "Running the clean_url filter" . PHP_EOL;
@@ -460,7 +577,7 @@ else {
 		return str_replace( ' src', ' defer="defer" src', $tag );
 	}, 10, 2 );
 }
-
+*/
 
 // Shortcodes
 // add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
@@ -525,7 +642,7 @@ function the_breadcrumb () {
     global $post, $wp_query;
     $category = get_the_category();
 
-    // Build the breadcrums
+    // Build the breadcrumbs
     echo '<ul id="' . $id . '" class="' . $class . '">';
 
     // Do not display on the homepage
@@ -536,10 +653,11 @@ function the_breadcrumb () {
         echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 
         if ( is_single() ) {
-
+			if (! empty($category) ) {
             // Single post (Only display the first category)
             echo '<li class="item-cat item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><a class="bread-cat bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '" href="' . get_category_link($category[0]->term_id ) . '" title="' . $category[0]->cat_name . '">' . $category[0]->cat_name . '</a></li>';
             echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
+			}
             echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
         } else if ( is_category() ) {
@@ -552,6 +670,7 @@ function the_breadcrumb () {
             // Standard page
             if( $post->post_parent ){
 
+				$parents = "";
                 // If child page, get parents
                 $anc = get_post_ancestors( $post->ID );
 
@@ -671,3 +790,39 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+
+/*------------------------------------*\
+    Social Sharing Button Functions
+\*------------------------------------*/
+
+function social_sharing_buttons($content) {
+	// Show this on post and page only. Add filter is_home() for home page
+	if(is_single() && ! is_front_page() ){
+
+		// Get current page URL
+		$shortURL = get_permalink();
+
+		// Get current page title
+		$shortTitle = get_the_title();
+
+		// Construct sharing URL without using any script
+		$twitterURL = 'https://twitter.com/intent/tweet?text='.$shortTitle.'&amp;url='.$shortURL;
+		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$shortURL;
+		$googleURL = 'https://plus.google.com/share?url='.$shortURL;
+		$emailURL = 'mailto:?subject='.$shortTitle.'&amp;body=Check out this totally awesome blog post: '.$shortURL;
+
+		// Add sharing button at the end of page/page content
+		$content .= '<div class="social-social">';
+		$content .= '<p>Share this story on <a class="social-link social-twitter" href="'. $twitterURL .'"><span class="icon-twitter5"></span>&nbsp;Twitter</a>';
+		$content .= '<a class="social-link social-facebook" href="'.$facebookURL.'"><span class="icon-facebook5"></span>&nbsp;Facebook</a>';
+		$content .= '<a class="social-link social-googleplus" href="'.$googleURL.'"><span class="icon-google-plus2"></span>&nbsp;Google+</a>';
+		$content .= '<a class="social-link social-email" href="'.$emailURL.'"><span class="icon-envelope"></span>&nbsp;Email</a>';
+		$content .= '</div>';
+		return $content;
+	}else{
+		// if not post/page then don't include sharing button
+		return $content;
+	}
+};
+add_filter( 'the_content', 'social_sharing_buttons');

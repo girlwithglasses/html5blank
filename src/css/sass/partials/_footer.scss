@@ -2,8 +2,61 @@
 
 .footer {
 	clear: both;
+	background-color: $f-bg;
+
+	p {
+		text-align: center;
+		margin: $line-ht $line-ht 0 $line-ht;
+	}
+
+	aside {
+		clear: both;
+		width: 100%;
+		margin: 0;
+		padding: $gutter 0;
+		p {
+			margin: 0;
+		}
+	}
+	.social {
+		list-style-type: none;
+		width: 8rem;
+		margin: $gutter auto;
+		a {
+			width: 8rem;
+		}
+	}
 }
-footer p {
-	text-align: center;
-	margin: $line-ht;
+
+/* CHECK ME!! */
+.social-icon {
+	display: inline-block;
+}
+
+.copyright {
+	padding-bottom: $line-ht;
+	clear: both;
+}
+
+div.one-third {
+	padding: 0 $gutter;
+
+}
+
+@include maxw( $nar ) {
+	div.one-third {
+		width: 100%;
+	}
+}
+@include minmax( $nar, $med ) {
+	div.one-third {
+		width: 48%;
+		float: left;
+	}
+}
+@include minw( $med ) {
+	div.one-third {
+		float: left;
+		width: 32%;
+	}
 }

@@ -375,6 +375,10 @@ sub {
 }
 */
 
+details summary {
+	display: block;
+}
+
 /* Best available ampersand */
 .amp {
 	font-family: Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;
@@ -393,6 +397,6 @@ li ul, li ol {
 	list-style: none;
 	margin-left: 0;
 }
-dd+dt {
+dd+dt, dt+dt {
 	margin-top: $line-ht;
 }

@@ -1,0 +1,175 @@
+/* partials/front_page */
+
+#front-page {
+
+	.main, .sub, .sub1, .subhalf {
+		float: left;
+		@include cf;
+	}
+
+	.one img {
+		z-index: 1;
+	}
+
+	.sub, .sub1 {
+		width: 33%;
+	}
+
+/*	.sub1 img {
+		width: 20%;
+		padding: 0;
+		margin: 0;
+	} */
+
+	.subhalf {
+		width: 50%;
+	}
+
+	.main {
+		width: 66%;
+		.img img {
+			margin: 0;
+		}
+		position: relative;
+	}
+
+	.fb {
+		margin-bottom: 1rem;
+	}
+
+	/* h3 + .css-events-list {
+		margin-top: -24px;
+	} */
+
+
+	// blog list formatting
+	a.title {
+		font-weight: bold;
+	}
+
+	a.image {
+		float: left;
+		width: 40%;
+		padding: 0 $gutter $gutter 0;
+		img {
+			width: auto;
+		}
+	}
+
+	div.listing-item {
+		clear: both;
+	}
+
+	@include minmax( 880px, 1200px ) {
+		p {
+			//font-size: .8rem;
+			margin-bottom: 1rem;
+		}
+		h2 {
+			margin-bottom: 1rem;
+		}
+	}
+
+	@include minmax( 880px, 1100px ) {
+		.show-hide {
+			display: none;
+		}
+	}
+
+	@include minw( 567px ) {
+		.top {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+		}
+		.below {
+			display: none;
+		}
+	}
+
+	@include maxw( 566px) {
+		.top {
+			display: none;
+		}
+		.below {
+			float: left;
+		}
+	}
+
+	@include maxw( 880px ) {
+		.main, .sub1 {
+			width: 100%;
+		}
+	}
+
+	@include minw($med) {
+		.faq {
+			clear: left;
+		}
+		.left {
+			padding-right: $gutter-side;
+			&.imgcaption h4 {
+				margin-right: $gutter-side;
+			}
+		}
+		.middle {
+			padding: 0 $gutter-mid 0 $gutter-mid;
+			&.imgcaption h4 {
+				margin: 0 $gutter-mid 0 $gutter-mid;
+			}
+		}
+		.right {
+			padding-left: $gutter-side;
+			&.imgcaption h4 {
+				margin-left: $gutter-side;
+			}
+		}
+		.main {
+			padding-right: $gutter-mid;
+		}
+			&.imgcaption h4 {
+				margin-right: $gutter-mid;
+			}
+	}
+
+	// responsive
+	@include minmax( $nar-, $med- ) {
+		.sub {
+			width: 50%;
+		}
+		div.sub.middle.four {
+			display: none;
+		}
+		.three, .six, .eight {
+			padding-right: $gutter-side;
+			&.imgcaption h4 {
+				margin-right: $gutter-side;
+			}
+		}
+		.five, .seven, .nine {
+			padding-left: $gutter-side;
+			&.imgcaption h4 {
+				margin-left: $gutter-side;
+			}
+		}
+	}
+
+	@include maxw( $nar- ) {
+		.sub, .main, .subhalf {
+			width: 100%;
+		}
+		.imgcaption h4 {
+			position: relative;
+		}
+	}
+
+	@include maxw( $med- ){
+		a.image {
+			width: auto;
+			// padding: 0 $gutter $gutter 0;
+			img {
+				width: auto;
+			}
+		}
+	}
+}

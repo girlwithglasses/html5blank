@@ -1,8 +1,7 @@
 // icons
 
-
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
+	font-family: $icon-font-name;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -13,6 +12,42 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.footer [class^="icon-"], [class*=" icon-"] {
+	font-size: 2rem;
+}
+
+.icon-link-external:before {
+	content: "\e600";
+}
+
+.icon-envelope:before {
+	content: "\e601";
+}
+
+.icon-keyboard-arrow-up:before {
+	content: "\e602";
+}
+
+.icon-keyboard-arrow-right:before {
+	content: "\e603";
+}
+
+.icon-keyboard-arrow-left:before {
+	content: "\e604";
+}
+
+.icon-keyboard-arrow-down:before {
+	content: "\e605";
+}
+
+.icon-mail:before {
+	content: "\e606";
+}
+
+.icon-mail2:before {
+	content: "\e607";
 }
 
 .icon-mail3:before {
@@ -37,22 +72,6 @@
 
 .icon-plus:before {
 	content: "\e60d";
-}
-
-.icon-keyboard-arrow-up:before {
-	content: "\e602";
-}
-
-.icon-keyboard-arrow-right:before {
-	content: "\e603";
-}
-
-.icon-keyboard-arrow-left:before {
-	content: "\e604";
-}
-
-.icon-keyboard-arrow-down:before {
-	content: "\e605";
 }
 
 .icon-instagram2:before {
@@ -135,12 +154,24 @@
 	content: "\e621";
 }
 
-.icon-link-external:before {
-	content: "\e600";
+.icon-file-pdf-o:before {
+	content: "\e622";
 }
 
-.icon-envelope:before {
-	content: "\e601";
+.icon-minus-square-o:before {
+	content: "\e623";
+}
+
+.icon-minus-square:before {
+	content: "\e624";
+}
+
+.icon-plus-square-o:before {
+	content: "\e625";
+}
+
+.icon-plus-square:before {
+	content: "\e626";
 }
 
 .icon-home3:before {
@@ -234,32 +265,3 @@
 .icon-file-word:before {
 	content: "\eadc";
 }
-
-.icon-file-pdf-o:before {
-	content: "\e622";
-}
-
-.icon-minus-square-o:before {
-	content: "\e623";
-}
-
-.icon-minus-square:before {
-	content: "\e624";
-}
-
-.icon-plus-square-o:before {
-	content: "\e625";
-}
-
-.icon-plus-square:before {
-	content: "\e626";
-}
-
-.icon-mail:before {
-	content: "\e606";
-}
-
-.icon-mail2:before {
-	content: "\e607";
-}
-

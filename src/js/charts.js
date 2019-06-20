@@ -1,11 +1,10 @@
 "use strict";
 
-var icra_scripts = function(){
-};
+var gcharts = function(){};
 
-icra_scripts.prototype = {
+gcharts.prototype = {
 
-	constructor: icra_scripts,
+	constructor: gcharts,
 
 	init: function() {
 		var self = this;
@@ -25,37 +24,19 @@ icra_scripts.prototype = {
 	go: function() {
 		// do we have a chartify table?
 		var self = this,
-		tables = document.querySelectorAll(".pie-chartify"),
+		tables = document.getElementsByClassName("pie-chartify"),
 		b = document.getElementsByTagName('body')[0];
 		// we have javascript!
 		b.classList.add('js');
-		self.responsiveMenu();
 		if (tables.length > 0) {
 			var req = encodeURIComponent( '{"modules":[{"name":"visualization","version":"1.0","packages":["corechart"],"callback":pieChartify}]}' );
 
-			self.addScript("google-jsapi", "https://www.google.com/jsapi?autoload=" + req);
+			icra_scripts.addScript("google-jsapi", "https://www.google.com/jsapi?autoload=" + req);
 		}
-
-		if (document.getElementById("fb-root")) {
-			self.addScript("facebook-jssdk", "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3");
-		}
-		// GA
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;
-		f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();
-		h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];
-		h.async=1;
-		h.src=e;
-		l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-59710430-1', 'icraeastbay.org');
-		ga('send', 'pageview');
 	},
 
 	/*
 		Add a script to the page
-	*/
 	addScript: function(id, src) {
 		var
 		s = document.getElementsByTagName("script")[0],
@@ -68,6 +49,7 @@ icra_scripts.prototype = {
 		js.async = 1;
 		s.parentNode.insertBefore(js, s);
 	},
+	*/
 
 	/**
 		Pass in an HTML table
@@ -102,7 +84,7 @@ icra_scripts.prototype = {
 	*/
 	pieChartify: function () {
 		var i,
-		tables = document.querySelectorAll(".pie-chartify"),
+		tables = document.getElementsByClassName("pie-chartify"),
 		tl = tables.length, id, dt,
 		opt = {
 			pieSliceText: "none",
@@ -136,62 +118,13 @@ icra_scripts.prototype = {
 			);
 			c.draw(dt, opt);
 		}
-	},
-
-	handleEvent: function (e) {
-		var t, self = this;
-
-		console.log("handling a " + e.type + " on " + e.target.nodeName + "; event phase: " + e.eventPhase);
-
-		if (e.target.hasAttribute("id") && ( "navlinkS" === e.target.id || "navlinkA" === e.target.id || "navlink" === e.target.id ) ) {
-			self.menu.classList.toggle("show");
-			return;
-		}
-		if (e.target.classList.contains("expand")) {
-			e.preventDefault();
-			// get the nextSibling and toggle the 'show' property
-			t = e.target.parentNode.nextSibling;
-			while ("UL" !== t.nodeName) {
-				t = t.nextSibling;
-				if (undefined === typeof t) {
-					return;
-				}
-			}
-			t.classList.toggle("show");
-			// swap the content of the node
-
-			return;
-		}
-	},
-
-	responsiveMenu: function () {
-		var self = this,
-		menu = document.querySelector("nav > ul"),
-		nav = menu.parentNode,
-		subMenus = menu.querySelectorAll(".menu-item-has-children > a"),
-		sl = subMenus.length,
-		navl = document.querySelector("#navlinkA"),
-		s,
-		t;
-
-		self.menu = menu;
-
-		for (s = 0; s < sl; s++) {
-			// add in the expanders
-			subMenus[s].innerHTML =
-				subMenus[s].innerHTML + "<span class='expand'>&#xe625;</span>";
-		}
-		navl.innerHTML = navl.innerHTML + "<span id='navlinkS' class='expand'>&#xe625;</span>";
-
-		// add an event handler to the menu
-		nav.addEventListener('click', self, false);
-
 	}
 };
 
 /**
 	Polyfills required:
 
+	getElementsByClassName
 	classList
 	addEventListener
 	[].forEach
@@ -199,11 +132,11 @@ icra_scripts.prototype = {
 
 */
 function pieChartify() {
-	var ic = new icra_scripts();
-	ic.pieChartify();
+	var gc = new gcharts();
+	gc.pieChartify();
 }
 
 (function () {
-	var ic = new icra_scripts();
-	ic.init();
+	var gc = new gcharts();
+	gc.init();
 }());

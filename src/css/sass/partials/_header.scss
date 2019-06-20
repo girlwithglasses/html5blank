@@ -4,12 +4,62 @@
 // Header container
 .header {
 	@include cf;
-	margin-bottom: $line-ht;
+	// margin-bottom: $line-ht;
+// possibly dodgy...
+	overflow: visible;
+	z-index: 2;
+
+// Name in header
+	h1 {
+		text-align: left;
+	}
+	.logo {
+		float: right;
+		max-width: 158px;
+		padding-top: $gutter;
+	}
 }
 
-// Logo
-.logo {
-	padding: $gutter 0;
+.logo img {}
+
+@include maxw( 519px ) {
+
+	.header {
+		h1 {
+			margin: $gutter 0;
+			font-size: 1.25rem;
+		}
+		.logo {
+			width: 30%;
+			margin-left: $gutter;
+		}
+	}
+	#mainNav {
+		clear: both;
+	}
 }
 
-.logo-img {}
+@include minw( 520px ) {
+	.header {
+		h1 {
+			margin-top: 2rem;
+			height: 52px;
+		}
+		.logo {
+
+		}
+	}
+
+
+}
+
+@include minw( 1060px ) {
+	.header {
+		position: relative;
+		.logo {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+}

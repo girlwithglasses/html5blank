@@ -10,6 +10,9 @@
 .clearR { clear: right; }
 .clearL { clear: left; }
 .clear { clear: both; }
+.gutterR { margin-right: $gutter; }
+.nospace { margin: 0; }
+.ib { display: inline-block; }
 
 .reset-box {
   @include reset-box;

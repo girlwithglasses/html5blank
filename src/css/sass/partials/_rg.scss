@@ -1,0 +1,158 @@
+/* partials/rg */
+
+/* img.rgtkSearchPetPicImg {
+	width: 200px;
+} */
+
+/* .rgtkSearchTable {
+	vertical-align: top;
+} */
+
+select.rgtkSearchFormSelect {
+	border: 1px;
+	border-color: $form-element-border;
+	border-width: 1px;
+	font-family: $typeface-page-text;
+	border-style: solid;
+	font-size: $font-size;
+	display: inline;
+//	background-color: $primary;
+//	font-color: $h-menu-link;
+}
+
+.rgtkSearchFormTitle {
+	font-family: $typeface-page-text;
+	font-size: $font-size;
+	line-height: 3;	
+}
+
+.rgtkSearchString {
+	padding: .5rem;
+	margin: auto;
+}
+
+input.rgtkSearchString {
+	margin: auto;
+}
+
+#rgtkSearchSubmit_0, #rgtkSearchClear_0 {
+	padding: .5rem;
+	background-color: $d-button-bg;
+	color: $d-button-t;
+	border: none;
+	margin: 0.5rem;
+}
+
+.rgtkSearchPetInfoAnimalBreed {
+	margin-bottom: $gutter;
+}
+
+@include minw( $med ) {
+	div.rgtk-yw8G0jSF div.rgtkSearchPetPic {
+		width: 200px;
+		height: 200px;
+		margin: auto;
+		overflow:hidden
+	}
+	div.rgtkSearchPetInfoField {
+		width: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+}
+
+@include maxw( $med- ) {
+	div.rgtk-yw8G0jSF div.rgtkSearchPetPic {
+		width: 150px;
+		height: 150px;
+		margin: auto;
+		overflow:hidden
+	}
+	div.rgtkSearchPetInfoField {
+		width: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+}
+
+div.rgtkSearchPetName, #rgtkSearchPetInfoAnimalName {
+	font-family: $typeface-display;
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+
+/* @include minw( $med ) {
+	div.rgtkSearchPetPic.rgtkSearchPetPicFixed {
+		width: 150px;
+		height: 150px;
+		margin: auto;
+	}
+	div.rgtkSearchPetName, div.rgtkSearchPetBreed, div.rgtkSearchPetBasicInfo, div.rgtkSearchPetInfoField {
+		width: 200px;
+		margin: auto;
+		text-align: center;
+	}
+}
+
+div.rgtkSearchPetLocationDistance {
+	// display: none;
+}
+
+div.rgtkSearchPetBasicInfo, div#rgtkSearchPetInfoAnimalBreed {
+	margin-bottom: 1rem;
+}
+
+div.rgtkSearchPetName, #rgtkSearchPetInfoAnimalName {
+	font-family: $typeface-display;
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+
+div.rgtkSearchPetBreed {
+	font-weight: normal;
+}
+
+.rgtkSearchLocationField,
+.rgtkSearchFormSelect,
+.rgtkSearchFormTitle,
+.rgtkSearchFormSelect,
+.rgtkSearchLabel,
+#rgtkSearchLocationField_0,
+.rgtkSearchPetLocationDistance,
+.rgtkSearchTableSpacer {
+	display: none;
+	padding: 0;
+}
+
+.rgtk-LTlXEApI .rgtkSearchTable tbody td {
+	padding: 0;
+}
+
+#rgtkSearchTable_0 {
+	visibility: hidden;
+}
+
+#rgtkSearchFormSubmitButton_0 {
+	visibility: visible;
+}
+
+@include maxw( $med- ) {
+	div.rgtkSearchPetPic.rgtkSearchPetPicFixed {
+		width: 150px;
+		height: 150px;
+		margin: auto;
+	}
+	div.rgtkSearchPetName, div.rgtkSearchPetBreed, div.rgtkSearchPetBasicInfo, div.rgtkSearchPetInfoField {
+		width: 150px;
+		margin: auto;
+		text-align: center;
+	}
+} */
+
+
+//.rgtkPetBrowsePetsBox {
+//	display: none;
+//}

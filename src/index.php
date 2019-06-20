@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<div class="main" id="primary-left" role="main">
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+			<h1><?php _e( 'Blog', 'html5blank' ); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 
@@ -12,8 +12,8 @@
 
 		</section>
 		<!-- /section -->
-	</main>
+	</div>
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('right'); ?>
 
 <?php get_footer(); ?>

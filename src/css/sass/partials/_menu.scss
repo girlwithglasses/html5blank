@@ -1,11 +1,14 @@
-// NAVIGATION
+/* partials/menu */
 
-
+/*
 nav li > ul,
 nav li > ol {
 	margin: 0;
 	list-style: none;
 }
+*/
+
+$l-sub-w: 12.5rem;
 
 #navlink {
 	display: none;
@@ -14,129 +17,156 @@ nav li > ol {
 
 #navlinkA {
 	display: block;
-	padding: $gutter $font-size;
+	padding: $gutter;
+	border-bottom: 1px solid #fff;
 }
 
-#navlink a:before {
-	font-family: 'icomoon';
+.expand {
+	font-family: $icon-font-name;
+	color: $h-menu-link;
+	min-width: 1rem;
+	margin-top: $neg-gutter;
+	margin-right: $neg-gutter;
+	padding: 0 $gutter;
+	text-align: center;
+}
+
+/*
+#navlink a:after {
 	content: "\e625";
-	padding-right: .75rem;
 }
 
-#navlink.open a:before {
+.show ~ #navlink a:after {
 	content: "\e623";
 }
 
-header nav {
-	@include cf;
+#navlink.open a:after {
+//	content: "\e623";
+}
+*/
+nav {
+	background: $h-menu-bg;
+	margin: $gutter 0 $line-ht;
 	width: 100%;
-	background-color: $h-menu-bg;
+	clear: right;
+	@include cf;
+
+	ul {
+		margin: 0;
+		list-style-type: none;
+		> li {
+			overflow: visible;
+//			display: inline-block;
+			position: relative;
+		}
+	}
 
 	a {
+		display: block;
 		color: $h-menu-link;
 		background-color: $h-menu-link-bg;
-		padding: $gutter $font-size;
+		padding: $gutter;
 
 		&:hover, &:focus, &:active {
 			color: $h-menu-hfa-link;
 			background-color: $h-menu-hfa-link-bg;
 		}
+		&:visited {
+			color: $h-menu-link;
+		}
 	}
+
 	.current-menu-item > a {
 		color: $h-menu-current;
 		background-color: $h-menu-current-bg;
 	}
 	.sub-menu .current-menu-item > a {
-		border-left: .25rem $h-menu-current-hilite solid;
+		border-left: .25rem solid $h-menu-current-hilite;
+	}
+
+	li:hover {
+		background-color: darken($h-menu-bg, 10%);
+		> .sub-menu {
+			left: auto;
+		}
+	}
+
+	.sub-menu {
+		left: -9999px;
+		top: 2 * $line-ht;
+		position: absolute;
+		z-index: 2;
+		background-color: inherit;
+		li {
+			border-top: 1px solid lighten($h-menu-bg, 15%);
+			background: $h-menu-bg;
+			display: block;
+			&:hover {
+				background-color: darken($h-menu-bg, 10%);
+			}
+		}
 	}
 }
+
 
 @include minw($med) {
 	#navlink {
 		display: none;
 	}
-	header nav {
-		li {
+	nav {
+
+		ul > li {
 			float: left;
-			position: relative;
-		}
-		a {
-			display: block;
-			float: left;
-		}
+			display: inline-block;
 
-		// drop down
-		.sub-menu li {
-			margin-left: -1px;
-			border-left: 1px solid $h-menu-border;
-			border-right: 1px solid $h-menu-border;
-			border-bottom: 1px solid $h-menu-border;
-
-			li {
-				border-bottom: 1px solid $h-menu-border;
-				&:last-child {
-			//		float: none;
-					border-bottom: none;
-				}
-			}
 		}
-
-		li ul,
-		li:hover ul ul {
-			display: none;
-		//	z-index: 100;
+		li li {
+			width: $l-sub-w;
 		}
-		li:hover ul {
-			display:block;
-		}
-
-		li {
-			ul {
-				position: absolute;
-				width: 12.5rem;
-				top: $font-size*3;
-			}
-			li ul {
-				left: 12.5rem;
-				top: 0;
-			}
-			li {
-				float: none;
-			}
-			li a,
-			.current-menu-item li a,
-			li.current-menu-item a,
-			.current_page_ancestor li a,
-			.current-menu-ancestor li a,
-			.current_page_item li a {
-				float: none;
-				height: 100%;
-			}
+		.expand {
+			display: inline-block;
 		}
 	}
 }
 
+// responsive
 @include maxw($med-) {
 	#navlink {
 		display: block;
-
 		a:hover, a:focus {
 			color: $selcn;
 		}
 	}
 
 	nav {
-		a {
-			display: block;
-			border-bottom: 1px solid #F8F8F8;
+		.expand {
+			float: right;
+			line-height: 3rem;
 		}
-		li {
-			li a {
-				padding-left: 2rem;
+		ul {
+			width: 100%;
+			a {
+				display: block;
+				border-bottom: 1px solid #F8F8F8;
 			}
-			li li a {
-				padding-left: 4rem;
+			li {
+				li a {
+					padding-left: 2rem;
+				}
+				li li a {
+					padding-left: 4rem;
+				}
 			}
 		}
 	}
+	.js nav ul, .js nav .show ul {
+		display: none;
+	}
+	.js nav .show, .js nav .show .show  {
+		display: block;
+	}
+}
+
+#menu-item-1792 a {
+	background-color: $h-menu-donate-bg;
 }

@@ -1,3 +1,5 @@
+/* partials / images */
+
 // images
 
 article img {
@@ -5,40 +7,26 @@ article img {
 	height: auto;
 }
 
-// give images that are links the class 'img'
-a.img { display: block }
-
-.img img { margin: $gutter; }
-
 @include minw(856px) {
 	.landscape {
 		width: 50%;
 	}
 }
 
-// not sure where this should go
-.ib > div {
-  display: inline-block;
-}
-
 // captions
-.imgcaption { 
-	position: relative; 
-	// width: 100%; /* for IE 6 */
+.imgcaption {
+	position: relative;
+	margin-bottom: $line-ht;
 }
 
-.imgcaption h4 { 
-	position: absolute; 
-	bottom: 0px;
-	left: 0; 
+.imgcaption h4 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 0;
+	padding: 0 $gutter;
 	width: 100%;
-	margin-bottom: 10px;
-}
-
-.imgcaption h4 span { 
-	color: white; 
-	// letter-spacing: -1px;  
-	background: rgb(0, 0, 0); /* fallback color */
-	background: rgba(0, 0, 0, 0.7);
-	padding: 10px; 
+	color: $i-cap;
+	background: $i-cap-dft; /* fallback color */
+	background: $i-cap-bg;
 }

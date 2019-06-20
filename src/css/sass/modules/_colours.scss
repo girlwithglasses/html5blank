@@ -4,9 +4,9 @@ $text-color: #444;
 $body-bg: #fff;
 
 // primary colour for the theme
-$primary: null;
+$primary: #649191; //#ADC0AD;
 // secondary colour
-$secondary: null;
+$secondary: #FFF4C2;
 
 // selected text, selection background
 $selcn: #04A4CC;
@@ -17,7 +17,7 @@ $inserted-text-bg: deepskyblue;
 
 // change 'null' to a value to set these colours
 // link colours in main body text
-$main-link: #044;
+$main-link: darken($primary, 50%);
 $main-link-bg: null;
 
 // visited link
@@ -26,7 +26,7 @@ $main-vlink-bg: null;
 
 // hover/focus link, background
 $main-hflink: null;
-$main-hflink-bg: null;
+$main-hflink-bg: $primary;
 
 // active link
 $main-alink: null;
@@ -39,21 +39,23 @@ $blockquote-left-bar: #666;
 $form-element-border: #333;
 
 // header nav colours:
-$h-menu-border: #999;
+$h-menu-border: #fff;
 // background
-$h-menu-bg: aliceblue;
+$h-menu-bg: $primary;
 // link colour
-$h-menu-link: #044;
+$h-menu-link: #fff;
 // link background
-$h-menu-link-bg: #eee;
+$h-menu-link-bg: $h-menu-bg;
 // hover/focus/active link
 $h-menu-hfa-link: #fff;
 // hover/focus/active link bg
-$h-menu-hfa-link-bg: #044;
+$h-menu-hfa-link-bg: darken($primary, 30%);
+// donate button
+$h-menu-donate-bg: #FF7400; //#FF2D18;
 
 // the current menu item
 $h-menu-current: $h-menu-link;
-$h-menu-current-bg: $h-menu-link-bg;
+$h-menu-current-bg: $h-menu-hfa-link-bg;
 $h-menu-current-hilite: deepskyblue;
 
 // table colours
@@ -71,10 +73,23 @@ $tr-odd: null;
 $tr-odd-bg: lighten(aliceblue, 5%);
 
 // sidebar buttons
-$s-button-bg: orange;
+$s-button-bg: null;
 // sidebar bg
 $sidebar-bg: #f6f6f6;
 
-/* // summary details
-$s-details-bg: #B8B8B8;
-$s-details-txt: #FFF; */
+// toggle
+$t-details-bg: lighten($primary, 20%);
+// toggle hover
+$t-hdetails-bg: $main-hflink-bg;
+
+// footer
+$f-bg: lighten($primary, 20%);
+
+// image captions
+$i-cap: #fff;
+$i-cap-dft: #000;
+$i-cap-bg: rgba(0, 0, 0, 0.6);
+
+// donate button
+$d-button-bg: darken($primary, 30%);
+$d-button-t: #fff;

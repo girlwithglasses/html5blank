@@ -9,8 +9,19 @@ article a {
 	&:hover, &:focus, &:active {
 		border-style: solid;
 	}
+
+	// give images that are links the class 'img'
 	.img {
-		border: 1px dotted $main-link;
+		display: block;
+
+		border-style: none;
+
+		&:hover {
+			background-color: #fff;
+			border-style: none;
+		}
 	}
+
+	.img img { margin: $gutter; }
 
 }
