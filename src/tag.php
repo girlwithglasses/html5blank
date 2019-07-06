@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" aria-label="Content">
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
+			<h1><?php esc_html_e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title( '', false ); ?></h1>
 
-			<?php get_template_part('loop'); ?>
+			<?php get_template_part( 'loop' ); ?>
 
-			<?php get_template_part('pagination'); ?>
+			<?php get_template_part( 'pagination' ); ?>
 
 		</section>
 		<!-- /section -->

@@ -5,13 +5,17 @@
   "version": "1.5.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/toddmotto/html5blank.git"
+    "url": "https://github.com/html5blank/html5blank.git"
   },
   "author": "Todd Motto",
   "contributors": [
     {
       "name": "toddmotto",
       "url": "https://github.com/toddmotto"
+    },
+    {
+      "name": "robertdevore",
+      "url": "https://github.com/robertdevore"
     },
     {
       "name": "J-Rabe",
@@ -46,8 +50,8 @@
       "url": "https://github.com/oriSomething"
     },
     {
-      "name": "itsduc",
-      "url": "https://github.com/itsduc"
+      "name": "pgerochi",
+      "url": "https://github.com/pgerochi"
     },
     {
       "name": "alorence",
@@ -114,20 +118,30 @@
       "url": "https://github.com/weslleih"
     }
   ],
-  "dependencies": {},
+  "scripts": {
+    "modernizr": "gulp modernizr"
+  },
+  "dependencies": {
+    "modernizr": "^3.5.0",
+    "normalize.css": "^7.0.0",
+    "npm": "^5.6.0"
+  },
   "devDependencies": {
-    "del": "^0.1.2",
+    "del": "^3.0.0",
     "gulp": "^3.6.0",
-    "gulp-autoprefixer": "^0.0.7",
+    "gulp-autoprefixer": "^4.1.0",
     "gulp-concat": "^2.3.4",
-    "gulp-csso": "^0.2.9",
-    "gulp-jshint": "^1.8.4",
-    "gulp-livereload": "^1.2.0",
-    "gulp-load-plugins": "^0.5.0",
-    "gulp-ruby-sass": "^0.7.1",
-    "gulp-template": "^1.0.0",
-    "gulp-uglify": "^1.0.0",
-    "jshint-stylish": "^0.4.0"
+    "gulp-csso": "^3.0.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-template": "^5.0.0",
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.3.1",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
   },
   "engines": {
     "node": ">=0.10.0"

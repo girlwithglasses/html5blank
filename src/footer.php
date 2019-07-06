@@ -1,6 +1,6 @@
 			<footer class="footer C" role="contentinfo">
 				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>.
+					&copy; <?php echo esc_html( date( 'Y' ) ); ?> Copyright <?php bloginfo( 'name' ); ?>.
 				</p>
 			</footer>
 		</div>

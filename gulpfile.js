@@ -8,11 +8,11 @@ var gulp = require( "gulp" ),
 	/** @type {Array} JS source files to concatenate and uglify */
 	uglifySrc = [
 		/** Modernizr */
-		"src/bower_components/modernizr/modernizr.js",
+		"src/js/lib/modernizr.js",
 		/** Conditionizr */
 		"src/js/lib/conditionizr-4.3.0.min.js",
 		/** jQuery */
-		"src/bower_components/jquery/dist/jquery.js",
+		"node_modules/jquery/dist/jquery.js",
 		/** Page scripts */
 		"src/js/scripts.js"
 	],
@@ -28,7 +28,7 @@ var gulp = require( "gulp" ),
 			/** The banner of `style.css` */
 			"src/css/banner.css",
 			/** Normalize */
-			"src/bower_components/normalize.css/normalize.css",
+			"node_modules/normalize.css/normalize.css",
 			/** Theme style */
 			"src/css/style.css"
 		]
@@ -73,10 +73,9 @@ gulp.task( "copy", function() {
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
 	return gulp.src( "src/css/sass/style.scss" )
-		.pipe( $.rubySass({
-			style: "expanded",
-			precision: 10
-		}))
+		.pipe( $.sourcemaps.init() )
+		.pipe( $.sass() )
+		.pipe( $.sourcemaps.write( "." ) )
 		.on( "error", function( e ) {
 			console.error( e );
 		})
@@ -121,6 +120,17 @@ gulp.task( "template", function() {
         .pipe( gulp.dest( "src/modules" ) );
 });
 
+/** Modernizr **/
+gulp.task( "modernizr", function() {
+	var modernizr = require( "modernizr" ),
+		config = require( "./node_modules/modernizr/lib/config-all"),
+		fs = require( "fs" );
+
+		modernizr.build(config, function(code) {
+			fs.writeFile("./src/js/lib/modernizr.js", code);
+		});
+});
+
 /** Uglify */
 gulp.task( "uglify", function() {
 	return gulp.src( uglifySrc )
@@ -129,14 +139,28 @@ gulp.task( "uglify", function() {
 		.pipe( gulp.dest( "dist/js" ) );
 });
 
+/** jQuery **/
+gulp.task("jquery", function() {
+	return gulp.src("node_modules/jquery/dist/jquery.js")
+		.pipe( $.sourcemaps.init() )
+		.pipe( $.sourcemaps.write( "." ) )
+		.pipe( gulp.dest( "src/js/lib" ) );
+});
+
+gulp.task("normalize", function() {
+	return gulp.src("node_modules/normalize.css/normalize.css")
+		.pipe( gulp.dest( "src/css/lib" ) );
+});
+
 /** `env` to 'production' */
 gulp.task( "envProduction", function() {
 	env = "production";
 });
 
 /** Livereload */
-gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
-	var server = $.livereload();
+gulp.task( "watch", [ "template", "styles", "jshint", "modernizr", "jquery", "normalize" ], function() {
+	var server = $.livereload;
+	server.listen();
 
 	/** Watch for livereoad */
 	gulp.watch([
@@ -164,9 +188,13 @@ gulp.task( "build", [
 	"clean",
 	"template",
 	"styles",
+	"modernizr",
 	"jshint",
 	"copy",
 	"uglify"
 ], function () {
 	console.log("Build is finished");
 });
+
+/** Gulp default task */
+gulp.task( "default", ["watch"] );
